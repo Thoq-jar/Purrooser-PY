@@ -1,0 +1,1 @@
+cd ~/.purrooser; cd Purrooser; chmod +x configure; ./configure; ./Thoqfile; source purr/bin/activate; python purrooser.py; deativate;

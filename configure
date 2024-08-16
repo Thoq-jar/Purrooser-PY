@@ -10,4 +10,5 @@ pip install setuptools
 pip install Cython
 deactivate
 chmod +x Thoqfile
-echo "Done! Now run ./Thoqfile to start Purroser."
+echo "Done! Now run ./Thoqfile to build Purroser."
+echo "Run python purrooser.py to run Purroser."

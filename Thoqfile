@@ -1,5 +1,4 @@
 source purr/bin/activate
 python setup.py build_ext --inplace
 clear
-python purrooser.py
 deactivate
