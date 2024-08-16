@@ -1,6 +1,7 @@
 from PyQt5.QtWidgets import QMainWindow, QTabWidget, QToolBar, QAction, QLineEdit
 from PyQt5.QtWebEngineWidgets import QWebEngineView
 from PyQt5.QtCore import QUrl
+from PyQt5.QtGui import QIcon
 from src.styles import get_styles
 
 URL = "https://www.qwant.com/"
@@ -15,6 +16,9 @@ class Purroser(QMainWindow):
         self.setCentralWidget(self.tabs)
         self.toolbar = QToolBar()
         self.addToolBar(self.toolbar)
+
+        app_icon_path = "../assets/purr.png"
+        self.setWindowIcon(QIcon(app_icon_path))
 
         if self.tabs.count() == 0:
             self.add_tab(URL)

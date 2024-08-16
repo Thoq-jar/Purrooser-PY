@@ -1,2 +1,5 @@
 purr/
 build/
+*.so
+*.pyc
+*.pyo
