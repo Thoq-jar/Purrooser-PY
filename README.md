@@ -1,6 +1,7 @@
 # Purrooser
 
 ### Installation
+Run this code:
 ```bash
 echo "Setting up..."
 cd ~
