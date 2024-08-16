@@ -1492,7 +1492,8 @@ static const char *__pyx_f[] = {
 /* #### Code section: type_declarations ### */
 
 /*--- Type declarations ---*/
-struct __pyx_obj_7browser___pyx_scope_struct__add_tab;
+struct __pyx_obj_7browser___pyx_scope_struct__add_fullscreen_action;
+struct __pyx_obj_7browser___pyx_scope_struct_1_add_tab;
 struct __pyx_defaults;
 typedef struct __pyx_defaults __pyx_defaults;
 struct __pyx_defaults1;
@@ -1504,14 +1505,27 @@ struct __pyx_defaults1 {
   PyObject *__pyx_arg_self;
 };
 
-/* "browser.pyx":55
+/* "browser.pyx":56
+ *         self.add_fullscreen_action()  # Ensure fullscreen action is added here too
+ * 
+ *     def add_fullscreen_action(self):             # <<<<<<<<<<<<<<
+ *         fullscreen_action = QAction("Full Screen", self)
+ *         fullscreen_action.triggered.connect(lambda: self.toggle_fullscreen(self.tabs.currentWidget()))
+ */
+struct __pyx_obj_7browser___pyx_scope_struct__add_fullscreen_action {
+  PyObject_HEAD
+  PyObject *__pyx_v_self;
+};
+
+
+/* "browser.pyx":88
  *         self.tabs.currentWidget().setUrl(QUrl(URL))
  * 
  *     def add_tab(self, url=URL):             # <<<<<<<<<<<<<<
  *         web_view = QWebEngineView()
  *         if isinstance(url, str) and url:
  */
-struct __pyx_obj_7browser___pyx_scope_struct__add_tab {
+struct __pyx_obj_7browser___pyx_scope_struct_1_add_tab {
   PyObject_HEAD
   PyObject *__pyx_v_self;
 };
@@ -2188,13 +2202,14 @@ int __pyx_module_is_main_browser = 0;
 /* Implementation of "browser" */
 /* #### Code section: global_var ### */
 static PyObject *__pyx_builtin_super;
+static PyObject *__pyx_builtin_print;
 /* #### Code section: string_decls ### */
 static const char __pyx_k_q[] = "q";
-static const char __pyx_k__2[] = "//";
-static const char __pyx_k__3[] = ".";
+static const char __pyx_k__3[] = "//";
+static const char __pyx_k__4[] = ".";
 static const char __pyx_k_gc[] = "gc";
 static const char __pyx_k_URL[] = "URL";
-static const char __pyx_k__16[] = "?";
+static const char __pyx_k__23[] = "?";
 static const char __pyx_k_doc[] = "__doc__";
 static const char __pyx_k_url[] = "url";
 static const char __pyx_k_Back[] = "Back";
@@ -2207,6 +2222,7 @@ static const char __pyx_k_home[] = "home";
 static const char __pyx_k_init[] = "__init__";
 static const char __pyx_k_main[] = "__main__";
 static const char __pyx_k_name[] = "__name__";
+static const char __pyx_k_page[] = "page";
 static const char __pyx_k_self[] = "self";
 static const char __pyx_k_tabs[] = "tabs";
 static const char __pyx_k_test[] = "__test__";
@@ -2214,6 +2230,7 @@ static const char __pyx_k_text[] = "text";
 static const char __pyx_k_QIcon[] = "QIcon";
 static const char __pyx_k_count[] = "count";
 static const char __pyx_k_https[] = "https";
+static const char __pyx_k_print[] = "print";
 static const char __pyx_k_split[] = "split";
 static const char __pyx_k_super[] = "super";
 static const char __pyx_k_addTab[] = "addTab";
@@ -2231,6 +2248,7 @@ static const char __pyx_k_connect[] = "connect";
 static const char __pyx_k_disable[] = "disable";
 static const char __pyx_k_forward[] = "forward";
 static const char __pyx_k_https_2[] = "https://";
+static const char __pyx_k_js_code[] = "js_code";
 static const char __pyx_k_prepare[] = "__prepare__";
 static const char __pyx_k_setText[] = "setText";
 static const char __pyx_k_toolbar[] = "toolbar";
@@ -2256,6 +2274,7 @@ static const char __pyx_k_get_styles[] = "get_styles";
 static const char __pyx_k_src_styles[] = "src.styles";
 static const char __pyx_k_startswith[] = "startswith";
 static const char __pyx_k_urlChanged[] = "urlChanged";
+static const char __pyx_k_Full_Screen[] = "Full Screen";
 static const char __pyx_k_PyQt5_QtGui[] = "PyQt5.QtGui";
 static const char __pyx_k_QMainWindow[] = "QMainWindow";
 static const char __pyx_k_back_button[] = "back_button";
@@ -2271,14 +2290,17 @@ static const char __pyx_k_currentWidget[] = "currentWidget";
 static const char __pyx_k_current_index[] = "current_index";
 static const char __pyx_k_init_subclass[] = "__init_subclass__";
 static const char __pyx_k_returnPressed[] = "returnPressed";
+static const char __pyx_k_runJavaScript[] = "runJavaScript";
 static const char __pyx_k_setStyleSheet[] = "setStyleSheet";
 static const char __pyx_k_setWindowIcon[] = "setWindowIcon";
 static const char __pyx_k_QWebEngineView[] = "QWebEngineView";
 static const char __pyx_k_forward_button[] = "forward_button";
 static const char __pyx_k_new_tab_action[] = "new_tab_action";
 static const char __pyx_k_setWindowTitle[] = "setWindowTitle";
+static const char __pyx_k_showFullScreen[] = "showFullScreen";
 static const char __pyx_k_Purroser___init[] = "Purroser.__init__";
 static const char __pyx_k_PyQt5_QtWidgets[] = "PyQt5.QtWidgets";
+static const char __pyx_k_assets_purr_png[] = "../assets/purr.png";
 static const char __pyx_k_navigate_to_url[] = "navigate_to_url";
 static const char __pyx_k_src_browser_pyx[] = "src/browser.pyx";
 static const char __pyx_k_Purroser_add_tab[] = "Purroser.add_tab";
@@ -2286,30 +2308,44 @@ static const char __pyx_k_close_tab_action[] = "close_tab_action";
 static const char __pyx_k_setCentralWidget[] = "setCentralWidget";
 static const char __pyx_k_setCurrentWidget[] = "setCurrentWidget";
 static const char __pyx_k_close_current_tab[] = "close_current_tab";
+static const char __pyx_k_fullscreen_action[] = "fullscreen_action";
+static const char __pyx_k_toggle_fullscreen[] = "toggle_fullscreen";
 static const char __pyx_k_asyncio_coroutines[] = "asyncio.coroutines";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
 static const char __pyx_k_add_toolbar_actions[] = "add_toolbar_actions";
 static const char __pyx_k_https_www_qwant_com[] = "https://www.qwant.com/";
+static const char __pyx_k_add_fullscreen_action[] = "add_fullscreen_action";
+static const char __pyx_k_Fullscreen_not_supported[] = "Fullscreen not supported.";
 static const char __pyx_k_Purroser_navigate_to_url[] = "Purroser.navigate_to_url";
 static const char __pyx_k_PyQt5_QtWebEngineWidgets[] = "PyQt5.QtWebEngineWidgets";
+static const char __pyx_k_check_fullscreen_support[] = "check_fullscreen_support";
 static const char __pyx_k_Purroser_close_current_tab[] = "Purroser.close_current_tab";
+static const char __pyx_k_Purroser_toggle_fullscreen[] = "Purroser.toggle_fullscreen";
 static const char __pyx_k_Purroser_add_toolbar_actions[] = "Purroser.add_toolbar_actions";
+static const char __pyx_k_Purroser_add_fullscreen_action[] = "Purroser.add_fullscreen_action";
 static const char __pyx_k_Purroser_add_tab_locals_lambda[] = "Purroser.add_tab.<locals>.<lambda>";
-static const char __pyx_k_home_tristans_Code_Purrooser_as[] = "/home/tristans/Code/Purrooser/assets/purr.png";
+static const char __pyx_k_var_elem_document_documentEleme[] = "\n        var elem = document.documentElement;\n        if (!document.fullscreenElement && \n            !document.mozFullScreenElement && \n            !document.webkitFullscreenElement && \n            !document.msFullscreenElement ) {        \n            if (elem.requestFullscreen) {\n                elem.requestFullscreen();\n                return true;\n            }\n        }\n        return false;\n        ";
+static const char __pyx_k_Purroser_add_fullscreen_action_l[] = "Purroser.add_fullscreen_action.<locals>.<lambda>";
 static const char __pyx_k_Purroser_add_toolbar_actions_loc[] = "Purroser.add_toolbar_actions.<locals>.<lambda>";
+static const char __pyx_k_Purroser_check_fullscreen_suppor[] = "Purroser.check_fullscreen_support";
 static const char __pyx_k_background_color_black_color_whi[] = "background-color: black; color: white;";
 /* #### Code section: decls ### */
 static PyObject *__pyx_pf_7browser_8Purroser___init__(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_7browser_2__defaults__(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
 static PyObject *__pyx_lambda_funcdef_lambda(CYTHON_UNUSED PyObject *__pyx_self, CYTHON_UNUSED PyObject *__pyx_v_checked, PyObject *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_7browser_8Purroser_2add_toolbar_actions(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_7browser_8Purroser_4home(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self); /* proto */
+static PyObject *__pyx_lambda_funcdef_lambda1(PyObject *__pyx_self); /* proto */
+static PyObject *__pyx_pf_7browser_8Purroser_4add_fullscreen_action(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_7browser_8Purroser_6check_fullscreen_support(CYTHON_UNUSED PyObject *__pyx_self, CYTHON_UNUSED PyObject *__pyx_v_self, PyObject *__pyx_v_web_view); /* proto */
+static PyObject *__pyx_pf_7browser_8Purroser_8toggle_fullscreen(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_web_view); /* proto */
+static PyObject *__pyx_pf_7browser_8Purroser_10home(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_7browser___defaults__(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
-static PyObject *__pyx_lambda_funcdef_lambda1(PyObject *__pyx_self, PyObject *__pyx_v_q); /* proto */
-static PyObject *__pyx_pf_7browser_8Purroser_6add_tab(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_url); /* proto */
-static PyObject *__pyx_pf_7browser_8Purroser_8close_current_tab(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v_args); /* proto */
-static PyObject *__pyx_pf_7browser_8Purroser_10navigate_to_url(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self); /* proto */
-static PyObject *__pyx_tp_new_7browser___pyx_scope_struct__add_tab(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_lambda_funcdef_lambda2(PyObject *__pyx_self, PyObject *__pyx_v_q); /* proto */
+static PyObject *__pyx_pf_7browser_8Purroser_12add_tab(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_url); /* proto */
+static PyObject *__pyx_pf_7browser_8Purroser_14close_current_tab(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v_args); /* proto */
+static PyObject *__pyx_pf_7browser_8Purroser_16navigate_to_url(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self); /* proto */
+static PyObject *__pyx_tp_new_7browser___pyx_scope_struct__add_fullscreen_action(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_7browser___pyx_scope_struct_1_add_tab(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 /* #### Code section: late_includes ### */
 /* #### Code section: module_state ### */
 typedef struct {
@@ -2338,23 +2374,32 @@ typedef struct {
   PyTypeObject *__pyx_CoroutineType;
   #endif
   #if CYTHON_USE_MODULE_STATE
-  PyObject *__pyx_type_7browser___pyx_scope_struct__add_tab;
+  PyObject *__pyx_type_7browser___pyx_scope_struct__add_fullscreen_action;
+  PyObject *__pyx_type_7browser___pyx_scope_struct_1_add_tab;
   #endif
-  PyTypeObject *__pyx_ptype_7browser___pyx_scope_struct__add_tab;
-  PyObject *__pyx_n_s_Back;
-  PyObject *__pyx_kp_s_Close_Tab;
-  PyObject *__pyx_n_s_Forward;
-  PyObject *__pyx_n_s_Home;
-  PyObject *__pyx_kp_s_New_Tab;
+  PyTypeObject *__pyx_ptype_7browser___pyx_scope_struct__add_fullscreen_action;
+  PyTypeObject *__pyx_ptype_7browser___pyx_scope_struct_1_add_tab;
+  PyObject *__pyx_n_u_Back;
+  PyObject *__pyx_kp_u_Close_Tab;
+  PyObject *__pyx_n_u_Forward;
+  PyObject *__pyx_kp_u_Full_Screen;
+  PyObject *__pyx_kp_u_Fullscreen_not_supported;
+  PyObject *__pyx_n_u_Home;
+  PyObject *__pyx_kp_u_New_Tab;
   PyObject *__pyx_n_s_Purroser;
+  PyObject *__pyx_n_u_Purroser;
   PyObject *__pyx_n_s_Purroser___init;
+  PyObject *__pyx_n_s_Purroser_add_fullscreen_action;
+  PyObject *__pyx_n_s_Purroser_add_fullscreen_action_l;
   PyObject *__pyx_n_s_Purroser_add_tab;
   PyObject *__pyx_n_s_Purroser_add_tab_locals_lambda;
   PyObject *__pyx_n_s_Purroser_add_toolbar_actions;
   PyObject *__pyx_n_s_Purroser_add_toolbar_actions_loc;
+  PyObject *__pyx_n_s_Purroser_check_fullscreen_suppor;
   PyObject *__pyx_n_s_Purroser_close_current_tab;
   PyObject *__pyx_n_s_Purroser_home;
   PyObject *__pyx_n_s_Purroser_navigate_to_url;
+  PyObject *__pyx_n_s_Purroser_toggle_fullscreen;
   PyObject *__pyx_n_s_PyQt5_QtCore;
   PyObject *__pyx_n_s_PyQt5_QtGui;
   PyObject *__pyx_n_s_PyQt5_QtWebEngineWidgets;
@@ -2368,22 +2413,25 @@ typedef struct {
   PyObject *__pyx_n_s_QUrl;
   PyObject *__pyx_n_s_QWebEngineView;
   PyObject *__pyx_n_s_URL;
-  PyObject *__pyx_n_s__16;
-  PyObject *__pyx_kp_s__2;
+  PyObject *__pyx_n_s__23;
   PyObject *__pyx_kp_u__3;
+  PyObject *__pyx_kp_u__4;
   PyObject *__pyx_n_s_addAction;
   PyObject *__pyx_n_s_addTab;
   PyObject *__pyx_n_s_addToolBar;
   PyObject *__pyx_n_s_addWidget;
+  PyObject *__pyx_n_s_add_fullscreen_action;
   PyObject *__pyx_n_s_add_tab;
   PyObject *__pyx_n_s_add_toolbar_actions;
   PyObject *__pyx_n_s_app_icon_path;
   PyObject *__pyx_n_s_args;
+  PyObject *__pyx_kp_u_assets_purr_png;
   PyObject *__pyx_n_s_asyncio_coroutines;
   PyObject *__pyx_n_s_back;
   PyObject *__pyx_n_s_back_button;
-  PyObject *__pyx_kp_s_background_color_black_color_whi;
+  PyObject *__pyx_kp_u_background_color_black_color_whi;
   PyObject *__pyx_n_s_browser;
+  PyObject *__pyx_n_s_check_fullscreen_support;
   PyObject *__pyx_n_s_checked;
   PyObject *__pyx_n_s_cline_in_traceback;
   PyObject *__pyx_n_s_close_current_tab;
@@ -2399,19 +2447,20 @@ typedef struct {
   PyObject *__pyx_kp_u_enable;
   PyObject *__pyx_n_s_forward;
   PyObject *__pyx_n_s_forward_button;
+  PyObject *__pyx_n_s_fullscreen_action;
   PyObject *__pyx_kp_u_gc;
   PyObject *__pyx_n_s_get_styles;
   PyObject *__pyx_n_s_home;
   PyObject *__pyx_n_s_home_button;
-  PyObject *__pyx_kp_s_home_tristans_Code_Purrooser_as;
-  PyObject *__pyx_n_s_https;
-  PyObject *__pyx_kp_s_https_2;
-  PyObject *__pyx_kp_s_https_www_qwant_com;
+  PyObject *__pyx_n_u_https;
+  PyObject *__pyx_kp_u_https_2;
+  PyObject *__pyx_kp_u_https_www_qwant_com;
   PyObject *__pyx_n_s_import;
   PyObject *__pyx_n_s_init;
   PyObject *__pyx_n_s_init_subclass;
   PyObject *__pyx_n_s_is_coroutine;
   PyObject *__pyx_kp_u_isenabled;
+  PyObject *__pyx_n_s_js_code;
   PyObject *__pyx_n_s_main;
   PyObject *__pyx_n_s_metaclass;
   PyObject *__pyx_n_s_module;
@@ -2419,11 +2468,14 @@ typedef struct {
   PyObject *__pyx_n_s_name;
   PyObject *__pyx_n_s_navigate_to_url;
   PyObject *__pyx_n_s_new_tab_action;
+  PyObject *__pyx_n_s_page;
   PyObject *__pyx_n_s_prepare;
+  PyObject *__pyx_n_s_print;
   PyObject *__pyx_n_s_q;
   PyObject *__pyx_n_s_qualname;
   PyObject *__pyx_n_s_removeTab;
   PyObject *__pyx_n_s_returnPressed;
+  PyObject *__pyx_n_s_runJavaScript;
   PyObject *__pyx_n_s_self;
   PyObject *__pyx_n_s_setCentralWidget;
   PyObject *__pyx_n_s_setCurrentWidget;
@@ -2434,6 +2486,7 @@ typedef struct {
   PyObject *__pyx_n_s_setWindowIcon;
   PyObject *__pyx_n_s_setWindowTitle;
   PyObject *__pyx_n_s_set_name;
+  PyObject *__pyx_n_s_showFullScreen;
   PyObject *__pyx_n_s_split;
   PyObject *__pyx_kp_s_src_browser_pyx;
   PyObject *__pyx_n_s_src_styles;
@@ -2444,11 +2497,13 @@ typedef struct {
   PyObject *__pyx_n_s_test;
   PyObject *__pyx_n_s_text;
   PyObject *__pyx_n_s_toString;
+  PyObject *__pyx_n_s_toggle_fullscreen;
   PyObject *__pyx_n_s_toolbar;
   PyObject *__pyx_n_s_triggered;
   PyObject *__pyx_n_s_url;
   PyObject *__pyx_n_s_urlChanged;
   PyObject *__pyx_n_s_url_bar;
+  PyObject *__pyx_kp_u_var_elem_document_documentEleme;
   PyObject *__pyx_n_s_web_view;
   PyObject *__pyx_int_0;
   PyObject *__pyx_int_100;
@@ -2456,18 +2511,25 @@ typedef struct {
   PyObject *__pyx_int_1600;
   PyObject *__pyx_int_neg_1;
   PyObject *__pyx_tuple_;
-  PyObject *__pyx_tuple__4;
-  PyObject *__pyx_tuple__6;
-  PyObject *__pyx_tuple__8;
-  PyObject *__pyx_tuple__10;
-  PyObject *__pyx_tuple__12;
-  PyObject *__pyx_tuple__14;
-  PyObject *__pyx_codeobj__5;
-  PyObject *__pyx_codeobj__7;
-  PyObject *__pyx_codeobj__9;
-  PyObject *__pyx_codeobj__11;
-  PyObject *__pyx_codeobj__13;
-  PyObject *__pyx_codeobj__15;
+  PyObject *__pyx_tuple__2;
+  PyObject *__pyx_tuple__5;
+  PyObject *__pyx_tuple__7;
+  PyObject *__pyx_tuple__9;
+  PyObject *__pyx_tuple__11;
+  PyObject *__pyx_tuple__13;
+  PyObject *__pyx_tuple__15;
+  PyObject *__pyx_tuple__17;
+  PyObject *__pyx_tuple__19;
+  PyObject *__pyx_tuple__21;
+  PyObject *__pyx_codeobj__6;
+  PyObject *__pyx_codeobj__8;
+  PyObject *__pyx_codeobj__10;
+  PyObject *__pyx_codeobj__12;
+  PyObject *__pyx_codeobj__14;
+  PyObject *__pyx_codeobj__16;
+  PyObject *__pyx_codeobj__18;
+  PyObject *__pyx_codeobj__20;
+  PyObject *__pyx_codeobj__22;
 } __pyx_mstate;
 
 #if CYTHON_USE_MODULE_STATE
@@ -2510,22 +2572,31 @@ static int __pyx_m_clear(PyObject *m) {
   #ifdef __Pyx_FusedFunction_USED
   Py_CLEAR(clear_module_state->__pyx_FusedFunctionType);
   #endif
-  Py_CLEAR(clear_module_state->__pyx_ptype_7browser___pyx_scope_struct__add_tab);
-  Py_CLEAR(clear_module_state->__pyx_type_7browser___pyx_scope_struct__add_tab);
-  Py_CLEAR(clear_module_state->__pyx_n_s_Back);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_Close_Tab);
-  Py_CLEAR(clear_module_state->__pyx_n_s_Forward);
-  Py_CLEAR(clear_module_state->__pyx_n_s_Home);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_New_Tab);
+  Py_CLEAR(clear_module_state->__pyx_ptype_7browser___pyx_scope_struct__add_fullscreen_action);
+  Py_CLEAR(clear_module_state->__pyx_type_7browser___pyx_scope_struct__add_fullscreen_action);
+  Py_CLEAR(clear_module_state->__pyx_ptype_7browser___pyx_scope_struct_1_add_tab);
+  Py_CLEAR(clear_module_state->__pyx_type_7browser___pyx_scope_struct_1_add_tab);
+  Py_CLEAR(clear_module_state->__pyx_n_u_Back);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_Close_Tab);
+  Py_CLEAR(clear_module_state->__pyx_n_u_Forward);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_Full_Screen);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_Fullscreen_not_supported);
+  Py_CLEAR(clear_module_state->__pyx_n_u_Home);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_New_Tab);
   Py_CLEAR(clear_module_state->__pyx_n_s_Purroser);
+  Py_CLEAR(clear_module_state->__pyx_n_u_Purroser);
   Py_CLEAR(clear_module_state->__pyx_n_s_Purroser___init);
+  Py_CLEAR(clear_module_state->__pyx_n_s_Purroser_add_fullscreen_action);
+  Py_CLEAR(clear_module_state->__pyx_n_s_Purroser_add_fullscreen_action_l);
   Py_CLEAR(clear_module_state->__pyx_n_s_Purroser_add_tab);
   Py_CLEAR(clear_module_state->__pyx_n_s_Purroser_add_tab_locals_lambda);
   Py_CLEAR(clear_module_state->__pyx_n_s_Purroser_add_toolbar_actions);
   Py_CLEAR(clear_module_state->__pyx_n_s_Purroser_add_toolbar_actions_loc);
+  Py_CLEAR(clear_module_state->__pyx_n_s_Purroser_check_fullscreen_suppor);
   Py_CLEAR(clear_module_state->__pyx_n_s_Purroser_close_current_tab);
   Py_CLEAR(clear_module_state->__pyx_n_s_Purroser_home);
   Py_CLEAR(clear_module_state->__pyx_n_s_Purroser_navigate_to_url);
+  Py_CLEAR(clear_module_state->__pyx_n_s_Purroser_toggle_fullscreen);
   Py_CLEAR(clear_module_state->__pyx_n_s_PyQt5_QtCore);
   Py_CLEAR(clear_module_state->__pyx_n_s_PyQt5_QtGui);
   Py_CLEAR(clear_module_state->__pyx_n_s_PyQt5_QtWebEngineWidgets);
@@ -2539,22 +2610,25 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_QUrl);
   Py_CLEAR(clear_module_state->__pyx_n_s_QWebEngineView);
   Py_CLEAR(clear_module_state->__pyx_n_s_URL);
-  Py_CLEAR(clear_module_state->__pyx_n_s__16);
-  Py_CLEAR(clear_module_state->__pyx_kp_s__2);
+  Py_CLEAR(clear_module_state->__pyx_n_s__23);
   Py_CLEAR(clear_module_state->__pyx_kp_u__3);
+  Py_CLEAR(clear_module_state->__pyx_kp_u__4);
   Py_CLEAR(clear_module_state->__pyx_n_s_addAction);
   Py_CLEAR(clear_module_state->__pyx_n_s_addTab);
   Py_CLEAR(clear_module_state->__pyx_n_s_addToolBar);
   Py_CLEAR(clear_module_state->__pyx_n_s_addWidget);
+  Py_CLEAR(clear_module_state->__pyx_n_s_add_fullscreen_action);
   Py_CLEAR(clear_module_state->__pyx_n_s_add_tab);
   Py_CLEAR(clear_module_state->__pyx_n_s_add_toolbar_actions);
   Py_CLEAR(clear_module_state->__pyx_n_s_app_icon_path);
   Py_CLEAR(clear_module_state->__pyx_n_s_args);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_assets_purr_png);
   Py_CLEAR(clear_module_state->__pyx_n_s_asyncio_coroutines);
   Py_CLEAR(clear_module_state->__pyx_n_s_back);
   Py_CLEAR(clear_module_state->__pyx_n_s_back_button);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_background_color_black_color_whi);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_background_color_black_color_whi);
   Py_CLEAR(clear_module_state->__pyx_n_s_browser);
+  Py_CLEAR(clear_module_state->__pyx_n_s_check_fullscreen_support);
   Py_CLEAR(clear_module_state->__pyx_n_s_checked);
   Py_CLEAR(clear_module_state->__pyx_n_s_cline_in_traceback);
   Py_CLEAR(clear_module_state->__pyx_n_s_close_current_tab);
@@ -2570,19 +2644,20 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_kp_u_enable);
   Py_CLEAR(clear_module_state->__pyx_n_s_forward);
   Py_CLEAR(clear_module_state->__pyx_n_s_forward_button);
+  Py_CLEAR(clear_module_state->__pyx_n_s_fullscreen_action);
   Py_CLEAR(clear_module_state->__pyx_kp_u_gc);
   Py_CLEAR(clear_module_state->__pyx_n_s_get_styles);
   Py_CLEAR(clear_module_state->__pyx_n_s_home);
   Py_CLEAR(clear_module_state->__pyx_n_s_home_button);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_home_tristans_Code_Purrooser_as);
-  Py_CLEAR(clear_module_state->__pyx_n_s_https);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_https_2);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_https_www_qwant_com);
+  Py_CLEAR(clear_module_state->__pyx_n_u_https);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_https_2);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_https_www_qwant_com);
   Py_CLEAR(clear_module_state->__pyx_n_s_import);
   Py_CLEAR(clear_module_state->__pyx_n_s_init);
   Py_CLEAR(clear_module_state->__pyx_n_s_init_subclass);
   Py_CLEAR(clear_module_state->__pyx_n_s_is_coroutine);
   Py_CLEAR(clear_module_state->__pyx_kp_u_isenabled);
+  Py_CLEAR(clear_module_state->__pyx_n_s_js_code);
   Py_CLEAR(clear_module_state->__pyx_n_s_main);
   Py_CLEAR(clear_module_state->__pyx_n_s_metaclass);
   Py_CLEAR(clear_module_state->__pyx_n_s_module);
@@ -2590,11 +2665,14 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_name);
   Py_CLEAR(clear_module_state->__pyx_n_s_navigate_to_url);
   Py_CLEAR(clear_module_state->__pyx_n_s_new_tab_action);
+  Py_CLEAR(clear_module_state->__pyx_n_s_page);
   Py_CLEAR(clear_module_state->__pyx_n_s_prepare);
+  Py_CLEAR(clear_module_state->__pyx_n_s_print);
   Py_CLEAR(clear_module_state->__pyx_n_s_q);
   Py_CLEAR(clear_module_state->__pyx_n_s_qualname);
   Py_CLEAR(clear_module_state->__pyx_n_s_removeTab);
   Py_CLEAR(clear_module_state->__pyx_n_s_returnPressed);
+  Py_CLEAR(clear_module_state->__pyx_n_s_runJavaScript);
   Py_CLEAR(clear_module_state->__pyx_n_s_self);
   Py_CLEAR(clear_module_state->__pyx_n_s_setCentralWidget);
   Py_CLEAR(clear_module_state->__pyx_n_s_setCurrentWidget);
@@ -2605,6 +2683,7 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_setWindowIcon);
   Py_CLEAR(clear_module_state->__pyx_n_s_setWindowTitle);
   Py_CLEAR(clear_module_state->__pyx_n_s_set_name);
+  Py_CLEAR(clear_module_state->__pyx_n_s_showFullScreen);
   Py_CLEAR(clear_module_state->__pyx_n_s_split);
   Py_CLEAR(clear_module_state->__pyx_kp_s_src_browser_pyx);
   Py_CLEAR(clear_module_state->__pyx_n_s_src_styles);
@@ -2615,11 +2694,13 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_test);
   Py_CLEAR(clear_module_state->__pyx_n_s_text);
   Py_CLEAR(clear_module_state->__pyx_n_s_toString);
+  Py_CLEAR(clear_module_state->__pyx_n_s_toggle_fullscreen);
   Py_CLEAR(clear_module_state->__pyx_n_s_toolbar);
   Py_CLEAR(clear_module_state->__pyx_n_s_triggered);
   Py_CLEAR(clear_module_state->__pyx_n_s_url);
   Py_CLEAR(clear_module_state->__pyx_n_s_urlChanged);
   Py_CLEAR(clear_module_state->__pyx_n_s_url_bar);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_var_elem_document_documentEleme);
   Py_CLEAR(clear_module_state->__pyx_n_s_web_view);
   Py_CLEAR(clear_module_state->__pyx_int_0);
   Py_CLEAR(clear_module_state->__pyx_int_100);
@@ -2627,18 +2708,25 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_int_1600);
   Py_CLEAR(clear_module_state->__pyx_int_neg_1);
   Py_CLEAR(clear_module_state->__pyx_tuple_);
-  Py_CLEAR(clear_module_state->__pyx_tuple__4);
-  Py_CLEAR(clear_module_state->__pyx_tuple__6);
-  Py_CLEAR(clear_module_state->__pyx_tuple__8);
-  Py_CLEAR(clear_module_state->__pyx_tuple__10);
-  Py_CLEAR(clear_module_state->__pyx_tuple__12);
-  Py_CLEAR(clear_module_state->__pyx_tuple__14);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__5);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__7);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__9);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__11);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__13);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__15);
+  Py_CLEAR(clear_module_state->__pyx_tuple__2);
+  Py_CLEAR(clear_module_state->__pyx_tuple__5);
+  Py_CLEAR(clear_module_state->__pyx_tuple__7);
+  Py_CLEAR(clear_module_state->__pyx_tuple__9);
+  Py_CLEAR(clear_module_state->__pyx_tuple__11);
+  Py_CLEAR(clear_module_state->__pyx_tuple__13);
+  Py_CLEAR(clear_module_state->__pyx_tuple__15);
+  Py_CLEAR(clear_module_state->__pyx_tuple__17);
+  Py_CLEAR(clear_module_state->__pyx_tuple__19);
+  Py_CLEAR(clear_module_state->__pyx_tuple__21);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__6);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__8);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__10);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__12);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__14);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__16);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__18);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__20);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__22);
   return 0;
 }
 #endif
@@ -2659,22 +2747,31 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   #ifdef __Pyx_FusedFunction_USED
   Py_VISIT(traverse_module_state->__pyx_FusedFunctionType);
   #endif
-  Py_VISIT(traverse_module_state->__pyx_ptype_7browser___pyx_scope_struct__add_tab);
-  Py_VISIT(traverse_module_state->__pyx_type_7browser___pyx_scope_struct__add_tab);
-  Py_VISIT(traverse_module_state->__pyx_n_s_Back);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_Close_Tab);
-  Py_VISIT(traverse_module_state->__pyx_n_s_Forward);
-  Py_VISIT(traverse_module_state->__pyx_n_s_Home);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_New_Tab);
+  Py_VISIT(traverse_module_state->__pyx_ptype_7browser___pyx_scope_struct__add_fullscreen_action);
+  Py_VISIT(traverse_module_state->__pyx_type_7browser___pyx_scope_struct__add_fullscreen_action);
+  Py_VISIT(traverse_module_state->__pyx_ptype_7browser___pyx_scope_struct_1_add_tab);
+  Py_VISIT(traverse_module_state->__pyx_type_7browser___pyx_scope_struct_1_add_tab);
+  Py_VISIT(traverse_module_state->__pyx_n_u_Back);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_Close_Tab);
+  Py_VISIT(traverse_module_state->__pyx_n_u_Forward);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_Full_Screen);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_Fullscreen_not_supported);
+  Py_VISIT(traverse_module_state->__pyx_n_u_Home);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_New_Tab);
   Py_VISIT(traverse_module_state->__pyx_n_s_Purroser);
+  Py_VISIT(traverse_module_state->__pyx_n_u_Purroser);
   Py_VISIT(traverse_module_state->__pyx_n_s_Purroser___init);
+  Py_VISIT(traverse_module_state->__pyx_n_s_Purroser_add_fullscreen_action);
+  Py_VISIT(traverse_module_state->__pyx_n_s_Purroser_add_fullscreen_action_l);
   Py_VISIT(traverse_module_state->__pyx_n_s_Purroser_add_tab);
   Py_VISIT(traverse_module_state->__pyx_n_s_Purroser_add_tab_locals_lambda);
   Py_VISIT(traverse_module_state->__pyx_n_s_Purroser_add_toolbar_actions);
   Py_VISIT(traverse_module_state->__pyx_n_s_Purroser_add_toolbar_actions_loc);
+  Py_VISIT(traverse_module_state->__pyx_n_s_Purroser_check_fullscreen_suppor);
   Py_VISIT(traverse_module_state->__pyx_n_s_Purroser_close_current_tab);
   Py_VISIT(traverse_module_state->__pyx_n_s_Purroser_home);
   Py_VISIT(traverse_module_state->__pyx_n_s_Purroser_navigate_to_url);
+  Py_VISIT(traverse_module_state->__pyx_n_s_Purroser_toggle_fullscreen);
   Py_VISIT(traverse_module_state->__pyx_n_s_PyQt5_QtCore);
   Py_VISIT(traverse_module_state->__pyx_n_s_PyQt5_QtGui);
   Py_VISIT(traverse_module_state->__pyx_n_s_PyQt5_QtWebEngineWidgets);
@@ -2688,22 +2785,25 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_QUrl);
   Py_VISIT(traverse_module_state->__pyx_n_s_QWebEngineView);
   Py_VISIT(traverse_module_state->__pyx_n_s_URL);
-  Py_VISIT(traverse_module_state->__pyx_n_s__16);
-  Py_VISIT(traverse_module_state->__pyx_kp_s__2);
+  Py_VISIT(traverse_module_state->__pyx_n_s__23);
   Py_VISIT(traverse_module_state->__pyx_kp_u__3);
+  Py_VISIT(traverse_module_state->__pyx_kp_u__4);
   Py_VISIT(traverse_module_state->__pyx_n_s_addAction);
   Py_VISIT(traverse_module_state->__pyx_n_s_addTab);
   Py_VISIT(traverse_module_state->__pyx_n_s_addToolBar);
   Py_VISIT(traverse_module_state->__pyx_n_s_addWidget);
+  Py_VISIT(traverse_module_state->__pyx_n_s_add_fullscreen_action);
   Py_VISIT(traverse_module_state->__pyx_n_s_add_tab);
   Py_VISIT(traverse_module_state->__pyx_n_s_add_toolbar_actions);
   Py_VISIT(traverse_module_state->__pyx_n_s_app_icon_path);
   Py_VISIT(traverse_module_state->__pyx_n_s_args);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_assets_purr_png);
   Py_VISIT(traverse_module_state->__pyx_n_s_asyncio_coroutines);
   Py_VISIT(traverse_module_state->__pyx_n_s_back);
   Py_VISIT(traverse_module_state->__pyx_n_s_back_button);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_background_color_black_color_whi);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_background_color_black_color_whi);
   Py_VISIT(traverse_module_state->__pyx_n_s_browser);
+  Py_VISIT(traverse_module_state->__pyx_n_s_check_fullscreen_support);
   Py_VISIT(traverse_module_state->__pyx_n_s_checked);
   Py_VISIT(traverse_module_state->__pyx_n_s_cline_in_traceback);
   Py_VISIT(traverse_module_state->__pyx_n_s_close_current_tab);
@@ -2719,19 +2819,20 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_kp_u_enable);
   Py_VISIT(traverse_module_state->__pyx_n_s_forward);
   Py_VISIT(traverse_module_state->__pyx_n_s_forward_button);
+  Py_VISIT(traverse_module_state->__pyx_n_s_fullscreen_action);
   Py_VISIT(traverse_module_state->__pyx_kp_u_gc);
   Py_VISIT(traverse_module_state->__pyx_n_s_get_styles);
   Py_VISIT(traverse_module_state->__pyx_n_s_home);
   Py_VISIT(traverse_module_state->__pyx_n_s_home_button);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_home_tristans_Code_Purrooser_as);
-  Py_VISIT(traverse_module_state->__pyx_n_s_https);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_https_2);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_https_www_qwant_com);
+  Py_VISIT(traverse_module_state->__pyx_n_u_https);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_https_2);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_https_www_qwant_com);
   Py_VISIT(traverse_module_state->__pyx_n_s_import);
   Py_VISIT(traverse_module_state->__pyx_n_s_init);
   Py_VISIT(traverse_module_state->__pyx_n_s_init_subclass);
   Py_VISIT(traverse_module_state->__pyx_n_s_is_coroutine);
   Py_VISIT(traverse_module_state->__pyx_kp_u_isenabled);
+  Py_VISIT(traverse_module_state->__pyx_n_s_js_code);
   Py_VISIT(traverse_module_state->__pyx_n_s_main);
   Py_VISIT(traverse_module_state->__pyx_n_s_metaclass);
   Py_VISIT(traverse_module_state->__pyx_n_s_module);
@@ -2739,11 +2840,14 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_name);
   Py_VISIT(traverse_module_state->__pyx_n_s_navigate_to_url);
   Py_VISIT(traverse_module_state->__pyx_n_s_new_tab_action);
+  Py_VISIT(traverse_module_state->__pyx_n_s_page);
   Py_VISIT(traverse_module_state->__pyx_n_s_prepare);
+  Py_VISIT(traverse_module_state->__pyx_n_s_print);
   Py_VISIT(traverse_module_state->__pyx_n_s_q);
   Py_VISIT(traverse_module_state->__pyx_n_s_qualname);
   Py_VISIT(traverse_module_state->__pyx_n_s_removeTab);
   Py_VISIT(traverse_module_state->__pyx_n_s_returnPressed);
+  Py_VISIT(traverse_module_state->__pyx_n_s_runJavaScript);
   Py_VISIT(traverse_module_state->__pyx_n_s_self);
   Py_VISIT(traverse_module_state->__pyx_n_s_setCentralWidget);
   Py_VISIT(traverse_module_state->__pyx_n_s_setCurrentWidget);
@@ -2754,6 +2858,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_setWindowIcon);
   Py_VISIT(traverse_module_state->__pyx_n_s_setWindowTitle);
   Py_VISIT(traverse_module_state->__pyx_n_s_set_name);
+  Py_VISIT(traverse_module_state->__pyx_n_s_showFullScreen);
   Py_VISIT(traverse_module_state->__pyx_n_s_split);
   Py_VISIT(traverse_module_state->__pyx_kp_s_src_browser_pyx);
   Py_VISIT(traverse_module_state->__pyx_n_s_src_styles);
@@ -2764,11 +2869,13 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_test);
   Py_VISIT(traverse_module_state->__pyx_n_s_text);
   Py_VISIT(traverse_module_state->__pyx_n_s_toString);
+  Py_VISIT(traverse_module_state->__pyx_n_s_toggle_fullscreen);
   Py_VISIT(traverse_module_state->__pyx_n_s_toolbar);
   Py_VISIT(traverse_module_state->__pyx_n_s_triggered);
   Py_VISIT(traverse_module_state->__pyx_n_s_url);
   Py_VISIT(traverse_module_state->__pyx_n_s_urlChanged);
   Py_VISIT(traverse_module_state->__pyx_n_s_url_bar);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_var_elem_document_documentEleme);
   Py_VISIT(traverse_module_state->__pyx_n_s_web_view);
   Py_VISIT(traverse_module_state->__pyx_int_0);
   Py_VISIT(traverse_module_state->__pyx_int_100);
@@ -2776,18 +2883,25 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_int_1600);
   Py_VISIT(traverse_module_state->__pyx_int_neg_1);
   Py_VISIT(traverse_module_state->__pyx_tuple_);
-  Py_VISIT(traverse_module_state->__pyx_tuple__4);
-  Py_VISIT(traverse_module_state->__pyx_tuple__6);
-  Py_VISIT(traverse_module_state->__pyx_tuple__8);
-  Py_VISIT(traverse_module_state->__pyx_tuple__10);
-  Py_VISIT(traverse_module_state->__pyx_tuple__12);
-  Py_VISIT(traverse_module_state->__pyx_tuple__14);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__5);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__7);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__9);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__11);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__13);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__15);
+  Py_VISIT(traverse_module_state->__pyx_tuple__2);
+  Py_VISIT(traverse_module_state->__pyx_tuple__5);
+  Py_VISIT(traverse_module_state->__pyx_tuple__7);
+  Py_VISIT(traverse_module_state->__pyx_tuple__9);
+  Py_VISIT(traverse_module_state->__pyx_tuple__11);
+  Py_VISIT(traverse_module_state->__pyx_tuple__13);
+  Py_VISIT(traverse_module_state->__pyx_tuple__15);
+  Py_VISIT(traverse_module_state->__pyx_tuple__17);
+  Py_VISIT(traverse_module_state->__pyx_tuple__19);
+  Py_VISIT(traverse_module_state->__pyx_tuple__21);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__6);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__8);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__10);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__12);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__14);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__16);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__18);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__20);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__22);
   return 0;
 }
 #endif
@@ -2817,23 +2931,32 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_CoroutineType __pyx_mstate_global->__pyx_CoroutineType
 #endif
 #if CYTHON_USE_MODULE_STATE
-#define __pyx_type_7browser___pyx_scope_struct__add_tab __pyx_mstate_global->__pyx_type_7browser___pyx_scope_struct__add_tab
+#define __pyx_type_7browser___pyx_scope_struct__add_fullscreen_action __pyx_mstate_global->__pyx_type_7browser___pyx_scope_struct__add_fullscreen_action
+#define __pyx_type_7browser___pyx_scope_struct_1_add_tab __pyx_mstate_global->__pyx_type_7browser___pyx_scope_struct_1_add_tab
 #endif
-#define __pyx_ptype_7browser___pyx_scope_struct__add_tab __pyx_mstate_global->__pyx_ptype_7browser___pyx_scope_struct__add_tab
-#define __pyx_n_s_Back __pyx_mstate_global->__pyx_n_s_Back
-#define __pyx_kp_s_Close_Tab __pyx_mstate_global->__pyx_kp_s_Close_Tab
-#define __pyx_n_s_Forward __pyx_mstate_global->__pyx_n_s_Forward
-#define __pyx_n_s_Home __pyx_mstate_global->__pyx_n_s_Home
-#define __pyx_kp_s_New_Tab __pyx_mstate_global->__pyx_kp_s_New_Tab
+#define __pyx_ptype_7browser___pyx_scope_struct__add_fullscreen_action __pyx_mstate_global->__pyx_ptype_7browser___pyx_scope_struct__add_fullscreen_action
+#define __pyx_ptype_7browser___pyx_scope_struct_1_add_tab __pyx_mstate_global->__pyx_ptype_7browser___pyx_scope_struct_1_add_tab
+#define __pyx_n_u_Back __pyx_mstate_global->__pyx_n_u_Back
+#define __pyx_kp_u_Close_Tab __pyx_mstate_global->__pyx_kp_u_Close_Tab
+#define __pyx_n_u_Forward __pyx_mstate_global->__pyx_n_u_Forward
+#define __pyx_kp_u_Full_Screen __pyx_mstate_global->__pyx_kp_u_Full_Screen
+#define __pyx_kp_u_Fullscreen_not_supported __pyx_mstate_global->__pyx_kp_u_Fullscreen_not_supported
+#define __pyx_n_u_Home __pyx_mstate_global->__pyx_n_u_Home
+#define __pyx_kp_u_New_Tab __pyx_mstate_global->__pyx_kp_u_New_Tab
 #define __pyx_n_s_Purroser __pyx_mstate_global->__pyx_n_s_Purroser
+#define __pyx_n_u_Purroser __pyx_mstate_global->__pyx_n_u_Purroser
 #define __pyx_n_s_Purroser___init __pyx_mstate_global->__pyx_n_s_Purroser___init
+#define __pyx_n_s_Purroser_add_fullscreen_action __pyx_mstate_global->__pyx_n_s_Purroser_add_fullscreen_action
+#define __pyx_n_s_Purroser_add_fullscreen_action_l __pyx_mstate_global->__pyx_n_s_Purroser_add_fullscreen_action_l
 #define __pyx_n_s_Purroser_add_tab __pyx_mstate_global->__pyx_n_s_Purroser_add_tab
 #define __pyx_n_s_Purroser_add_tab_locals_lambda __pyx_mstate_global->__pyx_n_s_Purroser_add_tab_locals_lambda
 #define __pyx_n_s_Purroser_add_toolbar_actions __pyx_mstate_global->__pyx_n_s_Purroser_add_toolbar_actions
 #define __pyx_n_s_Purroser_add_toolbar_actions_loc __pyx_mstate_global->__pyx_n_s_Purroser_add_toolbar_actions_loc
+#define __pyx_n_s_Purroser_check_fullscreen_suppor __pyx_mstate_global->__pyx_n_s_Purroser_check_fullscreen_suppor
 #define __pyx_n_s_Purroser_close_current_tab __pyx_mstate_global->__pyx_n_s_Purroser_close_current_tab
 #define __pyx_n_s_Purroser_home __pyx_mstate_global->__pyx_n_s_Purroser_home
 #define __pyx_n_s_Purroser_navigate_to_url __pyx_mstate_global->__pyx_n_s_Purroser_navigate_to_url
+#define __pyx_n_s_Purroser_toggle_fullscreen __pyx_mstate_global->__pyx_n_s_Purroser_toggle_fullscreen
 #define __pyx_n_s_PyQt5_QtCore __pyx_mstate_global->__pyx_n_s_PyQt5_QtCore
 #define __pyx_n_s_PyQt5_QtGui __pyx_mstate_global->__pyx_n_s_PyQt5_QtGui
 #define __pyx_n_s_PyQt5_QtWebEngineWidgets __pyx_mstate_global->__pyx_n_s_PyQt5_QtWebEngineWidgets
@@ -2847,22 +2970,25 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_QUrl __pyx_mstate_global->__pyx_n_s_QUrl
 #define __pyx_n_s_QWebEngineView __pyx_mstate_global->__pyx_n_s_QWebEngineView
 #define __pyx_n_s_URL __pyx_mstate_global->__pyx_n_s_URL
-#define __pyx_n_s__16 __pyx_mstate_global->__pyx_n_s__16
-#define __pyx_kp_s__2 __pyx_mstate_global->__pyx_kp_s__2
+#define __pyx_n_s__23 __pyx_mstate_global->__pyx_n_s__23
 #define __pyx_kp_u__3 __pyx_mstate_global->__pyx_kp_u__3
+#define __pyx_kp_u__4 __pyx_mstate_global->__pyx_kp_u__4
 #define __pyx_n_s_addAction __pyx_mstate_global->__pyx_n_s_addAction
 #define __pyx_n_s_addTab __pyx_mstate_global->__pyx_n_s_addTab
 #define __pyx_n_s_addToolBar __pyx_mstate_global->__pyx_n_s_addToolBar
 #define __pyx_n_s_addWidget __pyx_mstate_global->__pyx_n_s_addWidget
+#define __pyx_n_s_add_fullscreen_action __pyx_mstate_global->__pyx_n_s_add_fullscreen_action
 #define __pyx_n_s_add_tab __pyx_mstate_global->__pyx_n_s_add_tab
 #define __pyx_n_s_add_toolbar_actions __pyx_mstate_global->__pyx_n_s_add_toolbar_actions
 #define __pyx_n_s_app_icon_path __pyx_mstate_global->__pyx_n_s_app_icon_path
 #define __pyx_n_s_args __pyx_mstate_global->__pyx_n_s_args
+#define __pyx_kp_u_assets_purr_png __pyx_mstate_global->__pyx_kp_u_assets_purr_png
 #define __pyx_n_s_asyncio_coroutines __pyx_mstate_global->__pyx_n_s_asyncio_coroutines
 #define __pyx_n_s_back __pyx_mstate_global->__pyx_n_s_back
 #define __pyx_n_s_back_button __pyx_mstate_global->__pyx_n_s_back_button
-#define __pyx_kp_s_background_color_black_color_whi __pyx_mstate_global->__pyx_kp_s_background_color_black_color_whi
+#define __pyx_kp_u_background_color_black_color_whi __pyx_mstate_global->__pyx_kp_u_background_color_black_color_whi
 #define __pyx_n_s_browser __pyx_mstate_global->__pyx_n_s_browser
+#define __pyx_n_s_check_fullscreen_support __pyx_mstate_global->__pyx_n_s_check_fullscreen_support
 #define __pyx_n_s_checked __pyx_mstate_global->__pyx_n_s_checked
 #define __pyx_n_s_cline_in_traceback __pyx_mstate_global->__pyx_n_s_cline_in_traceback
 #define __pyx_n_s_close_current_tab __pyx_mstate_global->__pyx_n_s_close_current_tab
@@ -2878,19 +3004,20 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_kp_u_enable __pyx_mstate_global->__pyx_kp_u_enable
 #define __pyx_n_s_forward __pyx_mstate_global->__pyx_n_s_forward
 #define __pyx_n_s_forward_button __pyx_mstate_global->__pyx_n_s_forward_button
+#define __pyx_n_s_fullscreen_action __pyx_mstate_global->__pyx_n_s_fullscreen_action
 #define __pyx_kp_u_gc __pyx_mstate_global->__pyx_kp_u_gc
 #define __pyx_n_s_get_styles __pyx_mstate_global->__pyx_n_s_get_styles
 #define __pyx_n_s_home __pyx_mstate_global->__pyx_n_s_home
 #define __pyx_n_s_home_button __pyx_mstate_global->__pyx_n_s_home_button
-#define __pyx_kp_s_home_tristans_Code_Purrooser_as __pyx_mstate_global->__pyx_kp_s_home_tristans_Code_Purrooser_as
-#define __pyx_n_s_https __pyx_mstate_global->__pyx_n_s_https
-#define __pyx_kp_s_https_2 __pyx_mstate_global->__pyx_kp_s_https_2
-#define __pyx_kp_s_https_www_qwant_com __pyx_mstate_global->__pyx_kp_s_https_www_qwant_com
+#define __pyx_n_u_https __pyx_mstate_global->__pyx_n_u_https
+#define __pyx_kp_u_https_2 __pyx_mstate_global->__pyx_kp_u_https_2
+#define __pyx_kp_u_https_www_qwant_com __pyx_mstate_global->__pyx_kp_u_https_www_qwant_com
 #define __pyx_n_s_import __pyx_mstate_global->__pyx_n_s_import
 #define __pyx_n_s_init __pyx_mstate_global->__pyx_n_s_init
 #define __pyx_n_s_init_subclass __pyx_mstate_global->__pyx_n_s_init_subclass
 #define __pyx_n_s_is_coroutine __pyx_mstate_global->__pyx_n_s_is_coroutine
 #define __pyx_kp_u_isenabled __pyx_mstate_global->__pyx_kp_u_isenabled
+#define __pyx_n_s_js_code __pyx_mstate_global->__pyx_n_s_js_code
 #define __pyx_n_s_main __pyx_mstate_global->__pyx_n_s_main
 #define __pyx_n_s_metaclass __pyx_mstate_global->__pyx_n_s_metaclass
 #define __pyx_n_s_module __pyx_mstate_global->__pyx_n_s_module
@@ -2898,11 +3025,14 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_name __pyx_mstate_global->__pyx_n_s_name
 #define __pyx_n_s_navigate_to_url __pyx_mstate_global->__pyx_n_s_navigate_to_url
 #define __pyx_n_s_new_tab_action __pyx_mstate_global->__pyx_n_s_new_tab_action
+#define __pyx_n_s_page __pyx_mstate_global->__pyx_n_s_page
 #define __pyx_n_s_prepare __pyx_mstate_global->__pyx_n_s_prepare
+#define __pyx_n_s_print __pyx_mstate_global->__pyx_n_s_print
 #define __pyx_n_s_q __pyx_mstate_global->__pyx_n_s_q
 #define __pyx_n_s_qualname __pyx_mstate_global->__pyx_n_s_qualname
 #define __pyx_n_s_removeTab __pyx_mstate_global->__pyx_n_s_removeTab
 #define __pyx_n_s_returnPressed __pyx_mstate_global->__pyx_n_s_returnPressed
+#define __pyx_n_s_runJavaScript __pyx_mstate_global->__pyx_n_s_runJavaScript
 #define __pyx_n_s_self __pyx_mstate_global->__pyx_n_s_self
 #define __pyx_n_s_setCentralWidget __pyx_mstate_global->__pyx_n_s_setCentralWidget
 #define __pyx_n_s_setCurrentWidget __pyx_mstate_global->__pyx_n_s_setCurrentWidget
@@ -2913,6 +3043,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_setWindowIcon __pyx_mstate_global->__pyx_n_s_setWindowIcon
 #define __pyx_n_s_setWindowTitle __pyx_mstate_global->__pyx_n_s_setWindowTitle
 #define __pyx_n_s_set_name __pyx_mstate_global->__pyx_n_s_set_name
+#define __pyx_n_s_showFullScreen __pyx_mstate_global->__pyx_n_s_showFullScreen
 #define __pyx_n_s_split __pyx_mstate_global->__pyx_n_s_split
 #define __pyx_kp_s_src_browser_pyx __pyx_mstate_global->__pyx_kp_s_src_browser_pyx
 #define __pyx_n_s_src_styles __pyx_mstate_global->__pyx_n_s_src_styles
@@ -2923,11 +3054,13 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_test __pyx_mstate_global->__pyx_n_s_test
 #define __pyx_n_s_text __pyx_mstate_global->__pyx_n_s_text
 #define __pyx_n_s_toString __pyx_mstate_global->__pyx_n_s_toString
+#define __pyx_n_s_toggle_fullscreen __pyx_mstate_global->__pyx_n_s_toggle_fullscreen
 #define __pyx_n_s_toolbar __pyx_mstate_global->__pyx_n_s_toolbar
 #define __pyx_n_s_triggered __pyx_mstate_global->__pyx_n_s_triggered
 #define __pyx_n_s_url __pyx_mstate_global->__pyx_n_s_url
 #define __pyx_n_s_urlChanged __pyx_mstate_global->__pyx_n_s_urlChanged
 #define __pyx_n_s_url_bar __pyx_mstate_global->__pyx_n_s_url_bar
+#define __pyx_kp_u_var_elem_document_documentEleme __pyx_mstate_global->__pyx_kp_u_var_elem_document_documentEleme
 #define __pyx_n_s_web_view __pyx_mstate_global->__pyx_n_s_web_view
 #define __pyx_int_0 __pyx_mstate_global->__pyx_int_0
 #define __pyx_int_100 __pyx_mstate_global->__pyx_int_100
@@ -2935,21 +3068,28 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_int_1600 __pyx_mstate_global->__pyx_int_1600
 #define __pyx_int_neg_1 __pyx_mstate_global->__pyx_int_neg_1
 #define __pyx_tuple_ __pyx_mstate_global->__pyx_tuple_
-#define __pyx_tuple__4 __pyx_mstate_global->__pyx_tuple__4
-#define __pyx_tuple__6 __pyx_mstate_global->__pyx_tuple__6
-#define __pyx_tuple__8 __pyx_mstate_global->__pyx_tuple__8
-#define __pyx_tuple__10 __pyx_mstate_global->__pyx_tuple__10
-#define __pyx_tuple__12 __pyx_mstate_global->__pyx_tuple__12
-#define __pyx_tuple__14 __pyx_mstate_global->__pyx_tuple__14
-#define __pyx_codeobj__5 __pyx_mstate_global->__pyx_codeobj__5
-#define __pyx_codeobj__7 __pyx_mstate_global->__pyx_codeobj__7
-#define __pyx_codeobj__9 __pyx_mstate_global->__pyx_codeobj__9
-#define __pyx_codeobj__11 __pyx_mstate_global->__pyx_codeobj__11
-#define __pyx_codeobj__13 __pyx_mstate_global->__pyx_codeobj__13
-#define __pyx_codeobj__15 __pyx_mstate_global->__pyx_codeobj__15
+#define __pyx_tuple__2 __pyx_mstate_global->__pyx_tuple__2
+#define __pyx_tuple__5 __pyx_mstate_global->__pyx_tuple__5
+#define __pyx_tuple__7 __pyx_mstate_global->__pyx_tuple__7
+#define __pyx_tuple__9 __pyx_mstate_global->__pyx_tuple__9
+#define __pyx_tuple__11 __pyx_mstate_global->__pyx_tuple__11
+#define __pyx_tuple__13 __pyx_mstate_global->__pyx_tuple__13
+#define __pyx_tuple__15 __pyx_mstate_global->__pyx_tuple__15
+#define __pyx_tuple__17 __pyx_mstate_global->__pyx_tuple__17
+#define __pyx_tuple__19 __pyx_mstate_global->__pyx_tuple__19
+#define __pyx_tuple__21 __pyx_mstate_global->__pyx_tuple__21
+#define __pyx_codeobj__6 __pyx_mstate_global->__pyx_codeobj__6
+#define __pyx_codeobj__8 __pyx_mstate_global->__pyx_codeobj__8
+#define __pyx_codeobj__10 __pyx_mstate_global->__pyx_codeobj__10
+#define __pyx_codeobj__12 __pyx_mstate_global->__pyx_codeobj__12
+#define __pyx_codeobj__14 __pyx_mstate_global->__pyx_codeobj__14
+#define __pyx_codeobj__16 __pyx_mstate_global->__pyx_codeobj__16
+#define __pyx_codeobj__18 __pyx_mstate_global->__pyx_codeobj__18
+#define __pyx_codeobj__20 __pyx_mstate_global->__pyx_codeobj__20
+#define __pyx_codeobj__22 __pyx_mstate_global->__pyx_codeobj__22
 /* #### Code section: module_code ### */
 
-/* "browser.pyx":11
+/* "browser.pyx":15
  * 
  * class Purroser(QMainWindow):
  *     def __init__(self):             # <<<<<<<<<<<<<<
@@ -3010,12 +3150,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 11, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 15, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "__init__") < 0)) __PYX_ERR(0, 11, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "__init__") < 0)) __PYX_ERR(0, 15, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -3026,7 +3166,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__init__", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 11, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__init__", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 15, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -3069,7 +3209,7 @@ static PyObject *__pyx_pf_7browser_8Purroser___init__(CYTHON_UNUSED PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__init__", 1);
 
-  /* "browser.pyx":12
+  /* "browser.pyx":16
  * class Purroser(QMainWindow):
  *     def __init__(self):
  *         super().__init__()             # <<<<<<<<<<<<<<
@@ -3077,20 +3217,20 @@ static PyObject *__pyx_pf_7browser_8Purroser___init__(CYTHON_UNUSED PyObject *__
  *         self.setGeometry(100, 100, 1600, 900)
  */
   __pyx_t_2 = __Pyx_CyFunction_GetClassObj(__pyx_self);
-  if (!__pyx_t_2) { PyErr_SetString(PyExc_SystemError, "super(): empty __class__ cell"); __PYX_ERR(0, 12, __pyx_L1_error) }
+  if (!__pyx_t_2) { PyErr_SetString(PyExc_SystemError, "super(): empty __class__ cell"); __PYX_ERR(0, 16, __pyx_L1_error) }
   __Pyx_INCREF(__pyx_t_2);
-  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 12, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 16, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_2);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_2)) __PYX_ERR(0, 12, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_2)) __PYX_ERR(0, 16, __pyx_L1_error);
   __Pyx_INCREF(__pyx_v_self);
   __Pyx_GIVEREF(__pyx_v_self);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_v_self)) __PYX_ERR(0, 12, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_v_self)) __PYX_ERR(0, 16, __pyx_L1_error);
   __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_super, __pyx_t_3, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 12, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_super, __pyx_t_3, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 16, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_init); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 12, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_init); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 16, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -3111,20 +3251,20 @@ static PyObject *__pyx_pf_7browser_8Purroser___init__(CYTHON_UNUSED PyObject *__
     PyObject *__pyx_callargs[2] = {__pyx_t_2, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 12, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 16, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "browser.pyx":13
+  /* "browser.pyx":17
  *     def __init__(self):
  *         super().__init__()
  *         self.setWindowTitle("Purroser")             # <<<<<<<<<<<<<<
  *         self.setGeometry(100, 100, 1600, 900)
  *         self.tabs = QTabWidget()
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_setWindowTitle); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 13, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_setWindowTitle); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 17, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_2 = NULL;
   __pyx_t_4 = 0;
@@ -3141,37 +3281,37 @@ static PyObject *__pyx_pf_7browser_8Purroser___init__(CYTHON_UNUSED PyObject *__
   }
   #endif
   {
-    PyObject *__pyx_callargs[2] = {__pyx_t_2, __pyx_n_s_Purroser};
+    PyObject *__pyx_callargs[2] = {__pyx_t_2, __pyx_n_u_Purroser};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 13, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 17, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "browser.pyx":14
+  /* "browser.pyx":18
  *         super().__init__()
  *         self.setWindowTitle("Purroser")
  *         self.setGeometry(100, 100, 1600, 900)             # <<<<<<<<<<<<<<
  *         self.tabs = QTabWidget()
  *         self.setCentralWidget(self.tabs)
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_setGeometry); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 14, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_setGeometry); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 18, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple_, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 14, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_tuple_, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 18, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "browser.pyx":15
+  /* "browser.pyx":19
  *         self.setWindowTitle("Purroser")
  *         self.setGeometry(100, 100, 1600, 900)
  *         self.tabs = QTabWidget()             # <<<<<<<<<<<<<<
  *         self.setCentralWidget(self.tabs)
  *         self.toolbar = QToolBar()
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_QTabWidget); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 15, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_QTabWidget); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 19, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_2 = NULL;
   __pyx_t_4 = 0;
@@ -3191,23 +3331,23 @@ static PyObject *__pyx_pf_7browser_8Purroser___init__(CYTHON_UNUSED PyObject *__
     PyObject *__pyx_callargs[2] = {__pyx_t_2, NULL};
     __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_1, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 15, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 19, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_tabs, __pyx_t_3) < 0) __PYX_ERR(0, 15, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_tabs, __pyx_t_3) < 0) __PYX_ERR(0, 19, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "browser.pyx":16
+  /* "browser.pyx":20
  *         self.setGeometry(100, 100, 1600, 900)
  *         self.tabs = QTabWidget()
  *         self.setCentralWidget(self.tabs)             # <<<<<<<<<<<<<<
  *         self.toolbar = QToolBar()
  *         self.addToolBar(self.toolbar)
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_setCentralWidget); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 16, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_setCentralWidget); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 20, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_tabs); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 16, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_tabs); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 20, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_5 = NULL;
   __pyx_t_4 = 0;
@@ -3228,20 +3368,20 @@ static PyObject *__pyx_pf_7browser_8Purroser___init__(CYTHON_UNUSED PyObject *__
     __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_1, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 16, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 20, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "browser.pyx":17
+  /* "browser.pyx":21
  *         self.tabs = QTabWidget()
  *         self.setCentralWidget(self.tabs)
  *         self.toolbar = QToolBar()             # <<<<<<<<<<<<<<
  *         self.addToolBar(self.toolbar)
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_QToolBar); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 17, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_QToolBar); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 21, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_2 = NULL;
   __pyx_t_4 = 0;
@@ -3261,23 +3401,23 @@ static PyObject *__pyx_pf_7browser_8Purroser___init__(CYTHON_UNUSED PyObject *__
     PyObject *__pyx_callargs[2] = {__pyx_t_2, NULL};
     __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_1, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 17, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 21, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_toolbar, __pyx_t_3) < 0) __PYX_ERR(0, 17, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_toolbar, __pyx_t_3) < 0) __PYX_ERR(0, 21, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "browser.pyx":18
+  /* "browser.pyx":22
  *         self.setCentralWidget(self.tabs)
  *         self.toolbar = QToolBar()
  *         self.addToolBar(self.toolbar)             # <<<<<<<<<<<<<<
  * 
- *         app_icon_path = "/home/tristans/Code/Purrooser/assets/purr.png"
+ *         app_icon_path = "../assets/purr.png"
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_addToolBar); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 18, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_addToolBar); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 22, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_toolbar); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 18, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_toolbar); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 22, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_5 = NULL;
   __pyx_t_4 = 0;
@@ -3298,32 +3438,32 @@ static PyObject *__pyx_pf_7browser_8Purroser___init__(CYTHON_UNUSED PyObject *__
     __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_1, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 18, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 22, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "browser.pyx":20
+  /* "browser.pyx":24
  *         self.addToolBar(self.toolbar)
  * 
- *         app_icon_path = "/home/tristans/Code/Purrooser/assets/purr.png"             # <<<<<<<<<<<<<<
+ *         app_icon_path = "../assets/purr.png"             # <<<<<<<<<<<<<<
  *         self.setWindowIcon(QIcon(app_icon_path))
  * 
  */
-  __Pyx_INCREF(__pyx_kp_s_home_tristans_Code_Purrooser_as);
-  __pyx_v_app_icon_path = __pyx_kp_s_home_tristans_Code_Purrooser_as;
+  __Pyx_INCREF(__pyx_kp_u_assets_purr_png);
+  __pyx_v_app_icon_path = __pyx_kp_u_assets_purr_png;
 
-  /* "browser.pyx":21
+  /* "browser.pyx":25
  * 
- *         app_icon_path = "/home/tristans/Code/Purrooser/assets/purr.png"
+ *         app_icon_path = "../assets/purr.png"
  *         self.setWindowIcon(QIcon(app_icon_path))             # <<<<<<<<<<<<<<
  * 
  *         if self.tabs.count() == 0:
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_setWindowIcon); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 21, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_setWindowIcon); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 25, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_QIcon); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 21, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_QIcon); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 25, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_t_6 = NULL;
   __pyx_t_4 = 0;
@@ -3343,7 +3483,7 @@ static PyObject *__pyx_pf_7browser_8Purroser___init__(CYTHON_UNUSED PyObject *__
     PyObject *__pyx_callargs[2] = {__pyx_t_6, __pyx_v_app_icon_path};
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 21, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 25, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   }
@@ -3366,22 +3506,22 @@ static PyObject *__pyx_pf_7browser_8Purroser___init__(CYTHON_UNUSED PyObject *__
     __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_1, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 21, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 25, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "browser.pyx":23
+  /* "browser.pyx":27
  *         self.setWindowIcon(QIcon(app_icon_path))
  * 
  *         if self.tabs.count() == 0:             # <<<<<<<<<<<<<<
  *             self.add_tab(URL)
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_tabs); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 23, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_tabs); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 27, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_count); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 23, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_count); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 27, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_1 = NULL;
@@ -3402,24 +3542,24 @@ static PyObject *__pyx_pf_7browser_8Purroser___init__(CYTHON_UNUSED PyObject *__
     PyObject *__pyx_callargs[2] = {__pyx_t_1, NULL};
     __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 23, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 27, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
-  __pyx_t_7 = (__Pyx_PyInt_BoolEqObjC(__pyx_t_3, __pyx_int_0, 0, 0)); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 23, __pyx_L1_error)
+  __pyx_t_7 = (__Pyx_PyInt_BoolEqObjC(__pyx_t_3, __pyx_int_0, 0, 0)); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 27, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   if (__pyx_t_7) {
 
-    /* "browser.pyx":24
+    /* "browser.pyx":28
  * 
  *         if self.tabs.count() == 0:
  *             self.add_tab(URL)             # <<<<<<<<<<<<<<
  * 
  *         self.add_toolbar_actions()
  */
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_add_tab); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 24, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_add_tab); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 28, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_URL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 24, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_URL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 28, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_t_5 = NULL;
     __pyx_t_4 = 0;
@@ -3440,13 +3580,13 @@ static PyObject *__pyx_pf_7browser_8Purroser___init__(CYTHON_UNUSED PyObject *__
       __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
       __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 24, __pyx_L1_error)
+      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 28, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     }
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "browser.pyx":23
+    /* "browser.pyx":27
  *         self.setWindowIcon(QIcon(app_icon_path))
  * 
  *         if self.tabs.count() == 0:             # <<<<<<<<<<<<<<
@@ -3455,14 +3595,14 @@ static PyObject *__pyx_pf_7browser_8Purroser___init__(CYTHON_UNUSED PyObject *__
  */
   }
 
-  /* "browser.pyx":26
+  /* "browser.pyx":30
  *             self.add_tab(URL)
  * 
  *         self.add_toolbar_actions()             # <<<<<<<<<<<<<<
+ *         self.add_fullscreen_action()  # Added fullscreen action to the toolbar
  * 
- *         self.setStyleSheet(get_styles())
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_add_toolbar_actions); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 26, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_add_toolbar_actions); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 30, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_1 = NULL;
   __pyx_t_4 = 0;
@@ -3482,22 +3622,55 @@ static PyObject *__pyx_pf_7browser_8Purroser___init__(CYTHON_UNUSED PyObject *__
     PyObject *__pyx_callargs[2] = {__pyx_t_1, NULL};
     __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 26, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 30, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "browser.pyx":28
+  /* "browser.pyx":31
+ * 
  *         self.add_toolbar_actions()
+ *         self.add_fullscreen_action()  # Added fullscreen action to the toolbar             # <<<<<<<<<<<<<<
+ * 
+ *         self.setStyleSheet(get_styles())
+ */
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_add_fullscreen_action); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 31, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_1 = NULL;
+  __pyx_t_4 = 0;
+  #if CYTHON_UNPACK_METHODS
+  if (likely(PyMethod_Check(__pyx_t_2))) {
+    __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_2);
+    if (likely(__pyx_t_1)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+      __Pyx_INCREF(__pyx_t_1);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_2, function);
+      __pyx_t_4 = 1;
+    }
+  }
+  #endif
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_1, NULL};
+    __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
+    __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 31, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  }
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+
+  /* "browser.pyx":33
+ *         self.add_fullscreen_action()  # Added fullscreen action to the toolbar
  * 
  *         self.setStyleSheet(get_styles())             # <<<<<<<<<<<<<<
  * 
  *     def add_toolbar_actions(self):
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_setStyleSheet); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 28, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_setStyleSheet); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 33, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_get_styles); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 28, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_get_styles); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 33, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_t_6 = NULL;
   __pyx_t_4 = 0;
@@ -3517,7 +3690,7 @@ static PyObject *__pyx_pf_7browser_8Purroser___init__(CYTHON_UNUSED PyObject *__
     PyObject *__pyx_callargs[2] = {__pyx_t_6, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 28, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 33, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   }
@@ -3540,13 +3713,13 @@ static PyObject *__pyx_pf_7browser_8Purroser___init__(CYTHON_UNUSED PyObject *__
     __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 28, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 33, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "browser.pyx":11
+  /* "browser.pyx":15
  * 
  * class Purroser(QMainWindow):
  *     def __init__(self):             # <<<<<<<<<<<<<<
@@ -3572,7 +3745,7 @@ static PyObject *__pyx_pf_7browser_8Purroser___init__(CYTHON_UNUSED PyObject *__
   return __pyx_r;
 }
 
-/* "browser.pyx":30
+/* "browser.pyx":35
  *         self.setStyleSheet(get_styles())
  * 
  *     def add_toolbar_actions(self):             # <<<<<<<<<<<<<<
@@ -3633,12 +3806,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 30, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 35, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "add_toolbar_actions") < 0)) __PYX_ERR(0, 30, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "add_toolbar_actions") < 0)) __PYX_ERR(0, 35, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -3649,7 +3822,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("add_toolbar_actions", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 30, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("add_toolbar_actions", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 35, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -3676,7 +3849,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-/* "browser.pyx":44
+/* "browser.pyx":49
  *         self.toolbar.addAction(forward_button)
  *         home_button = QAction("Home", self)
  *         home_button.triggered.connect(lambda checked, self=self: self.home())             # <<<<<<<<<<<<<<
@@ -3694,18 +3867,18 @@ static PyObject *__pyx_pf_7browser_2__defaults__(CYTHON_UNUSED PyObject *__pyx_s
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__defaults__", 1);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 44, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 49, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__Pyx_CyFunction_Defaults(__pyx_defaults1, __pyx_self)->__pyx_arg_self);
   __Pyx_GIVEREF(__Pyx_CyFunction_Defaults(__pyx_defaults1, __pyx_self)->__pyx_arg_self);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __Pyx_CyFunction_Defaults(__pyx_defaults1, __pyx_self)->__pyx_arg_self)) __PYX_ERR(0, 44, __pyx_L1_error);
-  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 44, __pyx_L1_error)
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __Pyx_CyFunction_Defaults(__pyx_defaults1, __pyx_self)->__pyx_arg_self)) __PYX_ERR(0, 49, __pyx_L1_error);
+  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 49, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_GIVEREF(__pyx_t_1);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_1)) __PYX_ERR(0, 44, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_1)) __PYX_ERR(0, 49, __pyx_L1_error);
   __Pyx_INCREF(Py_None);
   __Pyx_GIVEREF(Py_None);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 1, Py_None)) __PYX_ERR(0, 44, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 1, Py_None)) __PYX_ERR(0, 49, __pyx_L1_error);
   __pyx_t_1 = 0;
   __pyx_r = __pyx_t_2;
   __pyx_t_2 = 0;
@@ -3781,19 +3954,19 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 44, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 49, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
         if (kw_args > 0) {
           PyObject* value = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_self);
           if (value) { values[1] = __Pyx_Arg_NewRef_FASTCALL(value); kw_args--; }
-          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 44, __pyx_L3_error)
+          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 49, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "lambda") < 0)) __PYX_ERR(0, 44, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "lambda") < 0)) __PYX_ERR(0, 49, __pyx_L3_error)
       }
     } else {
       switch (__pyx_nargs) {
@@ -3809,7 +3982,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("lambda", 0, 1, 2, __pyx_nargs); __PYX_ERR(0, 44, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("lambda", 0, 1, 2, __pyx_nargs); __PYX_ERR(0, 49, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -3848,7 +4021,7 @@ static PyObject *__pyx_lambda_funcdef_lambda(CYTHON_UNUSED PyObject *__pyx_self,
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("lambda", 1);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_home); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 44, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_home); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 49, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
@@ -3868,7 +4041,7 @@ static PyObject *__pyx_lambda_funcdef_lambda(CYTHON_UNUSED PyObject *__pyx_self,
     PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 44, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 49, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
@@ -3889,7 +4062,7 @@ static PyObject *__pyx_lambda_funcdef_lambda(CYTHON_UNUSED PyObject *__pyx_self,
   return __pyx_r;
 }
 
-/* "browser.pyx":30
+/* "browser.pyx":35
  *         self.setStyleSheet(get_styles())
  * 
  *     def add_toolbar_actions(self):             # <<<<<<<<<<<<<<
@@ -3916,14 +4089,14 @@ static PyObject *__pyx_pf_7browser_8Purroser_2add_toolbar_actions(CYTHON_UNUSED 
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("add_toolbar_actions", 1);
 
-  /* "browser.pyx":31
+  /* "browser.pyx":36
  * 
  *     def add_toolbar_actions(self):
  *         new_tab_action = QAction("New Tab", self)             # <<<<<<<<<<<<<<
  *         new_tab_action.triggered.connect(self.add_tab)
  *         self.toolbar.addAction(new_tab_action)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_QAction); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 31, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_QAction); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 36, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
@@ -3940,29 +4113,29 @@ static PyObject *__pyx_pf_7browser_8Purroser_2add_toolbar_actions(CYTHON_UNUSED 
   }
   #endif
   {
-    PyObject *__pyx_callargs[3] = {__pyx_t_3, __pyx_kp_s_New_Tab, __pyx_v_self};
+    PyObject *__pyx_callargs[3] = {__pyx_t_3, __pyx_kp_u_New_Tab, __pyx_v_self};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 2+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 31, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 36, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
   __pyx_v_new_tab_action = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "browser.pyx":32
+  /* "browser.pyx":37
  *     def add_toolbar_actions(self):
  *         new_tab_action = QAction("New Tab", self)
  *         new_tab_action.triggered.connect(self.add_tab)             # <<<<<<<<<<<<<<
  *         self.toolbar.addAction(new_tab_action)
  *         close_tab_action = QAction("Close Tab", self)
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_new_tab_action, __pyx_n_s_triggered); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 32, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_new_tab_action, __pyx_n_s_triggered); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 37, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_connect); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 32, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_connect); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 37, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_add_tab); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 32, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_add_tab); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 37, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_5 = NULL;
   __pyx_t_4 = 0;
@@ -3983,22 +4156,22 @@ static PyObject *__pyx_pf_7browser_8Purroser_2add_toolbar_actions(CYTHON_UNUSED 
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 32, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 37, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "browser.pyx":33
+  /* "browser.pyx":38
  *         new_tab_action = QAction("New Tab", self)
  *         new_tab_action.triggered.connect(self.add_tab)
  *         self.toolbar.addAction(new_tab_action)             # <<<<<<<<<<<<<<
  *         close_tab_action = QAction("Close Tab", self)
  *         close_tab_action.triggered.connect(self.close_current_tab)
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_toolbar); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 33, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_toolbar); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 38, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_addAction); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 33, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_addAction); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 38, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -4019,20 +4192,20 @@ static PyObject *__pyx_pf_7browser_8Purroser_2add_toolbar_actions(CYTHON_UNUSED 
     PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_v_new_tab_action};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 33, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 38, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "browser.pyx":34
+  /* "browser.pyx":39
  *         new_tab_action.triggered.connect(self.add_tab)
  *         self.toolbar.addAction(new_tab_action)
  *         close_tab_action = QAction("Close Tab", self)             # <<<<<<<<<<<<<<
  *         close_tab_action.triggered.connect(self.close_current_tab)
  *         self.toolbar.addAction(close_tab_action)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_QAction); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 34, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_QAction); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 39, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
@@ -4049,29 +4222,29 @@ static PyObject *__pyx_pf_7browser_8Purroser_2add_toolbar_actions(CYTHON_UNUSED 
   }
   #endif
   {
-    PyObject *__pyx_callargs[3] = {__pyx_t_3, __pyx_kp_s_Close_Tab, __pyx_v_self};
+    PyObject *__pyx_callargs[3] = {__pyx_t_3, __pyx_kp_u_Close_Tab, __pyx_v_self};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 2+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 34, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 39, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
   __pyx_v_close_tab_action = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "browser.pyx":35
+  /* "browser.pyx":40
  *         self.toolbar.addAction(new_tab_action)
  *         close_tab_action = QAction("Close Tab", self)
  *         close_tab_action.triggered.connect(self.close_current_tab)             # <<<<<<<<<<<<<<
  *         self.toolbar.addAction(close_tab_action)
  *         back_button = QAction("Back", self)
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_close_tab_action, __pyx_n_s_triggered); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 35, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_close_tab_action, __pyx_n_s_triggered); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 40, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_connect); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 35, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_connect); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 40, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_close_current_tab); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 35, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_close_current_tab); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 40, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_5 = NULL;
   __pyx_t_4 = 0;
@@ -4092,22 +4265,22 @@ static PyObject *__pyx_pf_7browser_8Purroser_2add_toolbar_actions(CYTHON_UNUSED 
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 35, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 40, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "browser.pyx":36
+  /* "browser.pyx":41
  *         close_tab_action = QAction("Close Tab", self)
  *         close_tab_action.triggered.connect(self.close_current_tab)
  *         self.toolbar.addAction(close_tab_action)             # <<<<<<<<<<<<<<
  *         back_button = QAction("Back", self)
  *         back_button.triggered.connect(self.tabs.currentWidget().back)
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_toolbar); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 36, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_toolbar); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 41, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_addAction); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 36, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_addAction); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 41, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -4128,20 +4301,20 @@ static PyObject *__pyx_pf_7browser_8Purroser_2add_toolbar_actions(CYTHON_UNUSED 
     PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_v_close_tab_action};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 36, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 41, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "browser.pyx":37
+  /* "browser.pyx":42
  *         close_tab_action.triggered.connect(self.close_current_tab)
  *         self.toolbar.addAction(close_tab_action)
  *         back_button = QAction("Back", self)             # <<<<<<<<<<<<<<
  *         back_button.triggered.connect(self.tabs.currentWidget().back)
  *         self.toolbar.addAction(back_button)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_QAction); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 37, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_QAction); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 42, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
@@ -4158,31 +4331,31 @@ static PyObject *__pyx_pf_7browser_8Purroser_2add_toolbar_actions(CYTHON_UNUSED 
   }
   #endif
   {
-    PyObject *__pyx_callargs[3] = {__pyx_t_3, __pyx_n_s_Back, __pyx_v_self};
+    PyObject *__pyx_callargs[3] = {__pyx_t_3, __pyx_n_u_Back, __pyx_v_self};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 2+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 37, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 42, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
   __pyx_v_back_button = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "browser.pyx":38
+  /* "browser.pyx":43
  *         self.toolbar.addAction(close_tab_action)
  *         back_button = QAction("Back", self)
  *         back_button.triggered.connect(self.tabs.currentWidget().back)             # <<<<<<<<<<<<<<
  *         self.toolbar.addAction(back_button)
  *         forward_button = QAction("Forward", self)
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_back_button, __pyx_n_s_triggered); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 38, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_back_button, __pyx_n_s_triggered); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 43, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_connect); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 38, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_connect); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 43, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_tabs); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 38, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_tabs); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 43, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_currentWidget); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 38, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_currentWidget); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 43, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_t_5 = NULL;
@@ -4203,11 +4376,11 @@ static PyObject *__pyx_pf_7browser_8Purroser_2add_toolbar_actions(CYTHON_UNUSED 
     PyObject *__pyx_callargs[2] = {__pyx_t_5, NULL};
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_6, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 38, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 43, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   }
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_back); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 38, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_back); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 43, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -4229,22 +4402,22 @@ static PyObject *__pyx_pf_7browser_8Purroser_2add_toolbar_actions(CYTHON_UNUSED 
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 38, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 43, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "browser.pyx":39
+  /* "browser.pyx":44
  *         back_button = QAction("Back", self)
  *         back_button.triggered.connect(self.tabs.currentWidget().back)
  *         self.toolbar.addAction(back_button)             # <<<<<<<<<<<<<<
  *         forward_button = QAction("Forward", self)
  *         forward_button.triggered.connect(self.tabs.currentWidget().forward)
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_toolbar); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 39, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_toolbar); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 44, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_addAction); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 39, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_addAction); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 44, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -4265,20 +4438,20 @@ static PyObject *__pyx_pf_7browser_8Purroser_2add_toolbar_actions(CYTHON_UNUSED 
     PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_v_back_button};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_6, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 39, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 44, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "browser.pyx":40
+  /* "browser.pyx":45
  *         back_button.triggered.connect(self.tabs.currentWidget().back)
  *         self.toolbar.addAction(back_button)
  *         forward_button = QAction("Forward", self)             # <<<<<<<<<<<<<<
  *         forward_button.triggered.connect(self.tabs.currentWidget().forward)
  *         self.toolbar.addAction(forward_button)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_QAction); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 40, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_QAction); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 45, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
@@ -4295,31 +4468,31 @@ static PyObject *__pyx_pf_7browser_8Purroser_2add_toolbar_actions(CYTHON_UNUSED 
   }
   #endif
   {
-    PyObject *__pyx_callargs[3] = {__pyx_t_3, __pyx_n_s_Forward, __pyx_v_self};
+    PyObject *__pyx_callargs[3] = {__pyx_t_3, __pyx_n_u_Forward, __pyx_v_self};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_6, __pyx_callargs+1-__pyx_t_4, 2+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 40, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 45, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   }
   __pyx_v_forward_button = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "browser.pyx":41
+  /* "browser.pyx":46
  *         self.toolbar.addAction(back_button)
  *         forward_button = QAction("Forward", self)
  *         forward_button.triggered.connect(self.tabs.currentWidget().forward)             # <<<<<<<<<<<<<<
  *         self.toolbar.addAction(forward_button)
  *         home_button = QAction("Home", self)
  */
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_forward_button, __pyx_n_s_triggered); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 41, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_forward_button, __pyx_n_s_triggered); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 46, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_connect); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 41, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_connect); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 46, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_tabs); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 41, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_tabs); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 46, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_currentWidget); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 41, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_currentWidget); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 46, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -4340,11 +4513,11 @@ static PyObject *__pyx_pf_7browser_8Purroser_2add_toolbar_actions(CYTHON_UNUSED 
     PyObject *__pyx_callargs[2] = {__pyx_t_2, NULL};
     __pyx_t_6 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 41, __pyx_L1_error)
+    if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 46, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   }
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_forward); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 41, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_forward); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 46, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __pyx_t_6 = NULL;
@@ -4366,22 +4539,22 @@ static PyObject *__pyx_pf_7browser_8Purroser_2add_toolbar_actions(CYTHON_UNUSED 
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 41, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 46, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "browser.pyx":42
+  /* "browser.pyx":47
  *         forward_button = QAction("Forward", self)
  *         forward_button.triggered.connect(self.tabs.currentWidget().forward)
  *         self.toolbar.addAction(forward_button)             # <<<<<<<<<<<<<<
  *         home_button = QAction("Home", self)
  *         home_button.triggered.connect(lambda checked, self=self: self.home())
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_toolbar); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 42, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_toolbar); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 47, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_addAction); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 42, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_addAction); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 47, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -4402,20 +4575,20 @@ static PyObject *__pyx_pf_7browser_8Purroser_2add_toolbar_actions(CYTHON_UNUSED 
     PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_v_forward_button};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 42, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 47, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "browser.pyx":43
+  /* "browser.pyx":48
  *         forward_button.triggered.connect(self.tabs.currentWidget().forward)
  *         self.toolbar.addAction(forward_button)
  *         home_button = QAction("Home", self)             # <<<<<<<<<<<<<<
  *         home_button.triggered.connect(lambda checked, self=self: self.home())
  *         self.toolbar.addAction(home_button)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_QAction); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 43, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_QAction); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 48, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
@@ -4432,31 +4605,31 @@ static PyObject *__pyx_pf_7browser_8Purroser_2add_toolbar_actions(CYTHON_UNUSED 
   }
   #endif
   {
-    PyObject *__pyx_callargs[3] = {__pyx_t_3, __pyx_n_s_Home, __pyx_v_self};
+    PyObject *__pyx_callargs[3] = {__pyx_t_3, __pyx_n_u_Home, __pyx_v_self};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+1-__pyx_t_4, 2+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 43, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 48, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   }
   __pyx_v_home_button = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "browser.pyx":44
+  /* "browser.pyx":49
  *         self.toolbar.addAction(forward_button)
  *         home_button = QAction("Home", self)
  *         home_button.triggered.connect(lambda checked, self=self: self.home())             # <<<<<<<<<<<<<<
  *         self.toolbar.addAction(home_button)
  *         self.url_bar = QLineEdit()
  */
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_home_button, __pyx_n_s_triggered); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 44, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_home_button, __pyx_n_s_triggered); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 49, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_connect); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 44, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_connect); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 49, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_7browser_8Purroser_19add_toolbar_actions_lambda, 0, __pyx_n_s_Purroser_add_toolbar_actions_loc, NULL, __pyx_n_s_browser, __pyx_d, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 44, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CyFunction_New(&__pyx_mdef_7browser_8Purroser_19add_toolbar_actions_lambda, 0, __pyx_n_s_Purroser_add_toolbar_actions_loc, NULL, __pyx_n_s_browser, __pyx_d, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 49, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (!__Pyx_CyFunction_InitDefaults(__pyx_t_5, sizeof(__pyx_defaults1), 1)) __PYX_ERR(0, 44, __pyx_L1_error)
+  if (!__Pyx_CyFunction_InitDefaults(__pyx_t_5, sizeof(__pyx_defaults1), 1)) __PYX_ERR(0, 49, __pyx_L1_error)
   __Pyx_INCREF(__pyx_v_self);
   __Pyx_CyFunction_Defaults(__pyx_defaults1, __pyx_t_5)->__pyx_arg_self = __pyx_v_self;
   __Pyx_GIVEREF(__pyx_v_self);
@@ -4480,22 +4653,22 @@ static PyObject *__pyx_pf_7browser_8Purroser_2add_toolbar_actions(CYTHON_UNUSED 
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 44, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 49, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "browser.pyx":45
+  /* "browser.pyx":50
  *         home_button = QAction("Home", self)
  *         home_button.triggered.connect(lambda checked, self=self: self.home())
  *         self.toolbar.addAction(home_button)             # <<<<<<<<<<<<<<
  *         self.url_bar = QLineEdit()
  *         self.url_bar.returnPressed.connect(self.navigate_to_url)
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_toolbar); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 45, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_toolbar); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 50, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_addAction); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 45, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_addAction); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 50, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -4516,20 +4689,20 @@ static PyObject *__pyx_pf_7browser_8Purroser_2add_toolbar_actions(CYTHON_UNUSED 
     PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_v_home_button};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 45, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 50, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "browser.pyx":46
+  /* "browser.pyx":51
  *         home_button.triggered.connect(lambda checked, self=self: self.home())
  *         self.toolbar.addAction(home_button)
  *         self.url_bar = QLineEdit()             # <<<<<<<<<<<<<<
  *         self.url_bar.returnPressed.connect(self.navigate_to_url)
  *         self.toolbar.addWidget(self.url_bar)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_QLineEdit); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 46, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_QLineEdit); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 51, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
@@ -4549,29 +4722,29 @@ static PyObject *__pyx_pf_7browser_8Purroser_2add_toolbar_actions(CYTHON_UNUSED 
     PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 46, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 51, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   }
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_url_bar, __pyx_t_1) < 0) __PYX_ERR(0, 46, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_url_bar, __pyx_t_1) < 0) __PYX_ERR(0, 51, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "browser.pyx":47
+  /* "browser.pyx":52
  *         self.toolbar.addAction(home_button)
  *         self.url_bar = QLineEdit()
  *         self.url_bar.returnPressed.connect(self.navigate_to_url)             # <<<<<<<<<<<<<<
  *         self.toolbar.addWidget(self.url_bar)
- * 
+ *         self.add_fullscreen_action()  # Ensure fullscreen action is added here too
  */
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_url_bar); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 47, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_url_bar); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 52, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_returnPressed); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 47, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_returnPressed); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 52, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_connect); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 47, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_connect); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 52, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_navigate_to_url); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 47, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_navigate_to_url); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 52, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_6 = NULL;
   __pyx_t_4 = 0;
@@ -4592,25 +4765,25 @@ static PyObject *__pyx_pf_7browser_8Purroser_2add_toolbar_actions(CYTHON_UNUSED 
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 47, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 52, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "browser.pyx":48
+  /* "browser.pyx":53
  *         self.url_bar = QLineEdit()
  *         self.url_bar.returnPressed.connect(self.navigate_to_url)
  *         self.toolbar.addWidget(self.url_bar)             # <<<<<<<<<<<<<<
+ *         self.add_fullscreen_action()  # Ensure fullscreen action is added here too
  * 
- *     def home(self):
  */
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_toolbar); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 48, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_toolbar); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 53, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_addWidget); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 48, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_addWidget); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 53, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_url_bar); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 48, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_url_bar); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 53, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_t_6 = NULL;
   __pyx_t_4 = 0;
@@ -4631,13 +4804,46 @@ static PyObject *__pyx_pf_7browser_8Purroser_2add_toolbar_actions(CYTHON_UNUSED 
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 48, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 53, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "browser.pyx":30
+  /* "browser.pyx":54
+ *         self.url_bar.returnPressed.connect(self.navigate_to_url)
+ *         self.toolbar.addWidget(self.url_bar)
+ *         self.add_fullscreen_action()  # Ensure fullscreen action is added here too             # <<<<<<<<<<<<<<
+ * 
+ *     def add_fullscreen_action(self):
+ */
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_add_fullscreen_action); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 54, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_5 = NULL;
+  __pyx_t_4 = 0;
+  #if CYTHON_UNPACK_METHODS
+  if (likely(PyMethod_Check(__pyx_t_3))) {
+    __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_3);
+    if (likely(__pyx_t_5)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_5);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_3, function);
+      __pyx_t_4 = 1;
+    }
+  }
+  #endif
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_5, NULL};
+    __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
+    __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 54, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  }
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "browser.pyx":35
  *         self.setStyleSheet(get_styles())
  * 
  *     def add_toolbar_actions(self):             # <<<<<<<<<<<<<<
@@ -4667,8 +4873,869 @@ static PyObject *__pyx_pf_7browser_8Purroser_2add_toolbar_actions(CYTHON_UNUSED 
   return __pyx_r;
 }
 
-/* "browser.pyx":50
- *         self.toolbar.addWidget(self.url_bar)
+/* "browser.pyx":56
+ *         self.add_fullscreen_action()  # Ensure fullscreen action is added here too
+ * 
+ *     def add_fullscreen_action(self):             # <<<<<<<<<<<<<<
+ *         fullscreen_action = QAction("Full Screen", self)
+ *         fullscreen_action.triggered.connect(lambda: self.toggle_fullscreen(self.tabs.currentWidget()))
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_7browser_8Purroser_5add_fullscreen_action(PyObject *__pyx_self, 
+#if CYTHON_METH_FASTCALL
+PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
+#else
+PyObject *__pyx_args, PyObject *__pyx_kwds
+#endif
+); /*proto*/
+static PyMethodDef __pyx_mdef_7browser_8Purroser_5add_fullscreen_action = {"add_fullscreen_action", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7browser_8Purroser_5add_fullscreen_action, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_7browser_8Purroser_5add_fullscreen_action(PyObject *__pyx_self, 
+#if CYTHON_METH_FASTCALL
+PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
+#else
+PyObject *__pyx_args, PyObject *__pyx_kwds
+#endif
+) {
+  PyObject *__pyx_v_self = 0;
+  #if !CYTHON_METH_FASTCALL
+  CYTHON_UNUSED Py_ssize_t __pyx_nargs;
+  #endif
+  CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
+  PyObject* values[1] = {0};
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("add_fullscreen_action (wrapper)", 0);
+  #if !CYTHON_METH_FASTCALL
+  #if CYTHON_ASSUME_SAFE_MACROS
+  __pyx_nargs = PyTuple_GET_SIZE(__pyx_args);
+  #else
+  __pyx_nargs = PyTuple_Size(__pyx_args); if (unlikely(__pyx_nargs < 0)) return NULL;
+  #endif
+  #endif
+  __pyx_kwvalues = __Pyx_KwValues_FASTCALL(__pyx_args, __pyx_nargs);
+  {
+    PyObject **__pyx_pyargnames[] = {&__pyx_n_s_self,0};
+    if (__pyx_kwds) {
+      Py_ssize_t kw_args;
+      switch (__pyx_nargs) {
+        case  1: values[0] = __Pyx_Arg_FASTCALL(__pyx_args, 0);
+        CYTHON_FALLTHROUGH;
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = __Pyx_NumKwargs_FASTCALL(__pyx_kwds);
+      switch (__pyx_nargs) {
+        case  0:
+        if (likely((values[0] = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_self)) != 0)) {
+          (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
+          kw_args--;
+        }
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 56, __pyx_L3_error)
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        const Py_ssize_t kwd_pos_args = __pyx_nargs;
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "add_fullscreen_action") < 0)) __PYX_ERR(0, 56, __pyx_L3_error)
+      }
+    } else if (unlikely(__pyx_nargs != 1)) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = __Pyx_Arg_FASTCALL(__pyx_args, 0);
+    }
+    __pyx_v_self = values[0];
+  }
+  goto __pyx_L6_skip;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("add_fullscreen_action", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 56, __pyx_L3_error)
+  __pyx_L6_skip:;
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  {
+    Py_ssize_t __pyx_temp;
+    for (__pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
+      __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
+    }
+  }
+  __Pyx_AddTraceback("browser.Purroser.add_fullscreen_action", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_7browser_8Purroser_4add_fullscreen_action(__pyx_self, __pyx_v_self);
+
+  /* function exit code */
+  {
+    Py_ssize_t __pyx_temp;
+    for (__pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
+      __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
+    }
+  }
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "browser.pyx":58
+ *     def add_fullscreen_action(self):
+ *         fullscreen_action = QAction("Full Screen", self)
+ *         fullscreen_action.triggered.connect(lambda: self.toggle_fullscreen(self.tabs.currentWidget()))             # <<<<<<<<<<<<<<
+ *         self.toolbar.addAction(fullscreen_action)
+ * 
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_7browser_8Purroser_21add_fullscreen_action_lambda1(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyMethodDef __pyx_mdef_7browser_8Purroser_21add_fullscreen_action_lambda1 = {"lambda1", (PyCFunction)__pyx_pw_7browser_8Purroser_21add_fullscreen_action_lambda1, METH_NOARGS, 0};
+static PyObject *__pyx_pw_7browser_8Purroser_21add_fullscreen_action_lambda1(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
+  CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("lambda1 (wrapper)", 0);
+  __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
+  __pyx_r = __pyx_lambda_funcdef_lambda1(__pyx_self);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_lambda_funcdef_lambda1(PyObject *__pyx_self) {
+  struct __pyx_obj_7browser___pyx_scope_struct__add_fullscreen_action *__pyx_cur_scope;
+  struct __pyx_obj_7browser___pyx_scope_struct__add_fullscreen_action *__pyx_outer_scope;
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  unsigned int __pyx_t_6;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("lambda1", 1);
+  __pyx_outer_scope = (struct __pyx_obj_7browser___pyx_scope_struct__add_fullscreen_action *) __Pyx_CyFunction_GetClosure(__pyx_self);
+  __pyx_cur_scope = __pyx_outer_scope;
+  __Pyx_XDECREF(__pyx_r);
+  if (unlikely(!__pyx_cur_scope->__pyx_v_self)) { __Pyx_RaiseClosureNameError("self"); __PYX_ERR(0, 58, __pyx_L1_error) }
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_toggle_fullscreen); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 58, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  if (unlikely(!__pyx_cur_scope->__pyx_v_self)) { __Pyx_RaiseClosureNameError("self"); __PYX_ERR(0, 58, __pyx_L1_error) }
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_tabs); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 58, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_currentWidget); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 58, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __pyx_t_4 = NULL;
+  __pyx_t_6 = 0;
+  #if CYTHON_UNPACK_METHODS
+  if (likely(PyMethod_Check(__pyx_t_5))) {
+    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_5);
+    if (likely(__pyx_t_4)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_5);
+      __Pyx_INCREF(__pyx_t_4);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_5, function);
+      __pyx_t_6 = 1;
+    }
+  }
+  #endif
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_4, NULL};
+    __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+1-__pyx_t_6, 0+__pyx_t_6);
+    __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 58, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  }
+  __pyx_t_5 = NULL;
+  __pyx_t_6 = 0;
+  #if CYTHON_UNPACK_METHODS
+  if (likely(PyMethod_Check(__pyx_t_2))) {
+    __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_2);
+    if (likely(__pyx_t_5)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+      __Pyx_INCREF(__pyx_t_5);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_2, function);
+      __pyx_t_6 = 1;
+    }
+  }
+  #endif
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_5, __pyx_t_3};
+    __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_6, 1+__pyx_t_6);
+    __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 58, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  }
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_AddTraceback("browser.Purroser.add_fullscreen_action.lambda1", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "browser.pyx":56
+ *         self.add_fullscreen_action()  # Ensure fullscreen action is added here too
+ * 
+ *     def add_fullscreen_action(self):             # <<<<<<<<<<<<<<
+ *         fullscreen_action = QAction("Full Screen", self)
+ *         fullscreen_action.triggered.connect(lambda: self.toggle_fullscreen(self.tabs.currentWidget()))
+ */
+
+static PyObject *__pyx_pf_7browser_8Purroser_4add_fullscreen_action(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self) {
+  struct __pyx_obj_7browser___pyx_scope_struct__add_fullscreen_action *__pyx_cur_scope;
+  PyObject *__pyx_v_fullscreen_action = NULL;
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  unsigned int __pyx_t_4;
+  PyObject *__pyx_t_5 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("add_fullscreen_action", 0);
+  __pyx_cur_scope = (struct __pyx_obj_7browser___pyx_scope_struct__add_fullscreen_action *)__pyx_tp_new_7browser___pyx_scope_struct__add_fullscreen_action(__pyx_ptype_7browser___pyx_scope_struct__add_fullscreen_action, __pyx_empty_tuple, NULL);
+  if (unlikely(!__pyx_cur_scope)) {
+    __pyx_cur_scope = ((struct __pyx_obj_7browser___pyx_scope_struct__add_fullscreen_action *)Py_None);
+    __Pyx_INCREF(Py_None);
+    __PYX_ERR(0, 56, __pyx_L1_error)
+  } else {
+    __Pyx_GOTREF((PyObject *)__pyx_cur_scope);
+  }
+  __pyx_cur_scope->__pyx_v_self = __pyx_v_self;
+  __Pyx_INCREF(__pyx_cur_scope->__pyx_v_self);
+  __Pyx_GIVEREF(__pyx_cur_scope->__pyx_v_self);
+
+  /* "browser.pyx":57
+ * 
+ *     def add_fullscreen_action(self):
+ *         fullscreen_action = QAction("Full Screen", self)             # <<<<<<<<<<<<<<
+ *         fullscreen_action.triggered.connect(lambda: self.toggle_fullscreen(self.tabs.currentWidget()))
+ *         self.toolbar.addAction(fullscreen_action)
+ */
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_QAction); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 57, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = NULL;
+  __pyx_t_4 = 0;
+  #if CYTHON_UNPACK_METHODS
+  if (unlikely(PyMethod_Check(__pyx_t_2))) {
+    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_2);
+    if (likely(__pyx_t_3)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+      __Pyx_INCREF(__pyx_t_3);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_2, function);
+      __pyx_t_4 = 1;
+    }
+  }
+  #endif
+  {
+    PyObject *__pyx_callargs[3] = {__pyx_t_3, __pyx_kp_u_Full_Screen, __pyx_cur_scope->__pyx_v_self};
+    __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 2+__pyx_t_4);
+    __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 57, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  }
+  __pyx_v_fullscreen_action = __pyx_t_1;
+  __pyx_t_1 = 0;
+
+  /* "browser.pyx":58
+ *     def add_fullscreen_action(self):
+ *         fullscreen_action = QAction("Full Screen", self)
+ *         fullscreen_action.triggered.connect(lambda: self.toggle_fullscreen(self.tabs.currentWidget()))             # <<<<<<<<<<<<<<
+ *         self.toolbar.addAction(fullscreen_action)
+ * 
+ */
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_fullscreen_action, __pyx_n_s_triggered); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 58, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_connect); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 58, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7browser_8Purroser_21add_fullscreen_action_lambda1, 0, __pyx_n_s_Purroser_add_fullscreen_action_l, ((PyObject*)__pyx_cur_scope), __pyx_n_s_browser, __pyx_d, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 58, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_5 = NULL;
+  __pyx_t_4 = 0;
+  #if CYTHON_UNPACK_METHODS
+  if (likely(PyMethod_Check(__pyx_t_3))) {
+    __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_3);
+    if (likely(__pyx_t_5)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_5);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_3, function);
+      __pyx_t_4 = 1;
+    }
+  }
+  #endif
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_5, __pyx_t_2};
+    __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
+    __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 58, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  }
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "browser.pyx":59
+ *         fullscreen_action = QAction("Full Screen", self)
+ *         fullscreen_action.triggered.connect(lambda: self.toggle_fullscreen(self.tabs.currentWidget()))
+ *         self.toolbar.addAction(fullscreen_action)             # <<<<<<<<<<<<<<
+ * 
+ *     def check_fullscreen_support(self, web_view):
+ */
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_toolbar); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 59, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_addAction); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 59, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_3 = NULL;
+  __pyx_t_4 = 0;
+  #if CYTHON_UNPACK_METHODS
+  if (likely(PyMethod_Check(__pyx_t_2))) {
+    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_2);
+    if (likely(__pyx_t_3)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+      __Pyx_INCREF(__pyx_t_3);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_2, function);
+      __pyx_t_4 = 1;
+    }
+  }
+  #endif
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_v_fullscreen_action};
+    __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
+    __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 59, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  }
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "browser.pyx":56
+ *         self.add_fullscreen_action()  # Ensure fullscreen action is added here too
+ * 
+ *     def add_fullscreen_action(self):             # <<<<<<<<<<<<<<
+ *         fullscreen_action = QAction("Full Screen", self)
+ *         fullscreen_action.triggered.connect(lambda: self.toggle_fullscreen(self.tabs.currentWidget()))
+ */
+
+  /* function exit code */
+  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_AddTraceback("browser.Purroser.add_fullscreen_action", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XDECREF(__pyx_v_fullscreen_action);
+  __Pyx_DECREF((PyObject *)__pyx_cur_scope);
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "browser.pyx":61
+ *         self.toolbar.addAction(fullscreen_action)
+ * 
+ *     def check_fullscreen_support(self, web_view):             # <<<<<<<<<<<<<<
+ *         js_code = """
+ *         var elem = document.documentElement;
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_7browser_8Purroser_7check_fullscreen_support(PyObject *__pyx_self, 
+#if CYTHON_METH_FASTCALL
+PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
+#else
+PyObject *__pyx_args, PyObject *__pyx_kwds
+#endif
+); /*proto*/
+static PyMethodDef __pyx_mdef_7browser_8Purroser_7check_fullscreen_support = {"check_fullscreen_support", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7browser_8Purroser_7check_fullscreen_support, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_7browser_8Purroser_7check_fullscreen_support(PyObject *__pyx_self, 
+#if CYTHON_METH_FASTCALL
+PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
+#else
+PyObject *__pyx_args, PyObject *__pyx_kwds
+#endif
+) {
+  CYTHON_UNUSED PyObject *__pyx_v_self = 0;
+  PyObject *__pyx_v_web_view = 0;
+  #if !CYTHON_METH_FASTCALL
+  CYTHON_UNUSED Py_ssize_t __pyx_nargs;
+  #endif
+  CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
+  PyObject* values[2] = {0,0};
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("check_fullscreen_support (wrapper)", 0);
+  #if !CYTHON_METH_FASTCALL
+  #if CYTHON_ASSUME_SAFE_MACROS
+  __pyx_nargs = PyTuple_GET_SIZE(__pyx_args);
+  #else
+  __pyx_nargs = PyTuple_Size(__pyx_args); if (unlikely(__pyx_nargs < 0)) return NULL;
+  #endif
+  #endif
+  __pyx_kwvalues = __Pyx_KwValues_FASTCALL(__pyx_args, __pyx_nargs);
+  {
+    PyObject **__pyx_pyargnames[] = {&__pyx_n_s_self,&__pyx_n_s_web_view,0};
+    if (__pyx_kwds) {
+      Py_ssize_t kw_args;
+      switch (__pyx_nargs) {
+        case  2: values[1] = __Pyx_Arg_FASTCALL(__pyx_args, 1);
+        CYTHON_FALLTHROUGH;
+        case  1: values[0] = __Pyx_Arg_FASTCALL(__pyx_args, 0);
+        CYTHON_FALLTHROUGH;
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = __Pyx_NumKwargs_FASTCALL(__pyx_kwds);
+      switch (__pyx_nargs) {
+        case  0:
+        if (likely((values[0] = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_self)) != 0)) {
+          (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
+          kw_args--;
+        }
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 61, __pyx_L3_error)
+        else goto __pyx_L5_argtuple_error;
+        CYTHON_FALLTHROUGH;
+        case  1:
+        if (likely((values[1] = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_web_view)) != 0)) {
+          (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
+          kw_args--;
+        }
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 61, __pyx_L3_error)
+        else {
+          __Pyx_RaiseArgtupleInvalid("check_fullscreen_support", 1, 2, 2, 1); __PYX_ERR(0, 61, __pyx_L3_error)
+        }
+      }
+      if (unlikely(kw_args > 0)) {
+        const Py_ssize_t kwd_pos_args = __pyx_nargs;
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "check_fullscreen_support") < 0)) __PYX_ERR(0, 61, __pyx_L3_error)
+      }
+    } else if (unlikely(__pyx_nargs != 2)) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = __Pyx_Arg_FASTCALL(__pyx_args, 0);
+      values[1] = __Pyx_Arg_FASTCALL(__pyx_args, 1);
+    }
+    __pyx_v_self = values[0];
+    __pyx_v_web_view = values[1];
+  }
+  goto __pyx_L6_skip;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("check_fullscreen_support", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 61, __pyx_L3_error)
+  __pyx_L6_skip:;
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  {
+    Py_ssize_t __pyx_temp;
+    for (__pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
+      __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
+    }
+  }
+  __Pyx_AddTraceback("browser.Purroser.check_fullscreen_support", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_7browser_8Purroser_6check_fullscreen_support(__pyx_self, __pyx_v_self, __pyx_v_web_view);
+
+  /* function exit code */
+  {
+    Py_ssize_t __pyx_temp;
+    for (__pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
+      __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
+    }
+  }
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_7browser_8Purroser_6check_fullscreen_support(CYTHON_UNUSED PyObject *__pyx_self, CYTHON_UNUSED PyObject *__pyx_v_self, PyObject *__pyx_v_web_view) {
+  PyObject *__pyx_v_js_code = NULL;
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  unsigned int __pyx_t_5;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("check_fullscreen_support", 1);
+
+  /* "browser.pyx":62
+ * 
+ *     def check_fullscreen_support(self, web_view):
+ *         js_code = """             # <<<<<<<<<<<<<<
+ *         var elem = document.documentElement;
+ *         if (!document.fullscreenElement &&
+ */
+  __Pyx_INCREF(__pyx_kp_u_var_elem_document_documentEleme);
+  __pyx_v_js_code = __pyx_kp_u_var_elem_document_documentEleme;
+
+  /* "browser.pyx":75
+ *         return false;
+ *         """
+ *         web_view.page().runJavaScript(js_code)             # <<<<<<<<<<<<<<
+ * 
+ *     def toggle_fullscreen(self, web_view):
+ */
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_web_view, __pyx_n_s_page); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 75, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_4 = NULL;
+  __pyx_t_5 = 0;
+  #if CYTHON_UNPACK_METHODS
+  if (likely(PyMethod_Check(__pyx_t_3))) {
+    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+    if (likely(__pyx_t_4)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_4);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_3, function);
+      __pyx_t_5 = 1;
+    }
+  }
+  #endif
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_4, NULL};
+    __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 0+__pyx_t_5);
+    __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 75, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  }
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_runJavaScript); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 75, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_2 = NULL;
+  __pyx_t_5 = 0;
+  #if CYTHON_UNPACK_METHODS
+  if (likely(PyMethod_Check(__pyx_t_3))) {
+    __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_3);
+    if (likely(__pyx_t_2)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_2);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_3, function);
+      __pyx_t_5 = 1;
+    }
+  }
+  #endif
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_2, __pyx_v_js_code};
+    __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
+    __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 75, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  }
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "browser.pyx":61
+ *         self.toolbar.addAction(fullscreen_action)
+ * 
+ *     def check_fullscreen_support(self, web_view):             # <<<<<<<<<<<<<<
+ *         js_code = """
+ *         var elem = document.documentElement;
+ */
+
+  /* function exit code */
+  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_AddTraceback("browser.Purroser.check_fullscreen_support", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XDECREF(__pyx_v_js_code);
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "browser.pyx":77
+ *         web_view.page().runJavaScript(js_code)
+ * 
+ *     def toggle_fullscreen(self, web_view):             # <<<<<<<<<<<<<<
+ *         if self.check_fullscreen_support(web_view):
+ *             web_view.showFullScreen()
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_7browser_8Purroser_9toggle_fullscreen(PyObject *__pyx_self, 
+#if CYTHON_METH_FASTCALL
+PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
+#else
+PyObject *__pyx_args, PyObject *__pyx_kwds
+#endif
+); /*proto*/
+static PyMethodDef __pyx_mdef_7browser_8Purroser_9toggle_fullscreen = {"toggle_fullscreen", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7browser_8Purroser_9toggle_fullscreen, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_7browser_8Purroser_9toggle_fullscreen(PyObject *__pyx_self, 
+#if CYTHON_METH_FASTCALL
+PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
+#else
+PyObject *__pyx_args, PyObject *__pyx_kwds
+#endif
+) {
+  PyObject *__pyx_v_self = 0;
+  PyObject *__pyx_v_web_view = 0;
+  #if !CYTHON_METH_FASTCALL
+  CYTHON_UNUSED Py_ssize_t __pyx_nargs;
+  #endif
+  CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
+  PyObject* values[2] = {0,0};
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("toggle_fullscreen (wrapper)", 0);
+  #if !CYTHON_METH_FASTCALL
+  #if CYTHON_ASSUME_SAFE_MACROS
+  __pyx_nargs = PyTuple_GET_SIZE(__pyx_args);
+  #else
+  __pyx_nargs = PyTuple_Size(__pyx_args); if (unlikely(__pyx_nargs < 0)) return NULL;
+  #endif
+  #endif
+  __pyx_kwvalues = __Pyx_KwValues_FASTCALL(__pyx_args, __pyx_nargs);
+  {
+    PyObject **__pyx_pyargnames[] = {&__pyx_n_s_self,&__pyx_n_s_web_view,0};
+    if (__pyx_kwds) {
+      Py_ssize_t kw_args;
+      switch (__pyx_nargs) {
+        case  2: values[1] = __Pyx_Arg_FASTCALL(__pyx_args, 1);
+        CYTHON_FALLTHROUGH;
+        case  1: values[0] = __Pyx_Arg_FASTCALL(__pyx_args, 0);
+        CYTHON_FALLTHROUGH;
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = __Pyx_NumKwargs_FASTCALL(__pyx_kwds);
+      switch (__pyx_nargs) {
+        case  0:
+        if (likely((values[0] = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_self)) != 0)) {
+          (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
+          kw_args--;
+        }
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 77, __pyx_L3_error)
+        else goto __pyx_L5_argtuple_error;
+        CYTHON_FALLTHROUGH;
+        case  1:
+        if (likely((values[1] = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_web_view)) != 0)) {
+          (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
+          kw_args--;
+        }
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 77, __pyx_L3_error)
+        else {
+          __Pyx_RaiseArgtupleInvalid("toggle_fullscreen", 1, 2, 2, 1); __PYX_ERR(0, 77, __pyx_L3_error)
+        }
+      }
+      if (unlikely(kw_args > 0)) {
+        const Py_ssize_t kwd_pos_args = __pyx_nargs;
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "toggle_fullscreen") < 0)) __PYX_ERR(0, 77, __pyx_L3_error)
+      }
+    } else if (unlikely(__pyx_nargs != 2)) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = __Pyx_Arg_FASTCALL(__pyx_args, 0);
+      values[1] = __Pyx_Arg_FASTCALL(__pyx_args, 1);
+    }
+    __pyx_v_self = values[0];
+    __pyx_v_web_view = values[1];
+  }
+  goto __pyx_L6_skip;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("toggle_fullscreen", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 77, __pyx_L3_error)
+  __pyx_L6_skip:;
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  {
+    Py_ssize_t __pyx_temp;
+    for (__pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
+      __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
+    }
+  }
+  __Pyx_AddTraceback("browser.Purroser.toggle_fullscreen", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_7browser_8Purroser_8toggle_fullscreen(__pyx_self, __pyx_v_self, __pyx_v_web_view);
+
+  /* function exit code */
+  {
+    Py_ssize_t __pyx_temp;
+    for (__pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
+      __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
+    }
+  }
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_7browser_8Purroser_8toggle_fullscreen(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_web_view) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  unsigned int __pyx_t_4;
+  int __pyx_t_5;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("toggle_fullscreen", 1);
+
+  /* "browser.pyx":78
+ * 
+ *     def toggle_fullscreen(self, web_view):
+ *         if self.check_fullscreen_support(web_view):             # <<<<<<<<<<<<<<
+ *             web_view.showFullScreen()
+ *         else:
+ */
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_check_fullscreen_support); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 78, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = NULL;
+  __pyx_t_4 = 0;
+  #if CYTHON_UNPACK_METHODS
+  if (likely(PyMethod_Check(__pyx_t_2))) {
+    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_2);
+    if (likely(__pyx_t_3)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+      __Pyx_INCREF(__pyx_t_3);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_2, function);
+      __pyx_t_4 = 1;
+    }
+  }
+  #endif
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_v_web_view};
+    __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
+    __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 78, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  }
+  __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 78, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  if (__pyx_t_5) {
+
+    /* "browser.pyx":79
+ *     def toggle_fullscreen(self, web_view):
+ *         if self.check_fullscreen_support(web_view):
+ *             web_view.showFullScreen()             # <<<<<<<<<<<<<<
+ *         else:
+ *             print("Fullscreen not supported.")
+ */
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_web_view, __pyx_n_s_showFullScreen); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 79, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __pyx_t_3 = NULL;
+    __pyx_t_4 = 0;
+    #if CYTHON_UNPACK_METHODS
+    if (likely(PyMethod_Check(__pyx_t_2))) {
+      __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_2);
+      if (likely(__pyx_t_3)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+        __Pyx_INCREF(__pyx_t_3);
+        __Pyx_INCREF(function);
+        __Pyx_DECREF_SET(__pyx_t_2, function);
+        __pyx_t_4 = 1;
+      }
+    }
+    #endif
+    {
+      PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
+      __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
+      __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 79, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    }
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+    /* "browser.pyx":78
+ * 
+ *     def toggle_fullscreen(self, web_view):
+ *         if self.check_fullscreen_support(web_view):             # <<<<<<<<<<<<<<
+ *             web_view.showFullScreen()
+ *         else:
+ */
+    goto __pyx_L3;
+  }
+
+  /* "browser.pyx":81
+ *             web_view.showFullScreen()
+ *         else:
+ *             print("Fullscreen not supported.")             # <<<<<<<<<<<<<<
+ * 
+ *     def home(self):
+ */
+  /*else*/ {
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_print, __pyx_tuple__2, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 81, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  }
+  __pyx_L3:;
+
+  /* "browser.pyx":77
+ *         web_view.page().runJavaScript(js_code)
+ * 
+ *     def toggle_fullscreen(self, web_view):             # <<<<<<<<<<<<<<
+ *         if self.check_fullscreen_support(web_view):
+ *             web_view.showFullScreen()
+ */
+
+  /* function exit code */
+  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_AddTraceback("browser.Purroser.toggle_fullscreen", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "browser.pyx":83
+ *             print("Fullscreen not supported.")
  * 
  *     def home(self):             # <<<<<<<<<<<<<<
  *         if self.tabs.count() == 0:
@@ -4676,15 +5743,15 @@ static PyObject *__pyx_pf_7browser_8Purroser_2add_toolbar_actions(CYTHON_UNUSED 
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7browser_8Purroser_5home(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_7browser_8Purroser_11home(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_7browser_8Purroser_5home = {"home", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7browser_8Purroser_5home, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_7browser_8Purroser_5home(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_7browser_8Purroser_11home = {"home", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7browser_8Purroser_11home, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_7browser_8Purroser_11home(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -4728,12 +5795,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 50, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 83, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "home") < 0)) __PYX_ERR(0, 50, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "home") < 0)) __PYX_ERR(0, 83, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -4744,7 +5811,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("home", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 50, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("home", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 83, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -4758,7 +5825,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_7browser_8Purroser_4home(__pyx_self, __pyx_v_self);
+  __pyx_r = __pyx_pf_7browser_8Purroser_10home(__pyx_self, __pyx_v_self);
 
   /* function exit code */
   {
@@ -4771,7 +5838,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7browser_8Purroser_4home(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self) {
+static PyObject *__pyx_pf_7browser_8Purroser_10home(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -4787,16 +5854,16 @@ static PyObject *__pyx_pf_7browser_8Purroser_4home(CYTHON_UNUSED PyObject *__pyx
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("home", 1);
 
-  /* "browser.pyx":51
+  /* "browser.pyx":84
  * 
  *     def home(self):
  *         if self.tabs.count() == 0:             # <<<<<<<<<<<<<<
  *             self.add_tab(URL)
  *         self.tabs.currentWidget().setUrl(QUrl(URL))
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_tabs); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 51, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_tabs); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 84, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_count); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 51, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_count); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 84, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -4817,24 +5884,24 @@ static PyObject *__pyx_pf_7browser_8Purroser_4home(CYTHON_UNUSED PyObject *__pyx
     PyObject *__pyx_callargs[2] = {__pyx_t_2, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 51, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 84, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
-  __pyx_t_5 = (__Pyx_PyInt_BoolEqObjC(__pyx_t_1, __pyx_int_0, 0, 0)); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 51, __pyx_L1_error)
+  __pyx_t_5 = (__Pyx_PyInt_BoolEqObjC(__pyx_t_1, __pyx_int_0, 0, 0)); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 84, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_5) {
 
-    /* "browser.pyx":52
+    /* "browser.pyx":85
  *     def home(self):
  *         if self.tabs.count() == 0:
  *             self.add_tab(URL)             # <<<<<<<<<<<<<<
  *         self.tabs.currentWidget().setUrl(QUrl(URL))
  * 
  */
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_add_tab); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 52, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_add_tab); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 85, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_URL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 52, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_URL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 85, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_6 = NULL;
     __pyx_t_4 = 0;
@@ -4855,13 +5922,13 @@ static PyObject *__pyx_pf_7browser_8Purroser_4home(CYTHON_UNUSED PyObject *__pyx
       __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
       __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 52, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 85, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "browser.pyx":51
+    /* "browser.pyx":84
  * 
  *     def home(self):
  *         if self.tabs.count() == 0:             # <<<<<<<<<<<<<<
@@ -4870,16 +5937,16 @@ static PyObject *__pyx_pf_7browser_8Purroser_4home(CYTHON_UNUSED PyObject *__pyx
  */
   }
 
-  /* "browser.pyx":53
+  /* "browser.pyx":86
  *         if self.tabs.count() == 0:
  *             self.add_tab(URL)
  *         self.tabs.currentWidget().setUrl(QUrl(URL))             # <<<<<<<<<<<<<<
  * 
  *     def add_tab(self, url=URL):
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_tabs); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 53, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_tabs); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 86, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_currentWidget); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 53, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_currentWidget); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 86, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -4900,16 +5967,16 @@ static PyObject *__pyx_pf_7browser_8Purroser_4home(CYTHON_UNUSED PyObject *__pyx
     PyObject *__pyx_callargs[2] = {__pyx_t_2, NULL};
     __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_6, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 53, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 86, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   }
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_setUrl); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 53, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_setUrl); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 86, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_QUrl); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 53, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_QUrl); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 86, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_URL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 53, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_URL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 86, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __pyx_t_8 = NULL;
   __pyx_t_4 = 0;
@@ -4930,7 +5997,7 @@ static PyObject *__pyx_pf_7browser_8Purroser_4home(CYTHON_UNUSED PyObject *__pyx
     __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 53, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 86, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
@@ -4953,14 +6020,14 @@ static PyObject *__pyx_pf_7browser_8Purroser_4home(CYTHON_UNUSED PyObject *__pyx
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_6, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 53, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 86, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "browser.pyx":50
- *         self.toolbar.addWidget(self.url_bar)
+  /* "browser.pyx":83
+ *             print("Fullscreen not supported.")
  * 
  *     def home(self):             # <<<<<<<<<<<<<<
  *         if self.tabs.count() == 0:
@@ -4985,7 +6052,7 @@ static PyObject *__pyx_pf_7browser_8Purroser_4home(CYTHON_UNUSED PyObject *__pyx
   return __pyx_r;
 }
 
-/* "browser.pyx":55
+/* "browser.pyx":88
  *         self.tabs.currentWidget().setUrl(QUrl(URL))
  * 
  *     def add_tab(self, url=URL):             # <<<<<<<<<<<<<<
@@ -5003,18 +6070,18 @@ static PyObject *__pyx_pf_7browser___defaults__(CYTHON_UNUSED PyObject *__pyx_se
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__defaults__", 1);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 55, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 88, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__Pyx_CyFunction_Defaults(__pyx_defaults, __pyx_self)->__pyx_arg_url);
   __Pyx_GIVEREF(__Pyx_CyFunction_Defaults(__pyx_defaults, __pyx_self)->__pyx_arg_url);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __Pyx_CyFunction_Defaults(__pyx_defaults, __pyx_self)->__pyx_arg_url)) __PYX_ERR(0, 55, __pyx_L1_error);
-  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 55, __pyx_L1_error)
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __Pyx_CyFunction_Defaults(__pyx_defaults, __pyx_self)->__pyx_arg_url)) __PYX_ERR(0, 88, __pyx_L1_error);
+  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 88, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_GIVEREF(__pyx_t_1);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_1)) __PYX_ERR(0, 55, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_1)) __PYX_ERR(0, 88, __pyx_L1_error);
   __Pyx_INCREF(Py_None);
   __Pyx_GIVEREF(Py_None);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 1, Py_None)) __PYX_ERR(0, 55, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 1, Py_None)) __PYX_ERR(0, 88, __pyx_L1_error);
   __pyx_t_1 = 0;
   __pyx_r = __pyx_t_2;
   __pyx_t_2 = 0;
@@ -5033,15 +6100,15 @@ static PyObject *__pyx_pf_7browser___defaults__(CYTHON_UNUSED PyObject *__pyx_se
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7browser_8Purroser_7add_tab(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_7browser_8Purroser_13add_tab(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_7browser_8Purroser_7add_tab = {"add_tab", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7browser_8Purroser_7add_tab, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_7browser_8Purroser_7add_tab(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_7browser_8Purroser_13add_tab = {"add_tab", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7browser_8Purroser_13add_tab, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_7browser_8Purroser_13add_tab(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -5090,19 +6157,19 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 55, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 88, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
         if (kw_args > 0) {
           PyObject* value = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_url);
           if (value) { values[1] = __Pyx_Arg_NewRef_FASTCALL(value); kw_args--; }
-          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 55, __pyx_L3_error)
+          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 88, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "add_tab") < 0)) __PYX_ERR(0, 55, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "add_tab") < 0)) __PYX_ERR(0, 88, __pyx_L3_error)
       }
     } else {
       switch (__pyx_nargs) {
@@ -5118,7 +6185,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("add_tab", 0, 1, 2, __pyx_nargs); __PYX_ERR(0, 55, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("add_tab", 0, 1, 2, __pyx_nargs); __PYX_ERR(0, 88, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -5132,7 +6199,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_7browser_8Purroser_6add_tab(__pyx_self, __pyx_v_self, __pyx_v_url);
+  __pyx_r = __pyx_pf_7browser_8Purroser_12add_tab(__pyx_self, __pyx_v_self, __pyx_v_url);
 
   /* function exit code */
   {
@@ -5145,7 +6212,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-/* "browser.pyx":66
+/* "browser.pyx":99
  *         self.tabs.addTab(web_view, tab_label)
  *         self.tabs.setCurrentWidget(web_view)
  *         web_view.urlChanged.connect(lambda q: self.url_bar.setText(q.toString()))             # <<<<<<<<<<<<<<
@@ -5154,15 +6221,15 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7browser_8Purroser_7add_tab_lambda1(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_7browser_8Purroser_7add_tab_lambda2(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_7browser_8Purroser_7add_tab_lambda1 = {"lambda1", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7browser_8Purroser_7add_tab_lambda1, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_7browser_8Purroser_7add_tab_lambda1(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_7browser_8Purroser_7add_tab_lambda2 = {"lambda2", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7browser_8Purroser_7add_tab_lambda2, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_7browser_8Purroser_7add_tab_lambda2(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -5180,7 +6247,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   int __pyx_clineno = 0;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("lambda1 (wrapper)", 0);
+  __Pyx_RefNannySetupContext("lambda2 (wrapper)", 0);
   #if !CYTHON_METH_FASTCALL
   #if CYTHON_ASSUME_SAFE_MACROS
   __pyx_nargs = PyTuple_GET_SIZE(__pyx_args);
@@ -5206,12 +6273,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 66, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 99, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "lambda1") < 0)) __PYX_ERR(0, 66, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "lambda2") < 0)) __PYX_ERR(0, 99, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -5222,7 +6289,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("lambda1", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 66, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("lambda2", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 99, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -5232,11 +6299,11 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
       __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
     }
   }
-  __Pyx_AddTraceback("browser.Purroser.add_tab.lambda1", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("browser.Purroser.add_tab.lambda2", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_lambda_funcdef_lambda1(__pyx_self, __pyx_v_q);
+  __pyx_r = __pyx_lambda_funcdef_lambda2(__pyx_self, __pyx_v_q);
 
   /* function exit code */
   {
@@ -5249,9 +6316,9 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_lambda_funcdef_lambda1(PyObject *__pyx_self, PyObject *__pyx_v_q) {
-  struct __pyx_obj_7browser___pyx_scope_struct__add_tab *__pyx_cur_scope;
-  struct __pyx_obj_7browser___pyx_scope_struct__add_tab *__pyx_outer_scope;
+static PyObject *__pyx_lambda_funcdef_lambda2(PyObject *__pyx_self, PyObject *__pyx_v_q) {
+  struct __pyx_obj_7browser___pyx_scope_struct_1_add_tab *__pyx_cur_scope;
+  struct __pyx_obj_7browser___pyx_scope_struct_1_add_tab *__pyx_outer_scope;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -5263,17 +6330,17 @@ static PyObject *__pyx_lambda_funcdef_lambda1(PyObject *__pyx_self, PyObject *__
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("lambda1", 1);
-  __pyx_outer_scope = (struct __pyx_obj_7browser___pyx_scope_struct__add_tab *) __Pyx_CyFunction_GetClosure(__pyx_self);
+  __Pyx_RefNannySetupContext("lambda2", 1);
+  __pyx_outer_scope = (struct __pyx_obj_7browser___pyx_scope_struct_1_add_tab *) __Pyx_CyFunction_GetClosure(__pyx_self);
   __pyx_cur_scope = __pyx_outer_scope;
   __Pyx_XDECREF(__pyx_r);
-  if (unlikely(!__pyx_cur_scope->__pyx_v_self)) { __Pyx_RaiseClosureNameError("self"); __PYX_ERR(0, 66, __pyx_L1_error) }
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_url_bar); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 66, __pyx_L1_error)
+  if (unlikely(!__pyx_cur_scope->__pyx_v_self)) { __Pyx_RaiseClosureNameError("self"); __PYX_ERR(0, 99, __pyx_L1_error) }
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_url_bar); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 99, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_setText); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 66, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_setText); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 99, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_q, __pyx_n_s_toString); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 66, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_q, __pyx_n_s_toString); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 99, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_5 = NULL;
   __pyx_t_6 = 0;
@@ -5293,7 +6360,7 @@ static PyObject *__pyx_lambda_funcdef_lambda1(PyObject *__pyx_self, PyObject *__
     PyObject *__pyx_callargs[2] = {__pyx_t_5, NULL};
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_6, 0+__pyx_t_6);
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 66, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 99, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   }
@@ -5316,7 +6383,7 @@ static PyObject *__pyx_lambda_funcdef_lambda1(PyObject *__pyx_self, PyObject *__
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_6, 1+__pyx_t_6);
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 66, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 99, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
@@ -5331,7 +6398,7 @@ static PyObject *__pyx_lambda_funcdef_lambda1(PyObject *__pyx_self, PyObject *__
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_AddTraceback("browser.Purroser.add_tab.lambda1", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("browser.Purroser.add_tab.lambda2", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -5339,7 +6406,7 @@ static PyObject *__pyx_lambda_funcdef_lambda1(PyObject *__pyx_self, PyObject *__
   return __pyx_r;
 }
 
-/* "browser.pyx":55
+/* "browser.pyx":88
  *         self.tabs.currentWidget().setUrl(QUrl(URL))
  * 
  *     def add_tab(self, url=URL):             # <<<<<<<<<<<<<<
@@ -5347,8 +6414,8 @@ static PyObject *__pyx_lambda_funcdef_lambda1(PyObject *__pyx_self, PyObject *__
  *         if isinstance(url, str) and url:
  */
 
-static PyObject *__pyx_pf_7browser_8Purroser_6add_tab(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_url) {
-  struct __pyx_obj_7browser___pyx_scope_struct__add_tab *__pyx_cur_scope;
+static PyObject *__pyx_pf_7browser_8Purroser_12add_tab(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_url) {
+  struct __pyx_obj_7browser___pyx_scope_struct_1_add_tab *__pyx_cur_scope;
   PyObject *__pyx_v_web_view = NULL;
   PyObject *__pyx_v_tab_label = NULL;
   PyObject *__pyx_r = NULL;
@@ -5366,11 +6433,11 @@ static PyObject *__pyx_pf_7browser_8Purroser_6add_tab(CYTHON_UNUSED PyObject *__
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("add_tab", 0);
-  __pyx_cur_scope = (struct __pyx_obj_7browser___pyx_scope_struct__add_tab *)__pyx_tp_new_7browser___pyx_scope_struct__add_tab(__pyx_ptype_7browser___pyx_scope_struct__add_tab, __pyx_empty_tuple, NULL);
+  __pyx_cur_scope = (struct __pyx_obj_7browser___pyx_scope_struct_1_add_tab *)__pyx_tp_new_7browser___pyx_scope_struct_1_add_tab(__pyx_ptype_7browser___pyx_scope_struct_1_add_tab, __pyx_empty_tuple, NULL);
   if (unlikely(!__pyx_cur_scope)) {
-    __pyx_cur_scope = ((struct __pyx_obj_7browser___pyx_scope_struct__add_tab *)Py_None);
+    __pyx_cur_scope = ((struct __pyx_obj_7browser___pyx_scope_struct_1_add_tab *)Py_None);
     __Pyx_INCREF(Py_None);
-    __PYX_ERR(0, 55, __pyx_L1_error)
+    __PYX_ERR(0, 88, __pyx_L1_error)
   } else {
     __Pyx_GOTREF((PyObject *)__pyx_cur_scope);
   }
@@ -5378,14 +6445,14 @@ static PyObject *__pyx_pf_7browser_8Purroser_6add_tab(CYTHON_UNUSED PyObject *__
   __Pyx_INCREF(__pyx_cur_scope->__pyx_v_self);
   __Pyx_GIVEREF(__pyx_cur_scope->__pyx_v_self);
 
-  /* "browser.pyx":56
+  /* "browser.pyx":89
  * 
  *     def add_tab(self, url=URL):
  *         web_view = QWebEngineView()             # <<<<<<<<<<<<<<
  *         if isinstance(url, str) and url:
  *             web_view.setUrl(QUrl(url))
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_QWebEngineView); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 56, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_QWebEngineView); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 89, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
@@ -5405,41 +6472,41 @@ static PyObject *__pyx_pf_7browser_8Purroser_6add_tab(CYTHON_UNUSED PyObject *__
     PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 56, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 89, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
   __pyx_v_web_view = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "browser.pyx":57
+  /* "browser.pyx":90
  *     def add_tab(self, url=URL):
  *         web_view = QWebEngineView()
  *         if isinstance(url, str) and url:             # <<<<<<<<<<<<<<
  *             web_view.setUrl(QUrl(url))
  *         else:
  */
-  __pyx_t_6 = PyString_Check(__pyx_v_url); 
+  __pyx_t_6 = PyUnicode_Check(__pyx_v_url); 
   if (__pyx_t_6) {
   } else {
     __pyx_t_5 = __pyx_t_6;
     goto __pyx_L4_bool_binop_done;
   }
-  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_v_url); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 57, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_v_url); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 90, __pyx_L1_error)
   __pyx_t_5 = __pyx_t_6;
   __pyx_L4_bool_binop_done:;
   if (__pyx_t_5) {
 
-    /* "browser.pyx":58
+    /* "browser.pyx":91
  *         web_view = QWebEngineView()
  *         if isinstance(url, str) and url:
  *             web_view.setUrl(QUrl(url))             # <<<<<<<<<<<<<<
  *         else:
  *             web_view.setUrl(QUrl(URL))
  */
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_web_view, __pyx_n_s_setUrl); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 58, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_web_view, __pyx_n_s_setUrl); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 91, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_QUrl); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 58, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_QUrl); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 91, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __pyx_t_8 = NULL;
     __pyx_t_4 = 0;
@@ -5459,7 +6526,7 @@ static PyObject *__pyx_pf_7browser_8Purroser_6add_tab(CYTHON_UNUSED PyObject *__
       PyObject *__pyx_callargs[2] = {__pyx_t_8, __pyx_v_url};
       __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_7, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
       __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
-      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 58, __pyx_L1_error)
+      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 91, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     }
@@ -5482,13 +6549,13 @@ static PyObject *__pyx_pf_7browser_8Purroser_6add_tab(CYTHON_UNUSED PyObject *__
       __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
       __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 58, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 91, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "browser.pyx":57
+    /* "browser.pyx":90
  *     def add_tab(self, url=URL):
  *         web_view = QWebEngineView()
  *         if isinstance(url, str) and url:             # <<<<<<<<<<<<<<
@@ -5498,7 +6565,7 @@ static PyObject *__pyx_pf_7browser_8Purroser_6add_tab(CYTHON_UNUSED PyObject *__
     goto __pyx_L3;
   }
 
-  /* "browser.pyx":60
+  /* "browser.pyx":93
  *             web_view.setUrl(QUrl(url))
  *         else:
  *             web_view.setUrl(QUrl(URL))             # <<<<<<<<<<<<<<
@@ -5506,11 +6573,11 @@ static PyObject *__pyx_pf_7browser_8Purroser_6add_tab(CYTHON_UNUSED PyObject *__
  *         web_view.setStyleSheet("background-color: black; color: white;")
  */
   /*else*/ {
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_web_view, __pyx_n_s_setUrl); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 60, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_web_view, __pyx_n_s_setUrl); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 93, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_QUrl); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 60, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_QUrl); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 93, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_n_s_URL); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 60, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_n_s_URL); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 93, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     __pyx_t_9 = NULL;
     __pyx_t_4 = 0;
@@ -5531,7 +6598,7 @@ static PyObject *__pyx_pf_7browser_8Purroser_6add_tab(CYTHON_UNUSED PyObject *__
       __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_7, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
       __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 60, __pyx_L1_error)
+      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 93, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     }
@@ -5554,7 +6621,7 @@ static PyObject *__pyx_pf_7browser_8Purroser_6add_tab(CYTHON_UNUSED PyObject *__
       __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
       __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 60, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 93, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     }
@@ -5562,14 +6629,14 @@ static PyObject *__pyx_pf_7browser_8Purroser_6add_tab(CYTHON_UNUSED PyObject *__
   }
   __pyx_L3:;
 
-  /* "browser.pyx":62
+  /* "browser.pyx":95
  *             web_view.setUrl(QUrl(URL))
  * 
  *         web_view.setStyleSheet("background-color: black; color: white;")             # <<<<<<<<<<<<<<
  *         tab_label = url.split("//")[-1] if isinstance(url, str) and url else "New Tab"
  *         self.tabs.addTab(web_view, tab_label)
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_web_view, __pyx_n_s_setStyleSheet); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 62, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_web_view, __pyx_n_s_setStyleSheet); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 95, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
@@ -5586,33 +6653,33 @@ static PyObject *__pyx_pf_7browser_8Purroser_6add_tab(CYTHON_UNUSED PyObject *__
   }
   #endif
   {
-    PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_kp_s_background_color_black_color_whi};
+    PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_kp_u_background_color_black_color_whi};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 62, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 95, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "browser.pyx":63
+  /* "browser.pyx":96
  * 
  *         web_view.setStyleSheet("background-color: black; color: white;")
  *         tab_label = url.split("//")[-1] if isinstance(url, str) and url else "New Tab"             # <<<<<<<<<<<<<<
  *         self.tabs.addTab(web_view, tab_label)
  *         self.tabs.setCurrentWidget(web_view)
  */
-  __pyx_t_6 = PyString_Check(__pyx_v_url); 
+  __pyx_t_6 = PyUnicode_Check(__pyx_v_url); 
   if (__pyx_t_6) {
   } else {
     __pyx_t_5 = __pyx_t_6;
     goto __pyx_L6_bool_binop_done;
   }
-  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_v_url); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 63, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_v_url); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 96, __pyx_L1_error)
   __pyx_t_5 = __pyx_t_6;
   __pyx_L6_bool_binop_done:;
   if (__pyx_t_5) {
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_url, __pyx_n_s_split); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 63, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_url, __pyx_n_s_split); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 96, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_7 = NULL;
     __pyx_t_4 = 0;
@@ -5629,35 +6696,35 @@ static PyObject *__pyx_pf_7browser_8Purroser_6add_tab(CYTHON_UNUSED PyObject *__
     }
     #endif
     {
-      PyObject *__pyx_callargs[2] = {__pyx_t_7, __pyx_kp_s__2};
+      PyObject *__pyx_callargs[2] = {__pyx_t_7, __pyx_kp_u__3};
       __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
       __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 63, __pyx_L1_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 96, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
-    __pyx_t_3 = __Pyx_GetItemInt(__pyx_t_2, -1L, long, 1, __Pyx_PyInt_From_long, 0, 1, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 63, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_GetItemInt(__pyx_t_2, -1L, long, 1, __Pyx_PyInt_From_long, 0, 1, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 96, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_t_1 = __pyx_t_3;
     __pyx_t_3 = 0;
   } else {
-    __Pyx_INCREF(__pyx_kp_s_New_Tab);
-    __pyx_t_1 = __pyx_kp_s_New_Tab;
+    __Pyx_INCREF(__pyx_kp_u_New_Tab);
+    __pyx_t_1 = __pyx_kp_u_New_Tab;
   }
   __pyx_v_tab_label = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "browser.pyx":64
+  /* "browser.pyx":97
  *         web_view.setStyleSheet("background-color: black; color: white;")
  *         tab_label = url.split("//")[-1] if isinstance(url, str) and url else "New Tab"
  *         self.tabs.addTab(web_view, tab_label)             # <<<<<<<<<<<<<<
  *         self.tabs.setCurrentWidget(web_view)
  *         web_view.urlChanged.connect(lambda q: self.url_bar.setText(q.toString()))
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_tabs); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 64, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_tabs); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 97, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_addTab); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 64, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_addTab); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 97, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -5678,22 +6745,22 @@ static PyObject *__pyx_pf_7browser_8Purroser_6add_tab(CYTHON_UNUSED PyObject *__
     PyObject *__pyx_callargs[3] = {__pyx_t_3, __pyx_v_web_view, __pyx_v_tab_label};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 2+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 64, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 97, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "browser.pyx":65
+  /* "browser.pyx":98
  *         tab_label = url.split("//")[-1] if isinstance(url, str) and url else "New Tab"
  *         self.tabs.addTab(web_view, tab_label)
  *         self.tabs.setCurrentWidget(web_view)             # <<<<<<<<<<<<<<
  *         web_view.urlChanged.connect(lambda q: self.url_bar.setText(q.toString()))
  * 
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_tabs); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 65, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_tabs); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 98, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_setCurrentWidget); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 65, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_setCurrentWidget); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 98, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -5714,25 +6781,25 @@ static PyObject *__pyx_pf_7browser_8Purroser_6add_tab(CYTHON_UNUSED PyObject *__
     PyObject *__pyx_callargs[2] = {__pyx_t_2, __pyx_v_web_view};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 65, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 98, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "browser.pyx":66
+  /* "browser.pyx":99
  *         self.tabs.addTab(web_view, tab_label)
  *         self.tabs.setCurrentWidget(web_view)
  *         web_view.urlChanged.connect(lambda q: self.url_bar.setText(q.toString()))             # <<<<<<<<<<<<<<
  * 
  *     def close_current_tab(self, *args):
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_web_view, __pyx_n_s_urlChanged); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 66, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_web_view, __pyx_n_s_urlChanged); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 99, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_connect); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 66, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_connect); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 99, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_7browser_8Purroser_7add_tab_lambda1, 0, __pyx_n_s_Purroser_add_tab_locals_lambda, ((PyObject*)__pyx_cur_scope), __pyx_n_s_browser, __pyx_d, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 66, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_7browser_8Purroser_7add_tab_lambda2, 0, __pyx_n_s_Purroser_add_tab_locals_lambda, ((PyObject*)__pyx_cur_scope), __pyx_n_s_browser, __pyx_d, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 99, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_7 = NULL;
   __pyx_t_4 = 0;
@@ -5753,13 +6820,13 @@ static PyObject *__pyx_pf_7browser_8Purroser_6add_tab(CYTHON_UNUSED PyObject *__
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 66, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 99, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "browser.pyx":55
+  /* "browser.pyx":88
  *         self.tabs.currentWidget().setUrl(QUrl(URL))
  * 
  *     def add_tab(self, url=URL):             # <<<<<<<<<<<<<<
@@ -5788,7 +6855,7 @@ static PyObject *__pyx_pf_7browser_8Purroser_6add_tab(CYTHON_UNUSED PyObject *__
   return __pyx_r;
 }
 
-/* "browser.pyx":68
+/* "browser.pyx":101
  *         web_view.urlChanged.connect(lambda q: self.url_bar.setText(q.toString()))
  * 
  *     def close_current_tab(self, *args):             # <<<<<<<<<<<<<<
@@ -5797,15 +6864,15 @@ static PyObject *__pyx_pf_7browser_8Purroser_6add_tab(CYTHON_UNUSED PyObject *__
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7browser_8Purroser_9close_current_tab(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_7browser_8Purroser_15close_current_tab(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_7browser_8Purroser_9close_current_tab = {"close_current_tab", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7browser_8Purroser_9close_current_tab, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_7browser_8Purroser_9close_current_tab(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_7browser_8Purroser_15close_current_tab = {"close_current_tab", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7browser_8Purroser_15close_current_tab, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_7browser_8Purroser_15close_current_tab(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -5856,13 +6923,13 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 68, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 101, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
         const Py_ssize_t used_pos_args = (kwd_pos_args < 1) ? kwd_pos_args : 1;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, used_pos_args, "close_current_tab") < 0)) __PYX_ERR(0, 68, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, used_pos_args, "close_current_tab") < 0)) __PYX_ERR(0, 101, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs < 1)) {
       goto __pyx_L5_argtuple_error;
@@ -5873,7 +6940,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("close_current_tab", 0, 1, 1, __pyx_nargs); __PYX_ERR(0, 68, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("close_current_tab", 0, 1, 1, __pyx_nargs); __PYX_ERR(0, 101, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -5888,7 +6955,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_7browser_8Purroser_8close_current_tab(__pyx_self, __pyx_v_self, __pyx_v_args);
+  __pyx_r = __pyx_pf_7browser_8Purroser_14close_current_tab(__pyx_self, __pyx_v_self, __pyx_v_args);
 
   /* function exit code */
   __Pyx_DECREF(__pyx_v_args);
@@ -5902,7 +6969,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7browser_8Purroser_8close_current_tab(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v_args) {
+static PyObject *__pyx_pf_7browser_8Purroser_14close_current_tab(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v_args) {
   PyObject *__pyx_v_current_index = NULL;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -5916,16 +6983,16 @@ static PyObject *__pyx_pf_7browser_8Purroser_8close_current_tab(CYTHON_UNUSED Py
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("close_current_tab", 1);
 
-  /* "browser.pyx":69
+  /* "browser.pyx":102
  * 
  *     def close_current_tab(self, *args):
  *         current_index = self.tabs.currentIndex()             # <<<<<<<<<<<<<<
  *         if current_index != -1:
  *             self.tabs.removeTab(current_index)
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_tabs); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 69, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_tabs); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 102, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_currentIndex); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 69, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_currentIndex); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 102, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -5946,33 +7013,33 @@ static PyObject *__pyx_pf_7browser_8Purroser_8close_current_tab(CYTHON_UNUSED Py
     PyObject *__pyx_callargs[2] = {__pyx_t_2, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 69, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 102, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
   __pyx_v_current_index = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "browser.pyx":70
+  /* "browser.pyx":103
  *     def close_current_tab(self, *args):
  *         current_index = self.tabs.currentIndex()
  *         if current_index != -1:             # <<<<<<<<<<<<<<
  *             self.tabs.removeTab(current_index)
  * 
  */
-  __pyx_t_5 = (__Pyx_PyInt_BoolNeObjC(__pyx_v_current_index, __pyx_int_neg_1, -1L, 0)); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 70, __pyx_L1_error)
+  __pyx_t_5 = (__Pyx_PyInt_BoolNeObjC(__pyx_v_current_index, __pyx_int_neg_1, -1L, 0)); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 103, __pyx_L1_error)
   if (__pyx_t_5) {
 
-    /* "browser.pyx":71
+    /* "browser.pyx":104
  *         current_index = self.tabs.currentIndex()
  *         if current_index != -1:
  *             self.tabs.removeTab(current_index)             # <<<<<<<<<<<<<<
  * 
  *     def navigate_to_url(self):
  */
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_tabs); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 71, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_tabs); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 104, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_removeTab); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 71, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_removeTab); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 104, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_t_3 = NULL;
@@ -5993,13 +7060,13 @@ static PyObject *__pyx_pf_7browser_8Purroser_8close_current_tab(CYTHON_UNUSED Py
       PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_v_current_index};
       __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 71, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 104, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "browser.pyx":70
+    /* "browser.pyx":103
  *     def close_current_tab(self, *args):
  *         current_index = self.tabs.currentIndex()
  *         if current_index != -1:             # <<<<<<<<<<<<<<
@@ -6008,7 +7075,7 @@ static PyObject *__pyx_pf_7browser_8Purroser_8close_current_tab(CYTHON_UNUSED Py
  */
   }
 
-  /* "browser.pyx":68
+  /* "browser.pyx":101
  *         web_view.urlChanged.connect(lambda q: self.url_bar.setText(q.toString()))
  * 
  *     def close_current_tab(self, *args):             # <<<<<<<<<<<<<<
@@ -6032,7 +7099,7 @@ static PyObject *__pyx_pf_7browser_8Purroser_8close_current_tab(CYTHON_UNUSED Py
   return __pyx_r;
 }
 
-/* "browser.pyx":73
+/* "browser.pyx":106
  *             self.tabs.removeTab(current_index)
  * 
  *     def navigate_to_url(self):             # <<<<<<<<<<<<<<
@@ -6041,15 +7108,15 @@ static PyObject *__pyx_pf_7browser_8Purroser_8close_current_tab(CYTHON_UNUSED Py
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7browser_8Purroser_11navigate_to_url(PyObject *__pyx_self, 
+static PyObject *__pyx_pw_7browser_8Purroser_17navigate_to_url(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-static PyMethodDef __pyx_mdef_7browser_8Purroser_11navigate_to_url = {"navigate_to_url", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7browser_8Purroser_11navigate_to_url, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_7browser_8Purroser_11navigate_to_url(PyObject *__pyx_self, 
+static PyMethodDef __pyx_mdef_7browser_8Purroser_17navigate_to_url = {"navigate_to_url", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_7browser_8Purroser_17navigate_to_url, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_7browser_8Purroser_17navigate_to_url(PyObject *__pyx_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -6093,12 +7160,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 73, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 106, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "navigate_to_url") < 0)) __PYX_ERR(0, 73, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "navigate_to_url") < 0)) __PYX_ERR(0, 106, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -6109,7 +7176,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("navigate_to_url", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 73, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("navigate_to_url", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 106, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -6123,7 +7190,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_7browser_8Purroser_10navigate_to_url(__pyx_self, __pyx_v_self);
+  __pyx_r = __pyx_pf_7browser_8Purroser_16navigate_to_url(__pyx_self, __pyx_v_self);
 
   /* function exit code */
   {
@@ -6136,7 +7203,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7browser_8Purroser_10navigate_to_url(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self) {
+static PyObject *__pyx_pf_7browser_8Purroser_16navigate_to_url(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self) {
   PyObject *__pyx_v_url = NULL;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -6153,16 +7220,16 @@ static PyObject *__pyx_pf_7browser_8Purroser_10navigate_to_url(CYTHON_UNUSED PyO
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("navigate_to_url", 1);
 
-  /* "browser.pyx":74
+  /* "browser.pyx":107
  * 
  *     def navigate_to_url(self):
  *         url = self.url_bar.text()             # <<<<<<<<<<<<<<
  *         if not url.startswith("https"):
  *             url = "https://" + url
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_url_bar); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 74, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_url_bar); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 107, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_text); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 74, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_text); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 107, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -6183,21 +7250,21 @@ static PyObject *__pyx_pf_7browser_8Purroser_10navigate_to_url(CYTHON_UNUSED PyO
     PyObject *__pyx_callargs[2] = {__pyx_t_2, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 74, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 107, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
   __pyx_v_url = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "browser.pyx":75
+  /* "browser.pyx":108
  *     def navigate_to_url(self):
  *         url = self.url_bar.text()
  *         if not url.startswith("https"):             # <<<<<<<<<<<<<<
  *             url = "https://" + url
  *         self.tabs.currentWidget().setUrl(QUrl(url))
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_url, __pyx_n_s_startswith); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 75, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_url, __pyx_n_s_startswith); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 108, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_2 = NULL;
   __pyx_t_4 = 0;
@@ -6214,30 +7281,30 @@ static PyObject *__pyx_pf_7browser_8Purroser_10navigate_to_url(CYTHON_UNUSED PyO
   }
   #endif
   {
-    PyObject *__pyx_callargs[2] = {__pyx_t_2, __pyx_n_s_https};
+    PyObject *__pyx_callargs[2] = {__pyx_t_2, __pyx_n_u_https};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 75, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 108, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   }
-  __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 75, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_5 < 0))) __PYX_ERR(0, 108, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_6 = (!__pyx_t_5);
   if (__pyx_t_6) {
 
-    /* "browser.pyx":76
+    /* "browser.pyx":109
  *         url = self.url_bar.text()
  *         if not url.startswith("https"):
  *             url = "https://" + url             # <<<<<<<<<<<<<<
  *         self.tabs.currentWidget().setUrl(QUrl(url))
  */
-    __pyx_t_1 = PyNumber_Add(__pyx_kp_s_https_2, __pyx_v_url); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 76, __pyx_L1_error)
+    __pyx_t_1 = PyNumber_Add(__pyx_kp_u_https_2, __pyx_v_url); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 109, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF_SET(__pyx_v_url, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "browser.pyx":75
+    /* "browser.pyx":108
  *     def navigate_to_url(self):
  *         url = self.url_bar.text()
  *         if not url.startswith("https"):             # <<<<<<<<<<<<<<
@@ -6246,14 +7313,14 @@ static PyObject *__pyx_pf_7browser_8Purroser_10navigate_to_url(CYTHON_UNUSED PyO
  */
   }
 
-  /* "browser.pyx":77
+  /* "browser.pyx":110
  *         if not url.startswith("https"):
  *             url = "https://" + url
  *         self.tabs.currentWidget().setUrl(QUrl(url))             # <<<<<<<<<<<<<<
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_tabs); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 77, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_tabs); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 110, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_currentWidget); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 77, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_currentWidget); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 110, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -6274,14 +7341,14 @@ static PyObject *__pyx_pf_7browser_8Purroser_10navigate_to_url(CYTHON_UNUSED PyO
     PyObject *__pyx_callargs[2] = {__pyx_t_2, NULL};
     __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_7, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 77, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 110, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   }
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_setUrl); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 77, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_setUrl); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 110, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_QUrl); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 77, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_QUrl); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 110, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_8 = NULL;
   __pyx_t_4 = 0;
@@ -6301,7 +7368,7 @@ static PyObject *__pyx_pf_7browser_8Purroser_10navigate_to_url(CYTHON_UNUSED PyO
     PyObject *__pyx_callargs[2] = {__pyx_t_8, __pyx_v_url};
     __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 77, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 110, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
@@ -6324,13 +7391,13 @@ static PyObject *__pyx_pf_7browser_8Purroser_10navigate_to_url(CYTHON_UNUSED PyO
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_7, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 77, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 110, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "browser.pyx":73
+  /* "browser.pyx":106
  *             self.tabs.removeTab(current_index)
  * 
  *     def navigate_to_url(self):             # <<<<<<<<<<<<<<
@@ -6357,20 +7424,20 @@ static PyObject *__pyx_pf_7browser_8Purroser_10navigate_to_url(CYTHON_UNUSED PyO
 }
 
 #if CYTHON_USE_FREELISTS
-static struct __pyx_obj_7browser___pyx_scope_struct__add_tab *__pyx_freelist_7browser___pyx_scope_struct__add_tab[8];
-static int __pyx_freecount_7browser___pyx_scope_struct__add_tab = 0;
+static struct __pyx_obj_7browser___pyx_scope_struct__add_fullscreen_action *__pyx_freelist_7browser___pyx_scope_struct__add_fullscreen_action[8];
+static int __pyx_freecount_7browser___pyx_scope_struct__add_fullscreen_action = 0;
 #endif
 
-static PyObject *__pyx_tp_new_7browser___pyx_scope_struct__add_tab(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+static PyObject *__pyx_tp_new_7browser___pyx_scope_struct__add_fullscreen_action(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
   PyObject *o;
   #if CYTHON_COMPILING_IN_LIMITED_API
   allocfunc alloc_func = (allocfunc)PyType_GetSlot(t, Py_tp_alloc);
   o = alloc_func(t, 0);
   #else
   #if CYTHON_USE_FREELISTS
-  if (likely((int)(__pyx_freecount_7browser___pyx_scope_struct__add_tab > 0) & (int)(t->tp_basicsize == sizeof(struct __pyx_obj_7browser___pyx_scope_struct__add_tab)))) {
-    o = (PyObject*)__pyx_freelist_7browser___pyx_scope_struct__add_tab[--__pyx_freecount_7browser___pyx_scope_struct__add_tab];
-    memset(o, 0, sizeof(struct __pyx_obj_7browser___pyx_scope_struct__add_tab));
+  if (likely((int)(__pyx_freecount_7browser___pyx_scope_struct__add_fullscreen_action > 0) & (int)(t->tp_basicsize == sizeof(struct __pyx_obj_7browser___pyx_scope_struct__add_fullscreen_action)))) {
+    o = (PyObject*)__pyx_freelist_7browser___pyx_scope_struct__add_fullscreen_action[--__pyx_freecount_7browser___pyx_scope_struct__add_fullscreen_action];
+    memset(o, 0, sizeof(struct __pyx_obj_7browser___pyx_scope_struct__add_fullscreen_action));
     (void) PyObject_INIT(o, t);
     PyObject_GC_Track(o);
   } else
@@ -6383,11 +7450,11 @@ static PyObject *__pyx_tp_new_7browser___pyx_scope_struct__add_tab(PyTypeObject 
   return o;
 }
 
-static void __pyx_tp_dealloc_7browser___pyx_scope_struct__add_tab(PyObject *o) {
-  struct __pyx_obj_7browser___pyx_scope_struct__add_tab *p = (struct __pyx_obj_7browser___pyx_scope_struct__add_tab *)o;
+static void __pyx_tp_dealloc_7browser___pyx_scope_struct__add_fullscreen_action(PyObject *o) {
+  struct __pyx_obj_7browser___pyx_scope_struct__add_fullscreen_action *p = (struct __pyx_obj_7browser___pyx_scope_struct__add_fullscreen_action *)o;
   #if CYTHON_USE_TP_FINALIZE
   if (unlikely((PY_VERSION_HEX >= 0x03080000 || __Pyx_PyType_HasFeature(Py_TYPE(o), Py_TPFLAGS_HAVE_FINALIZE)) && __Pyx_PyObject_GetSlot(o, tp_finalize, destructor)) && !__Pyx_PyObject_GC_IsFinalized(o)) {
-    if (__Pyx_PyObject_GetSlot(o, tp_dealloc, destructor) == __pyx_tp_dealloc_7browser___pyx_scope_struct__add_tab) {
+    if (__Pyx_PyObject_GetSlot(o, tp_dealloc, destructor) == __pyx_tp_dealloc_7browser___pyx_scope_struct__add_fullscreen_action) {
       if (PyObject_CallFinalizerFromDealloc(o)) return;
     }
   }
@@ -6395,8 +7462,8 @@ static void __pyx_tp_dealloc_7browser___pyx_scope_struct__add_tab(PyObject *o) {
   PyObject_GC_UnTrack(o);
   Py_CLEAR(p->__pyx_v_self);
   #if CYTHON_USE_FREELISTS
-  if (((int)(__pyx_freecount_7browser___pyx_scope_struct__add_tab < 8) & (int)(Py_TYPE(o)->tp_basicsize == sizeof(struct __pyx_obj_7browser___pyx_scope_struct__add_tab)))) {
-    __pyx_freelist_7browser___pyx_scope_struct__add_tab[__pyx_freecount_7browser___pyx_scope_struct__add_tab++] = ((struct __pyx_obj_7browser___pyx_scope_struct__add_tab *)o);
+  if (((int)(__pyx_freecount_7browser___pyx_scope_struct__add_fullscreen_action < 8) & (int)(Py_TYPE(o)->tp_basicsize == sizeof(struct __pyx_obj_7browser___pyx_scope_struct__add_fullscreen_action)))) {
+    __pyx_freelist_7browser___pyx_scope_struct__add_fullscreen_action[__pyx_freecount_7browser___pyx_scope_struct__add_fullscreen_action++] = ((struct __pyx_obj_7browser___pyx_scope_struct__add_fullscreen_action *)o);
   } else
   #endif
   {
@@ -6411,46 +7478,46 @@ static void __pyx_tp_dealloc_7browser___pyx_scope_struct__add_tab(PyObject *o) {
   }
 }
 
-static int __pyx_tp_traverse_7browser___pyx_scope_struct__add_tab(PyObject *o, visitproc v, void *a) {
+static int __pyx_tp_traverse_7browser___pyx_scope_struct__add_fullscreen_action(PyObject *o, visitproc v, void *a) {
   int e;
-  struct __pyx_obj_7browser___pyx_scope_struct__add_tab *p = (struct __pyx_obj_7browser___pyx_scope_struct__add_tab *)o;
+  struct __pyx_obj_7browser___pyx_scope_struct__add_fullscreen_action *p = (struct __pyx_obj_7browser___pyx_scope_struct__add_fullscreen_action *)o;
   if (p->__pyx_v_self) {
     e = (*v)(p->__pyx_v_self, a); if (e) return e;
   }
   return 0;
 }
 
-static int __pyx_tp_clear_7browser___pyx_scope_struct__add_tab(PyObject *o) {
+static int __pyx_tp_clear_7browser___pyx_scope_struct__add_fullscreen_action(PyObject *o) {
   PyObject* tmp;
-  struct __pyx_obj_7browser___pyx_scope_struct__add_tab *p = (struct __pyx_obj_7browser___pyx_scope_struct__add_tab *)o;
+  struct __pyx_obj_7browser___pyx_scope_struct__add_fullscreen_action *p = (struct __pyx_obj_7browser___pyx_scope_struct__add_fullscreen_action *)o;
   tmp = ((PyObject*)p->__pyx_v_self);
   p->__pyx_v_self = Py_None; Py_INCREF(Py_None);
   Py_XDECREF(tmp);
   return 0;
 }
 #if CYTHON_USE_TYPE_SPECS
-static PyType_Slot __pyx_type_7browser___pyx_scope_struct__add_tab_slots[] = {
-  {Py_tp_dealloc, (void *)__pyx_tp_dealloc_7browser___pyx_scope_struct__add_tab},
-  {Py_tp_traverse, (void *)__pyx_tp_traverse_7browser___pyx_scope_struct__add_tab},
-  {Py_tp_clear, (void *)__pyx_tp_clear_7browser___pyx_scope_struct__add_tab},
-  {Py_tp_new, (void *)__pyx_tp_new_7browser___pyx_scope_struct__add_tab},
+static PyType_Slot __pyx_type_7browser___pyx_scope_struct__add_fullscreen_action_slots[] = {
+  {Py_tp_dealloc, (void *)__pyx_tp_dealloc_7browser___pyx_scope_struct__add_fullscreen_action},
+  {Py_tp_traverse, (void *)__pyx_tp_traverse_7browser___pyx_scope_struct__add_fullscreen_action},
+  {Py_tp_clear, (void *)__pyx_tp_clear_7browser___pyx_scope_struct__add_fullscreen_action},
+  {Py_tp_new, (void *)__pyx_tp_new_7browser___pyx_scope_struct__add_fullscreen_action},
   {0, 0},
 };
-static PyType_Spec __pyx_type_7browser___pyx_scope_struct__add_tab_spec = {
-  "browser.__pyx_scope_struct__add_tab",
-  sizeof(struct __pyx_obj_7browser___pyx_scope_struct__add_tab),
+static PyType_Spec __pyx_type_7browser___pyx_scope_struct__add_fullscreen_action_spec = {
+  "browser.__pyx_scope_struct__add_fullscreen_action",
+  sizeof(struct __pyx_obj_7browser___pyx_scope_struct__add_fullscreen_action),
   0,
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_HAVE_GC|Py_TPFLAGS_HAVE_FINALIZE,
-  __pyx_type_7browser___pyx_scope_struct__add_tab_slots,
+  __pyx_type_7browser___pyx_scope_struct__add_fullscreen_action_slots,
 };
 #else
 
-static PyTypeObject __pyx_type_7browser___pyx_scope_struct__add_tab = {
+static PyTypeObject __pyx_type_7browser___pyx_scope_struct__add_fullscreen_action = {
   PyVarObject_HEAD_INIT(0, 0)
-  "browser.""__pyx_scope_struct__add_tab", /*tp_name*/
-  sizeof(struct __pyx_obj_7browser___pyx_scope_struct__add_tab), /*tp_basicsize*/
+  "browser.""__pyx_scope_struct__add_fullscreen_action", /*tp_name*/
+  sizeof(struct __pyx_obj_7browser___pyx_scope_struct__add_fullscreen_action), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_7browser___pyx_scope_struct__add_tab, /*tp_dealloc*/
+  __pyx_tp_dealloc_7browser___pyx_scope_struct__add_fullscreen_action, /*tp_dealloc*/
   #if PY_VERSION_HEX < 0x030800b4
   0, /*tp_print*/
   #endif
@@ -6477,8 +7544,8 @@ static PyTypeObject __pyx_type_7browser___pyx_scope_struct__add_tab = {
   0, /*tp_as_buffer*/
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_HAVE_GC|Py_TPFLAGS_HAVE_FINALIZE, /*tp_flags*/
   0, /*tp_doc*/
-  __pyx_tp_traverse_7browser___pyx_scope_struct__add_tab, /*tp_traverse*/
-  __pyx_tp_clear_7browser___pyx_scope_struct__add_tab, /*tp_clear*/
+  __pyx_tp_traverse_7browser___pyx_scope_struct__add_fullscreen_action, /*tp_traverse*/
+  __pyx_tp_clear_7browser___pyx_scope_struct__add_fullscreen_action, /*tp_clear*/
   0, /*tp_richcompare*/
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
@@ -6495,7 +7562,181 @@ static PyTypeObject __pyx_type_7browser___pyx_scope_struct__add_tab = {
   #endif
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_7browser___pyx_scope_struct__add_tab, /*tp_new*/
+  __pyx_tp_new_7browser___pyx_scope_struct__add_fullscreen_action, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  #if CYTHON_USE_TP_FINALIZE
+  0, /*tp_finalize*/
+  #else
+  NULL, /*tp_finalize*/
+  #endif
+  #endif
+  #if PY_VERSION_HEX >= 0x030800b1 && (!CYTHON_COMPILING_IN_PYPY || PYPY_VERSION_NUM >= 0x07030800)
+  0, /*tp_vectorcall*/
+  #endif
+  #if __PYX_NEED_TP_PRINT_SLOT == 1
+  0, /*tp_print*/
+  #endif
+  #if PY_VERSION_HEX >= 0x030C0000
+  0, /*tp_watched*/
+  #endif
+  #if PY_VERSION_HEX >= 0x030d00A4
+  0, /*tp_versions_used*/
+  #endif
+  #if CYTHON_COMPILING_IN_PYPY && PY_VERSION_HEX >= 0x03090000 && PY_VERSION_HEX < 0x030a0000
+  0, /*tp_pypy_flags*/
+  #endif
+};
+#endif
+
+#if CYTHON_USE_FREELISTS
+static struct __pyx_obj_7browser___pyx_scope_struct_1_add_tab *__pyx_freelist_7browser___pyx_scope_struct_1_add_tab[8];
+static int __pyx_freecount_7browser___pyx_scope_struct_1_add_tab = 0;
+#endif
+
+static PyObject *__pyx_tp_new_7browser___pyx_scope_struct_1_add_tab(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  PyObject *o;
+  #if CYTHON_COMPILING_IN_LIMITED_API
+  allocfunc alloc_func = (allocfunc)PyType_GetSlot(t, Py_tp_alloc);
+  o = alloc_func(t, 0);
+  #else
+  #if CYTHON_USE_FREELISTS
+  if (likely((int)(__pyx_freecount_7browser___pyx_scope_struct_1_add_tab > 0) & (int)(t->tp_basicsize == sizeof(struct __pyx_obj_7browser___pyx_scope_struct_1_add_tab)))) {
+    o = (PyObject*)__pyx_freelist_7browser___pyx_scope_struct_1_add_tab[--__pyx_freecount_7browser___pyx_scope_struct_1_add_tab];
+    memset(o, 0, sizeof(struct __pyx_obj_7browser___pyx_scope_struct_1_add_tab));
+    (void) PyObject_INIT(o, t);
+    PyObject_GC_Track(o);
+  } else
+  #endif
+  {
+    o = (*t->tp_alloc)(t, 0);
+    if (unlikely(!o)) return 0;
+  }
+  #endif
+  return o;
+}
+
+static void __pyx_tp_dealloc_7browser___pyx_scope_struct_1_add_tab(PyObject *o) {
+  struct __pyx_obj_7browser___pyx_scope_struct_1_add_tab *p = (struct __pyx_obj_7browser___pyx_scope_struct_1_add_tab *)o;
+  #if CYTHON_USE_TP_FINALIZE
+  if (unlikely((PY_VERSION_HEX >= 0x03080000 || __Pyx_PyType_HasFeature(Py_TYPE(o), Py_TPFLAGS_HAVE_FINALIZE)) && __Pyx_PyObject_GetSlot(o, tp_finalize, destructor)) && !__Pyx_PyObject_GC_IsFinalized(o)) {
+    if (__Pyx_PyObject_GetSlot(o, tp_dealloc, destructor) == __pyx_tp_dealloc_7browser___pyx_scope_struct_1_add_tab) {
+      if (PyObject_CallFinalizerFromDealloc(o)) return;
+    }
+  }
+  #endif
+  PyObject_GC_UnTrack(o);
+  Py_CLEAR(p->__pyx_v_self);
+  #if CYTHON_USE_FREELISTS
+  if (((int)(__pyx_freecount_7browser___pyx_scope_struct_1_add_tab < 8) & (int)(Py_TYPE(o)->tp_basicsize == sizeof(struct __pyx_obj_7browser___pyx_scope_struct_1_add_tab)))) {
+    __pyx_freelist_7browser___pyx_scope_struct_1_add_tab[__pyx_freecount_7browser___pyx_scope_struct_1_add_tab++] = ((struct __pyx_obj_7browser___pyx_scope_struct_1_add_tab *)o);
+  } else
+  #endif
+  {
+    #if CYTHON_USE_TYPE_SLOTS || CYTHON_COMPILING_IN_PYPY
+    (*Py_TYPE(o)->tp_free)(o);
+    #else
+    {
+      freefunc tp_free = (freefunc)PyType_GetSlot(Py_TYPE(o), Py_tp_free);
+      if (tp_free) tp_free(o);
+    }
+    #endif
+  }
+}
+
+static int __pyx_tp_traverse_7browser___pyx_scope_struct_1_add_tab(PyObject *o, visitproc v, void *a) {
+  int e;
+  struct __pyx_obj_7browser___pyx_scope_struct_1_add_tab *p = (struct __pyx_obj_7browser___pyx_scope_struct_1_add_tab *)o;
+  if (p->__pyx_v_self) {
+    e = (*v)(p->__pyx_v_self, a); if (e) return e;
+  }
+  return 0;
+}
+
+static int __pyx_tp_clear_7browser___pyx_scope_struct_1_add_tab(PyObject *o) {
+  PyObject* tmp;
+  struct __pyx_obj_7browser___pyx_scope_struct_1_add_tab *p = (struct __pyx_obj_7browser___pyx_scope_struct_1_add_tab *)o;
+  tmp = ((PyObject*)p->__pyx_v_self);
+  p->__pyx_v_self = Py_None; Py_INCREF(Py_None);
+  Py_XDECREF(tmp);
+  return 0;
+}
+#if CYTHON_USE_TYPE_SPECS
+static PyType_Slot __pyx_type_7browser___pyx_scope_struct_1_add_tab_slots[] = {
+  {Py_tp_dealloc, (void *)__pyx_tp_dealloc_7browser___pyx_scope_struct_1_add_tab},
+  {Py_tp_traverse, (void *)__pyx_tp_traverse_7browser___pyx_scope_struct_1_add_tab},
+  {Py_tp_clear, (void *)__pyx_tp_clear_7browser___pyx_scope_struct_1_add_tab},
+  {Py_tp_new, (void *)__pyx_tp_new_7browser___pyx_scope_struct_1_add_tab},
+  {0, 0},
+};
+static PyType_Spec __pyx_type_7browser___pyx_scope_struct_1_add_tab_spec = {
+  "browser.__pyx_scope_struct_1_add_tab",
+  sizeof(struct __pyx_obj_7browser___pyx_scope_struct_1_add_tab),
+  0,
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_HAVE_GC|Py_TPFLAGS_HAVE_FINALIZE,
+  __pyx_type_7browser___pyx_scope_struct_1_add_tab_slots,
+};
+#else
+
+static PyTypeObject __pyx_type_7browser___pyx_scope_struct_1_add_tab = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "browser.""__pyx_scope_struct_1_add_tab", /*tp_name*/
+  sizeof(struct __pyx_obj_7browser___pyx_scope_struct_1_add_tab), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_7browser___pyx_scope_struct_1_add_tab, /*tp_dealloc*/
+  #if PY_VERSION_HEX < 0x030800b4
+  0, /*tp_print*/
+  #endif
+  #if PY_VERSION_HEX >= 0x030800b4
+  0, /*tp_vectorcall_offset*/
+  #endif
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_HAVE_GC|Py_TPFLAGS_HAVE_FINALIZE, /*tp_flags*/
+  0, /*tp_doc*/
+  __pyx_tp_traverse_7browser___pyx_scope_struct_1_add_tab, /*tp_traverse*/
+  __pyx_tp_clear_7browser___pyx_scope_struct_1_add_tab, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  0, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  #if !CYTHON_USE_TYPE_SPECS
+  0, /*tp_dictoffset*/
+  #endif
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_7browser___pyx_scope_struct_1_add_tab, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -6546,20 +7787,27 @@ static PyMethodDef __pyx_methods[] = {
 
 static int __Pyx_CreateStringTabAndInitStrings(void) {
   __Pyx_StringTabEntry __pyx_string_tab[] = {
-    {&__pyx_n_s_Back, __pyx_k_Back, sizeof(__pyx_k_Back), 0, 0, 1, 1},
-    {&__pyx_kp_s_Close_Tab, __pyx_k_Close_Tab, sizeof(__pyx_k_Close_Tab), 0, 0, 1, 0},
-    {&__pyx_n_s_Forward, __pyx_k_Forward, sizeof(__pyx_k_Forward), 0, 0, 1, 1},
-    {&__pyx_n_s_Home, __pyx_k_Home, sizeof(__pyx_k_Home), 0, 0, 1, 1},
-    {&__pyx_kp_s_New_Tab, __pyx_k_New_Tab, sizeof(__pyx_k_New_Tab), 0, 0, 1, 0},
+    {&__pyx_n_u_Back, __pyx_k_Back, sizeof(__pyx_k_Back), 0, 1, 0, 1},
+    {&__pyx_kp_u_Close_Tab, __pyx_k_Close_Tab, sizeof(__pyx_k_Close_Tab), 0, 1, 0, 0},
+    {&__pyx_n_u_Forward, __pyx_k_Forward, sizeof(__pyx_k_Forward), 0, 1, 0, 1},
+    {&__pyx_kp_u_Full_Screen, __pyx_k_Full_Screen, sizeof(__pyx_k_Full_Screen), 0, 1, 0, 0},
+    {&__pyx_kp_u_Fullscreen_not_supported, __pyx_k_Fullscreen_not_supported, sizeof(__pyx_k_Fullscreen_not_supported), 0, 1, 0, 0},
+    {&__pyx_n_u_Home, __pyx_k_Home, sizeof(__pyx_k_Home), 0, 1, 0, 1},
+    {&__pyx_kp_u_New_Tab, __pyx_k_New_Tab, sizeof(__pyx_k_New_Tab), 0, 1, 0, 0},
     {&__pyx_n_s_Purroser, __pyx_k_Purroser, sizeof(__pyx_k_Purroser), 0, 0, 1, 1},
+    {&__pyx_n_u_Purroser, __pyx_k_Purroser, sizeof(__pyx_k_Purroser), 0, 1, 0, 1},
     {&__pyx_n_s_Purroser___init, __pyx_k_Purroser___init, sizeof(__pyx_k_Purroser___init), 0, 0, 1, 1},
+    {&__pyx_n_s_Purroser_add_fullscreen_action, __pyx_k_Purroser_add_fullscreen_action, sizeof(__pyx_k_Purroser_add_fullscreen_action), 0, 0, 1, 1},
+    {&__pyx_n_s_Purroser_add_fullscreen_action_l, __pyx_k_Purroser_add_fullscreen_action_l, sizeof(__pyx_k_Purroser_add_fullscreen_action_l), 0, 0, 1, 1},
     {&__pyx_n_s_Purroser_add_tab, __pyx_k_Purroser_add_tab, sizeof(__pyx_k_Purroser_add_tab), 0, 0, 1, 1},
     {&__pyx_n_s_Purroser_add_tab_locals_lambda, __pyx_k_Purroser_add_tab_locals_lambda, sizeof(__pyx_k_Purroser_add_tab_locals_lambda), 0, 0, 1, 1},
     {&__pyx_n_s_Purroser_add_toolbar_actions, __pyx_k_Purroser_add_toolbar_actions, sizeof(__pyx_k_Purroser_add_toolbar_actions), 0, 0, 1, 1},
     {&__pyx_n_s_Purroser_add_toolbar_actions_loc, __pyx_k_Purroser_add_toolbar_actions_loc, sizeof(__pyx_k_Purroser_add_toolbar_actions_loc), 0, 0, 1, 1},
+    {&__pyx_n_s_Purroser_check_fullscreen_suppor, __pyx_k_Purroser_check_fullscreen_suppor, sizeof(__pyx_k_Purroser_check_fullscreen_suppor), 0, 0, 1, 1},
     {&__pyx_n_s_Purroser_close_current_tab, __pyx_k_Purroser_close_current_tab, sizeof(__pyx_k_Purroser_close_current_tab), 0, 0, 1, 1},
     {&__pyx_n_s_Purroser_home, __pyx_k_Purroser_home, sizeof(__pyx_k_Purroser_home), 0, 0, 1, 1},
     {&__pyx_n_s_Purroser_navigate_to_url, __pyx_k_Purroser_navigate_to_url, sizeof(__pyx_k_Purroser_navigate_to_url), 0, 0, 1, 1},
+    {&__pyx_n_s_Purroser_toggle_fullscreen, __pyx_k_Purroser_toggle_fullscreen, sizeof(__pyx_k_Purroser_toggle_fullscreen), 0, 0, 1, 1},
     {&__pyx_n_s_PyQt5_QtCore, __pyx_k_PyQt5_QtCore, sizeof(__pyx_k_PyQt5_QtCore), 0, 0, 1, 1},
     {&__pyx_n_s_PyQt5_QtGui, __pyx_k_PyQt5_QtGui, sizeof(__pyx_k_PyQt5_QtGui), 0, 0, 1, 1},
     {&__pyx_n_s_PyQt5_QtWebEngineWidgets, __pyx_k_PyQt5_QtWebEngineWidgets, sizeof(__pyx_k_PyQt5_QtWebEngineWidgets), 0, 0, 1, 1},
@@ -6573,22 +7821,25 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_QUrl, __pyx_k_QUrl, sizeof(__pyx_k_QUrl), 0, 0, 1, 1},
     {&__pyx_n_s_QWebEngineView, __pyx_k_QWebEngineView, sizeof(__pyx_k_QWebEngineView), 0, 0, 1, 1},
     {&__pyx_n_s_URL, __pyx_k_URL, sizeof(__pyx_k_URL), 0, 0, 1, 1},
-    {&__pyx_n_s__16, __pyx_k__16, sizeof(__pyx_k__16), 0, 0, 1, 1},
-    {&__pyx_kp_s__2, __pyx_k__2, sizeof(__pyx_k__2), 0, 0, 1, 0},
+    {&__pyx_n_s__23, __pyx_k__23, sizeof(__pyx_k__23), 0, 0, 1, 1},
     {&__pyx_kp_u__3, __pyx_k__3, sizeof(__pyx_k__3), 0, 1, 0, 0},
+    {&__pyx_kp_u__4, __pyx_k__4, sizeof(__pyx_k__4), 0, 1, 0, 0},
     {&__pyx_n_s_addAction, __pyx_k_addAction, sizeof(__pyx_k_addAction), 0, 0, 1, 1},
     {&__pyx_n_s_addTab, __pyx_k_addTab, sizeof(__pyx_k_addTab), 0, 0, 1, 1},
     {&__pyx_n_s_addToolBar, __pyx_k_addToolBar, sizeof(__pyx_k_addToolBar), 0, 0, 1, 1},
     {&__pyx_n_s_addWidget, __pyx_k_addWidget, sizeof(__pyx_k_addWidget), 0, 0, 1, 1},
+    {&__pyx_n_s_add_fullscreen_action, __pyx_k_add_fullscreen_action, sizeof(__pyx_k_add_fullscreen_action), 0, 0, 1, 1},
     {&__pyx_n_s_add_tab, __pyx_k_add_tab, sizeof(__pyx_k_add_tab), 0, 0, 1, 1},
     {&__pyx_n_s_add_toolbar_actions, __pyx_k_add_toolbar_actions, sizeof(__pyx_k_add_toolbar_actions), 0, 0, 1, 1},
     {&__pyx_n_s_app_icon_path, __pyx_k_app_icon_path, sizeof(__pyx_k_app_icon_path), 0, 0, 1, 1},
     {&__pyx_n_s_args, __pyx_k_args, sizeof(__pyx_k_args), 0, 0, 1, 1},
+    {&__pyx_kp_u_assets_purr_png, __pyx_k_assets_purr_png, sizeof(__pyx_k_assets_purr_png), 0, 1, 0, 0},
     {&__pyx_n_s_asyncio_coroutines, __pyx_k_asyncio_coroutines, sizeof(__pyx_k_asyncio_coroutines), 0, 0, 1, 1},
     {&__pyx_n_s_back, __pyx_k_back, sizeof(__pyx_k_back), 0, 0, 1, 1},
     {&__pyx_n_s_back_button, __pyx_k_back_button, sizeof(__pyx_k_back_button), 0, 0, 1, 1},
-    {&__pyx_kp_s_background_color_black_color_whi, __pyx_k_background_color_black_color_whi, sizeof(__pyx_k_background_color_black_color_whi), 0, 0, 1, 0},
+    {&__pyx_kp_u_background_color_black_color_whi, __pyx_k_background_color_black_color_whi, sizeof(__pyx_k_background_color_black_color_whi), 0, 1, 0, 0},
     {&__pyx_n_s_browser, __pyx_k_browser, sizeof(__pyx_k_browser), 0, 0, 1, 1},
+    {&__pyx_n_s_check_fullscreen_support, __pyx_k_check_fullscreen_support, sizeof(__pyx_k_check_fullscreen_support), 0, 0, 1, 1},
     {&__pyx_n_s_checked, __pyx_k_checked, sizeof(__pyx_k_checked), 0, 0, 1, 1},
     {&__pyx_n_s_cline_in_traceback, __pyx_k_cline_in_traceback, sizeof(__pyx_k_cline_in_traceback), 0, 0, 1, 1},
     {&__pyx_n_s_close_current_tab, __pyx_k_close_current_tab, sizeof(__pyx_k_close_current_tab), 0, 0, 1, 1},
@@ -6604,19 +7855,20 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_kp_u_enable, __pyx_k_enable, sizeof(__pyx_k_enable), 0, 1, 0, 0},
     {&__pyx_n_s_forward, __pyx_k_forward, sizeof(__pyx_k_forward), 0, 0, 1, 1},
     {&__pyx_n_s_forward_button, __pyx_k_forward_button, sizeof(__pyx_k_forward_button), 0, 0, 1, 1},
+    {&__pyx_n_s_fullscreen_action, __pyx_k_fullscreen_action, sizeof(__pyx_k_fullscreen_action), 0, 0, 1, 1},
     {&__pyx_kp_u_gc, __pyx_k_gc, sizeof(__pyx_k_gc), 0, 1, 0, 0},
     {&__pyx_n_s_get_styles, __pyx_k_get_styles, sizeof(__pyx_k_get_styles), 0, 0, 1, 1},
     {&__pyx_n_s_home, __pyx_k_home, sizeof(__pyx_k_home), 0, 0, 1, 1},
     {&__pyx_n_s_home_button, __pyx_k_home_button, sizeof(__pyx_k_home_button), 0, 0, 1, 1},
-    {&__pyx_kp_s_home_tristans_Code_Purrooser_as, __pyx_k_home_tristans_Code_Purrooser_as, sizeof(__pyx_k_home_tristans_Code_Purrooser_as), 0, 0, 1, 0},
-    {&__pyx_n_s_https, __pyx_k_https, sizeof(__pyx_k_https), 0, 0, 1, 1},
-    {&__pyx_kp_s_https_2, __pyx_k_https_2, sizeof(__pyx_k_https_2), 0, 0, 1, 0},
-    {&__pyx_kp_s_https_www_qwant_com, __pyx_k_https_www_qwant_com, sizeof(__pyx_k_https_www_qwant_com), 0, 0, 1, 0},
+    {&__pyx_n_u_https, __pyx_k_https, sizeof(__pyx_k_https), 0, 1, 0, 1},
+    {&__pyx_kp_u_https_2, __pyx_k_https_2, sizeof(__pyx_k_https_2), 0, 1, 0, 0},
+    {&__pyx_kp_u_https_www_qwant_com, __pyx_k_https_www_qwant_com, sizeof(__pyx_k_https_www_qwant_com), 0, 1, 0, 0},
     {&__pyx_n_s_import, __pyx_k_import, sizeof(__pyx_k_import), 0, 0, 1, 1},
     {&__pyx_n_s_init, __pyx_k_init, sizeof(__pyx_k_init), 0, 0, 1, 1},
     {&__pyx_n_s_init_subclass, __pyx_k_init_subclass, sizeof(__pyx_k_init_subclass), 0, 0, 1, 1},
     {&__pyx_n_s_is_coroutine, __pyx_k_is_coroutine, sizeof(__pyx_k_is_coroutine), 0, 0, 1, 1},
     {&__pyx_kp_u_isenabled, __pyx_k_isenabled, sizeof(__pyx_k_isenabled), 0, 1, 0, 0},
+    {&__pyx_n_s_js_code, __pyx_k_js_code, sizeof(__pyx_k_js_code), 0, 0, 1, 1},
     {&__pyx_n_s_main, __pyx_k_main, sizeof(__pyx_k_main), 0, 0, 1, 1},
     {&__pyx_n_s_metaclass, __pyx_k_metaclass, sizeof(__pyx_k_metaclass), 0, 0, 1, 1},
     {&__pyx_n_s_module, __pyx_k_module, sizeof(__pyx_k_module), 0, 0, 1, 1},
@@ -6624,11 +7876,14 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_name, __pyx_k_name, sizeof(__pyx_k_name), 0, 0, 1, 1},
     {&__pyx_n_s_navigate_to_url, __pyx_k_navigate_to_url, sizeof(__pyx_k_navigate_to_url), 0, 0, 1, 1},
     {&__pyx_n_s_new_tab_action, __pyx_k_new_tab_action, sizeof(__pyx_k_new_tab_action), 0, 0, 1, 1},
+    {&__pyx_n_s_page, __pyx_k_page, sizeof(__pyx_k_page), 0, 0, 1, 1},
     {&__pyx_n_s_prepare, __pyx_k_prepare, sizeof(__pyx_k_prepare), 0, 0, 1, 1},
+    {&__pyx_n_s_print, __pyx_k_print, sizeof(__pyx_k_print), 0, 0, 1, 1},
     {&__pyx_n_s_q, __pyx_k_q, sizeof(__pyx_k_q), 0, 0, 1, 1},
     {&__pyx_n_s_qualname, __pyx_k_qualname, sizeof(__pyx_k_qualname), 0, 0, 1, 1},
     {&__pyx_n_s_removeTab, __pyx_k_removeTab, sizeof(__pyx_k_removeTab), 0, 0, 1, 1},
     {&__pyx_n_s_returnPressed, __pyx_k_returnPressed, sizeof(__pyx_k_returnPressed), 0, 0, 1, 1},
+    {&__pyx_n_s_runJavaScript, __pyx_k_runJavaScript, sizeof(__pyx_k_runJavaScript), 0, 0, 1, 1},
     {&__pyx_n_s_self, __pyx_k_self, sizeof(__pyx_k_self), 0, 0, 1, 1},
     {&__pyx_n_s_setCentralWidget, __pyx_k_setCentralWidget, sizeof(__pyx_k_setCentralWidget), 0, 0, 1, 1},
     {&__pyx_n_s_setCurrentWidget, __pyx_k_setCurrentWidget, sizeof(__pyx_k_setCurrentWidget), 0, 0, 1, 1},
@@ -6639,6 +7894,7 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_setWindowIcon, __pyx_k_setWindowIcon, sizeof(__pyx_k_setWindowIcon), 0, 0, 1, 1},
     {&__pyx_n_s_setWindowTitle, __pyx_k_setWindowTitle, sizeof(__pyx_k_setWindowTitle), 0, 0, 1, 1},
     {&__pyx_n_s_set_name, __pyx_k_set_name, sizeof(__pyx_k_set_name), 0, 0, 1, 1},
+    {&__pyx_n_s_showFullScreen, __pyx_k_showFullScreen, sizeof(__pyx_k_showFullScreen), 0, 0, 1, 1},
     {&__pyx_n_s_split, __pyx_k_split, sizeof(__pyx_k_split), 0, 0, 1, 1},
     {&__pyx_kp_s_src_browser_pyx, __pyx_k_src_browser_pyx, sizeof(__pyx_k_src_browser_pyx), 0, 0, 1, 0},
     {&__pyx_n_s_src_styles, __pyx_k_src_styles, sizeof(__pyx_k_src_styles), 0, 0, 1, 1},
@@ -6649,11 +7905,13 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
     {&__pyx_n_s_text, __pyx_k_text, sizeof(__pyx_k_text), 0, 0, 1, 1},
     {&__pyx_n_s_toString, __pyx_k_toString, sizeof(__pyx_k_toString), 0, 0, 1, 1},
+    {&__pyx_n_s_toggle_fullscreen, __pyx_k_toggle_fullscreen, sizeof(__pyx_k_toggle_fullscreen), 0, 0, 1, 1},
     {&__pyx_n_s_toolbar, __pyx_k_toolbar, sizeof(__pyx_k_toolbar), 0, 0, 1, 1},
     {&__pyx_n_s_triggered, __pyx_k_triggered, sizeof(__pyx_k_triggered), 0, 0, 1, 1},
     {&__pyx_n_s_url, __pyx_k_url, sizeof(__pyx_k_url), 0, 0, 1, 1},
     {&__pyx_n_s_urlChanged, __pyx_k_urlChanged, sizeof(__pyx_k_urlChanged), 0, 0, 1, 1},
     {&__pyx_n_s_url_bar, __pyx_k_url_bar, sizeof(__pyx_k_url_bar), 0, 0, 1, 1},
+    {&__pyx_kp_u_var_elem_document_documentEleme, __pyx_k_var_elem_document_documentEleme, sizeof(__pyx_k_var_elem_document_documentEleme), 0, 1, 0, 0},
     {&__pyx_n_s_web_view, __pyx_k_web_view, sizeof(__pyx_k_web_view), 0, 0, 1, 1},
     {0, 0, 0, 0, 0, 0, 0}
   };
@@ -6661,7 +7919,8 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
 }
 /* #### Code section: cached_builtins ### */
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
-  __pyx_builtin_super = __Pyx_GetBuiltinName(__pyx_n_s_super); if (!__pyx_builtin_super) __PYX_ERR(0, 12, __pyx_L1_error)
+  __pyx_builtin_super = __Pyx_GetBuiltinName(__pyx_n_s_super); if (!__pyx_builtin_super) __PYX_ERR(0, 16, __pyx_L1_error)
+  __pyx_builtin_print = __Pyx_GetBuiltinName(__pyx_n_s_print); if (!__pyx_builtin_print) __PYX_ERR(0, 81, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
   return -1;
@@ -6672,88 +7931,135 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "browser.pyx":14
+  /* "browser.pyx":18
  *         super().__init__()
  *         self.setWindowTitle("Purroser")
  *         self.setGeometry(100, 100, 1600, 900)             # <<<<<<<<<<<<<<
  *         self.tabs = QTabWidget()
  *         self.setCentralWidget(self.tabs)
  */
-  __pyx_tuple_ = PyTuple_Pack(4, __pyx_int_100, __pyx_int_100, __pyx_int_1600, __pyx_int_900); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 14, __pyx_L1_error)
+  __pyx_tuple_ = PyTuple_Pack(4, __pyx_int_100, __pyx_int_100, __pyx_int_1600, __pyx_int_900); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 18, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple_);
   __Pyx_GIVEREF(__pyx_tuple_);
 
-  /* "browser.pyx":11
+  /* "browser.pyx":81
+ *             web_view.showFullScreen()
+ *         else:
+ *             print("Fullscreen not supported.")             # <<<<<<<<<<<<<<
+ * 
+ *     def home(self):
+ */
+  __pyx_tuple__2 = PyTuple_Pack(1, __pyx_kp_u_Fullscreen_not_supported); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(0, 81, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__2);
+  __Pyx_GIVEREF(__pyx_tuple__2);
+
+  /* "browser.pyx":15
  * 
  * class Purroser(QMainWindow):
  *     def __init__(self):             # <<<<<<<<<<<<<<
  *         super().__init__()
  *         self.setWindowTitle("Purroser")
  */
-  __pyx_tuple__4 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_app_icon_path); if (unlikely(!__pyx_tuple__4)) __PYX_ERR(0, 11, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__4);
-  __Pyx_GIVEREF(__pyx_tuple__4);
-  __pyx_codeobj__5 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__4, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_browser_pyx, __pyx_n_s_init, 11, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__5)) __PYX_ERR(0, 11, __pyx_L1_error)
+  __pyx_tuple__5 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_app_icon_path); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(0, 15, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__5);
+  __Pyx_GIVEREF(__pyx_tuple__5);
+  __pyx_codeobj__6 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__5, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_browser_pyx, __pyx_n_s_init, 15, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__6)) __PYX_ERR(0, 15, __pyx_L1_error)
 
-  /* "browser.pyx":30
+  /* "browser.pyx":35
  *         self.setStyleSheet(get_styles())
  * 
  *     def add_toolbar_actions(self):             # <<<<<<<<<<<<<<
  *         new_tab_action = QAction("New Tab", self)
  *         new_tab_action.triggered.connect(self.add_tab)
  */
-  __pyx_tuple__6 = PyTuple_Pack(6, __pyx_n_s_self, __pyx_n_s_new_tab_action, __pyx_n_s_close_tab_action, __pyx_n_s_back_button, __pyx_n_s_forward_button, __pyx_n_s_home_button); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(0, 30, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__6);
-  __Pyx_GIVEREF(__pyx_tuple__6);
-  __pyx_codeobj__7 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__6, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_browser_pyx, __pyx_n_s_add_toolbar_actions, 30, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__7)) __PYX_ERR(0, 30, __pyx_L1_error)
+  __pyx_tuple__7 = PyTuple_Pack(6, __pyx_n_s_self, __pyx_n_s_new_tab_action, __pyx_n_s_close_tab_action, __pyx_n_s_back_button, __pyx_n_s_forward_button, __pyx_n_s_home_button); if (unlikely(!__pyx_tuple__7)) __PYX_ERR(0, 35, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__7);
+  __Pyx_GIVEREF(__pyx_tuple__7);
+  __pyx_codeobj__8 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__7, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_browser_pyx, __pyx_n_s_add_toolbar_actions, 35, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__8)) __PYX_ERR(0, 35, __pyx_L1_error)
 
-  /* "browser.pyx":50
- *         self.toolbar.addWidget(self.url_bar)
+  /* "browser.pyx":56
+ *         self.add_fullscreen_action()  # Ensure fullscreen action is added here too
+ * 
+ *     def add_fullscreen_action(self):             # <<<<<<<<<<<<<<
+ *         fullscreen_action = QAction("Full Screen", self)
+ *         fullscreen_action.triggered.connect(lambda: self.toggle_fullscreen(self.tabs.currentWidget()))
+ */
+  __pyx_tuple__9 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_fullscreen_action); if (unlikely(!__pyx_tuple__9)) __PYX_ERR(0, 56, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__9);
+  __Pyx_GIVEREF(__pyx_tuple__9);
+  __pyx_codeobj__10 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__9, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_browser_pyx, __pyx_n_s_add_fullscreen_action, 56, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__10)) __PYX_ERR(0, 56, __pyx_L1_error)
+
+  /* "browser.pyx":61
+ *         self.toolbar.addAction(fullscreen_action)
+ * 
+ *     def check_fullscreen_support(self, web_view):             # <<<<<<<<<<<<<<
+ *         js_code = """
+ *         var elem = document.documentElement;
+ */
+  __pyx_tuple__11 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_web_view, __pyx_n_s_js_code); if (unlikely(!__pyx_tuple__11)) __PYX_ERR(0, 61, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__11);
+  __Pyx_GIVEREF(__pyx_tuple__11);
+  __pyx_codeobj__12 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__11, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_browser_pyx, __pyx_n_s_check_fullscreen_support, 61, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__12)) __PYX_ERR(0, 61, __pyx_L1_error)
+
+  /* "browser.pyx":77
+ *         web_view.page().runJavaScript(js_code)
+ * 
+ *     def toggle_fullscreen(self, web_view):             # <<<<<<<<<<<<<<
+ *         if self.check_fullscreen_support(web_view):
+ *             web_view.showFullScreen()
+ */
+  __pyx_tuple__13 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_web_view); if (unlikely(!__pyx_tuple__13)) __PYX_ERR(0, 77, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__13);
+  __Pyx_GIVEREF(__pyx_tuple__13);
+  __pyx_codeobj__14 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__13, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_browser_pyx, __pyx_n_s_toggle_fullscreen, 77, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__14)) __PYX_ERR(0, 77, __pyx_L1_error)
+
+  /* "browser.pyx":83
+ *             print("Fullscreen not supported.")
  * 
  *     def home(self):             # <<<<<<<<<<<<<<
  *         if self.tabs.count() == 0:
  *             self.add_tab(URL)
  */
-  __pyx_tuple__8 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__8)) __PYX_ERR(0, 50, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__8);
-  __Pyx_GIVEREF(__pyx_tuple__8);
-  __pyx_codeobj__9 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__8, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_browser_pyx, __pyx_n_s_home, 50, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__9)) __PYX_ERR(0, 50, __pyx_L1_error)
+  __pyx_tuple__15 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__15)) __PYX_ERR(0, 83, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__15);
+  __Pyx_GIVEREF(__pyx_tuple__15);
+  __pyx_codeobj__16 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__15, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_browser_pyx, __pyx_n_s_home, 83, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__16)) __PYX_ERR(0, 83, __pyx_L1_error)
 
-  /* "browser.pyx":55
+  /* "browser.pyx":88
  *         self.tabs.currentWidget().setUrl(QUrl(URL))
  * 
  *     def add_tab(self, url=URL):             # <<<<<<<<<<<<<<
  *         web_view = QWebEngineView()
  *         if isinstance(url, str) and url:
  */
-  __pyx_tuple__10 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_url, __pyx_n_s_web_view, __pyx_n_s_tab_label); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(0, 55, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__10);
-  __Pyx_GIVEREF(__pyx_tuple__10);
-  __pyx_codeobj__11 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__10, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_browser_pyx, __pyx_n_s_add_tab, 55, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__11)) __PYX_ERR(0, 55, __pyx_L1_error)
+  __pyx_tuple__17 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_url, __pyx_n_s_web_view, __pyx_n_s_tab_label); if (unlikely(!__pyx_tuple__17)) __PYX_ERR(0, 88, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__17);
+  __Pyx_GIVEREF(__pyx_tuple__17);
+  __pyx_codeobj__18 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__17, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_browser_pyx, __pyx_n_s_add_tab, 88, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__18)) __PYX_ERR(0, 88, __pyx_L1_error)
 
-  /* "browser.pyx":68
+  /* "browser.pyx":101
  *         web_view.urlChanged.connect(lambda q: self.url_bar.setText(q.toString()))
  * 
  *     def close_current_tab(self, *args):             # <<<<<<<<<<<<<<
  *         current_index = self.tabs.currentIndex()
  *         if current_index != -1:
  */
-  __pyx_tuple__12 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_args, __pyx_n_s_current_index); if (unlikely(!__pyx_tuple__12)) __PYX_ERR(0, 68, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__12);
-  __Pyx_GIVEREF(__pyx_tuple__12);
-  __pyx_codeobj__13 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS|CO_VARARGS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__12, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_browser_pyx, __pyx_n_s_close_current_tab, 68, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__13)) __PYX_ERR(0, 68, __pyx_L1_error)
+  __pyx_tuple__19 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_args, __pyx_n_s_current_index); if (unlikely(!__pyx_tuple__19)) __PYX_ERR(0, 101, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__19);
+  __Pyx_GIVEREF(__pyx_tuple__19);
+  __pyx_codeobj__20 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS|CO_VARARGS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__19, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_browser_pyx, __pyx_n_s_close_current_tab, 101, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__20)) __PYX_ERR(0, 101, __pyx_L1_error)
 
-  /* "browser.pyx":73
+  /* "browser.pyx":106
  *             self.tabs.removeTab(current_index)
  * 
  *     def navigate_to_url(self):             # <<<<<<<<<<<<<<
  *         url = self.url_bar.text()
  *         if not url.startswith("https"):
  */
-  __pyx_tuple__14 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_url); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(0, 73, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__14);
-  __Pyx_GIVEREF(__pyx_tuple__14);
-  __pyx_codeobj__15 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__14, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_browser_pyx, __pyx_n_s_navigate_to_url, 73, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__15)) __PYX_ERR(0, 73, __pyx_L1_error)
+  __pyx_tuple__21 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_url); if (unlikely(!__pyx_tuple__21)) __PYX_ERR(0, 106, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__21);
+  __Pyx_GIVEREF(__pyx_tuple__21);
+  __pyx_codeobj__22 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__21, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_browser_pyx, __pyx_n_s_navigate_to_url, 106, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__22)) __PYX_ERR(0, 106, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -6820,22 +8126,41 @@ static int __Pyx_modinit_type_init_code(void) {
   __Pyx_RefNannySetupContext("__Pyx_modinit_type_init_code", 0);
   /*--- Type init code ---*/
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_ptype_7browser___pyx_scope_struct__add_tab = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_7browser___pyx_scope_struct__add_tab_spec, NULL); if (unlikely(!__pyx_ptype_7browser___pyx_scope_struct__add_tab)) __PYX_ERR(0, 55, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_7browser___pyx_scope_struct__add_tab_spec, __pyx_ptype_7browser___pyx_scope_struct__add_tab) < 0) __PYX_ERR(0, 55, __pyx_L1_error)
+  __pyx_ptype_7browser___pyx_scope_struct__add_fullscreen_action = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_7browser___pyx_scope_struct__add_fullscreen_action_spec, NULL); if (unlikely(!__pyx_ptype_7browser___pyx_scope_struct__add_fullscreen_action)) __PYX_ERR(0, 56, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_7browser___pyx_scope_struct__add_fullscreen_action_spec, __pyx_ptype_7browser___pyx_scope_struct__add_fullscreen_action) < 0) __PYX_ERR(0, 56, __pyx_L1_error)
   #else
-  __pyx_ptype_7browser___pyx_scope_struct__add_tab = &__pyx_type_7browser___pyx_scope_struct__add_tab;
+  __pyx_ptype_7browser___pyx_scope_struct__add_fullscreen_action = &__pyx_type_7browser___pyx_scope_struct__add_fullscreen_action;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_ptype_7browser___pyx_scope_struct__add_tab) < 0) __PYX_ERR(0, 55, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_ptype_7browser___pyx_scope_struct__add_fullscreen_action) < 0) __PYX_ERR(0, 56, __pyx_L1_error)
   #endif
   #if PY_MAJOR_VERSION < 3
-  __pyx_ptype_7browser___pyx_scope_struct__add_tab->tp_print = 0;
+  __pyx_ptype_7browser___pyx_scope_struct__add_fullscreen_action->tp_print = 0;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
-  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_ptype_7browser___pyx_scope_struct__add_tab->tp_dictoffset && __pyx_ptype_7browser___pyx_scope_struct__add_tab->tp_getattro == PyObject_GenericGetAttr)) {
-    __pyx_ptype_7browser___pyx_scope_struct__add_tab->tp_getattro = __Pyx_PyObject_GenericGetAttrNoDict;
+  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_ptype_7browser___pyx_scope_struct__add_fullscreen_action->tp_dictoffset && __pyx_ptype_7browser___pyx_scope_struct__add_fullscreen_action->tp_getattro == PyObject_GenericGetAttr)) {
+    __pyx_ptype_7browser___pyx_scope_struct__add_fullscreen_action->tp_getattro = __Pyx_PyObject_GenericGetAttrNoDict;
+  }
+  #endif
+  #if CYTHON_USE_TYPE_SPECS
+  __pyx_ptype_7browser___pyx_scope_struct_1_add_tab = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_7browser___pyx_scope_struct_1_add_tab_spec, NULL); if (unlikely(!__pyx_ptype_7browser___pyx_scope_struct_1_add_tab)) __PYX_ERR(0, 88, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_7browser___pyx_scope_struct_1_add_tab_spec, __pyx_ptype_7browser___pyx_scope_struct_1_add_tab) < 0) __PYX_ERR(0, 88, __pyx_L1_error)
+  #else
+  __pyx_ptype_7browser___pyx_scope_struct_1_add_tab = &__pyx_type_7browser___pyx_scope_struct_1_add_tab;
+  #endif
+  #if !CYTHON_COMPILING_IN_LIMITED_API
+  #endif
+  #if !CYTHON_USE_TYPE_SPECS
+  if (__Pyx_PyType_Ready(__pyx_ptype_7browser___pyx_scope_struct_1_add_tab) < 0) __PYX_ERR(0, 88, __pyx_L1_error)
+  #endif
+  #if PY_MAJOR_VERSION < 3
+  __pyx_ptype_7browser___pyx_scope_struct_1_add_tab->tp_print = 0;
+  #endif
+  #if !CYTHON_COMPILING_IN_LIMITED_API
+  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_ptype_7browser___pyx_scope_struct_1_add_tab->tp_dictoffset && __pyx_ptype_7browser___pyx_scope_struct_1_add_tab->tp_getattro == PyObject_GenericGetAttr)) {
+    __pyx_ptype_7browser___pyx_scope_struct_1_add_tab->tp_getattro = __Pyx_PyObject_GenericGetAttrNoDict;
   }
   #endif
   __Pyx_RefNannyFinishContext();
@@ -7152,275 +8477,314 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "browser.pyx":1
+  /* "browser.pyx":6
+ * 
+ * 
  * from PyQt5.QtWidgets import QMainWindow, QTabWidget, QToolBar, QAction, QLineEdit             # <<<<<<<<<<<<<<
  * from PyQt5.QtWebEngineWidgets import QWebEngineView
  * from PyQt5.QtCore import QUrl
  */
-  __pyx_t_2 = PyList_New(5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_t_2 = PyList_New(5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 6, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_INCREF(__pyx_n_s_QMainWindow);
   __Pyx_GIVEREF(__pyx_n_s_QMainWindow);
-  if (__Pyx_PyList_SET_ITEM(__pyx_t_2, 0, __pyx_n_s_QMainWindow)) __PYX_ERR(0, 1, __pyx_L1_error);
+  if (__Pyx_PyList_SET_ITEM(__pyx_t_2, 0, __pyx_n_s_QMainWindow)) __PYX_ERR(0, 6, __pyx_L1_error);
   __Pyx_INCREF(__pyx_n_s_QTabWidget);
   __Pyx_GIVEREF(__pyx_n_s_QTabWidget);
-  if (__Pyx_PyList_SET_ITEM(__pyx_t_2, 1, __pyx_n_s_QTabWidget)) __PYX_ERR(0, 1, __pyx_L1_error);
+  if (__Pyx_PyList_SET_ITEM(__pyx_t_2, 1, __pyx_n_s_QTabWidget)) __PYX_ERR(0, 6, __pyx_L1_error);
   __Pyx_INCREF(__pyx_n_s_QToolBar);
   __Pyx_GIVEREF(__pyx_n_s_QToolBar);
-  if (__Pyx_PyList_SET_ITEM(__pyx_t_2, 2, __pyx_n_s_QToolBar)) __PYX_ERR(0, 1, __pyx_L1_error);
+  if (__Pyx_PyList_SET_ITEM(__pyx_t_2, 2, __pyx_n_s_QToolBar)) __PYX_ERR(0, 6, __pyx_L1_error);
   __Pyx_INCREF(__pyx_n_s_QAction);
   __Pyx_GIVEREF(__pyx_n_s_QAction);
-  if (__Pyx_PyList_SET_ITEM(__pyx_t_2, 3, __pyx_n_s_QAction)) __PYX_ERR(0, 1, __pyx_L1_error);
+  if (__Pyx_PyList_SET_ITEM(__pyx_t_2, 3, __pyx_n_s_QAction)) __PYX_ERR(0, 6, __pyx_L1_error);
   __Pyx_INCREF(__pyx_n_s_QLineEdit);
   __Pyx_GIVEREF(__pyx_n_s_QLineEdit);
-  if (__Pyx_PyList_SET_ITEM(__pyx_t_2, 4, __pyx_n_s_QLineEdit)) __PYX_ERR(0, 1, __pyx_L1_error);
-  __pyx_t_3 = __Pyx_Import(__pyx_n_s_PyQt5_QtWidgets, __pyx_t_2, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1, __pyx_L1_error)
+  if (__Pyx_PyList_SET_ITEM(__pyx_t_2, 4, __pyx_n_s_QLineEdit)) __PYX_ERR(0, 6, __pyx_L1_error);
+  __pyx_t_3 = __Pyx_Import(__pyx_n_s_PyQt5_QtWidgets, __pyx_t_2, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 6, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_3, __pyx_n_s_QMainWindow); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_3, __pyx_n_s_QMainWindow); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 6, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_QMainWindow, __pyx_t_2) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_QMainWindow, __pyx_t_2) < 0) __PYX_ERR(0, 6, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_3, __pyx_n_s_QTabWidget); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_3, __pyx_n_s_QTabWidget); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 6, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_QTabWidget, __pyx_t_2) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_QTabWidget, __pyx_t_2) < 0) __PYX_ERR(0, 6, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_3, __pyx_n_s_QToolBar); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_3, __pyx_n_s_QToolBar); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 6, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_QToolBar, __pyx_t_2) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_QToolBar, __pyx_t_2) < 0) __PYX_ERR(0, 6, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_3, __pyx_n_s_QAction); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_3, __pyx_n_s_QAction); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 6, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_QAction, __pyx_t_2) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_QAction, __pyx_t_2) < 0) __PYX_ERR(0, 6, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_3, __pyx_n_s_QLineEdit); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_3, __pyx_n_s_QLineEdit); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 6, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_QLineEdit, __pyx_t_2) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_QLineEdit, __pyx_t_2) < 0) __PYX_ERR(0, 6, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "browser.pyx":2
+  /* "browser.pyx":7
+ * 
  * from PyQt5.QtWidgets import QMainWindow, QTabWidget, QToolBar, QAction, QLineEdit
  * from PyQt5.QtWebEngineWidgets import QWebEngineView             # <<<<<<<<<<<<<<
  * from PyQt5.QtCore import QUrl
  * from PyQt5.QtGui import QIcon
  */
-  __pyx_t_3 = PyList_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2, __pyx_L1_error)
+  __pyx_t_3 = PyList_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 7, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_INCREF(__pyx_n_s_QWebEngineView);
   __Pyx_GIVEREF(__pyx_n_s_QWebEngineView);
-  if (__Pyx_PyList_SET_ITEM(__pyx_t_3, 0, __pyx_n_s_QWebEngineView)) __PYX_ERR(0, 2, __pyx_L1_error);
-  __pyx_t_2 = __Pyx_Import(__pyx_n_s_PyQt5_QtWebEngineWidgets, __pyx_t_3, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2, __pyx_L1_error)
+  if (__Pyx_PyList_SET_ITEM(__pyx_t_3, 0, __pyx_n_s_QWebEngineView)) __PYX_ERR(0, 7, __pyx_L1_error);
+  __pyx_t_2 = __Pyx_Import(__pyx_n_s_PyQt5_QtWebEngineWidgets, __pyx_t_3, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 7, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_QWebEngineView); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 2, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_QWebEngineView); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 7, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_QWebEngineView, __pyx_t_3) < 0) __PYX_ERR(0, 2, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_QWebEngineView, __pyx_t_3) < 0) __PYX_ERR(0, 7, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "browser.pyx":3
+  /* "browser.pyx":8
  * from PyQt5.QtWidgets import QMainWindow, QTabWidget, QToolBar, QAction, QLineEdit
  * from PyQt5.QtWebEngineWidgets import QWebEngineView
  * from PyQt5.QtCore import QUrl             # <<<<<<<<<<<<<<
  * from PyQt5.QtGui import QIcon
  * from src.styles import get_styles
  */
-  __pyx_t_2 = PyList_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 3, __pyx_L1_error)
+  __pyx_t_2 = PyList_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 8, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_INCREF(__pyx_n_s_QUrl);
   __Pyx_GIVEREF(__pyx_n_s_QUrl);
-  if (__Pyx_PyList_SET_ITEM(__pyx_t_2, 0, __pyx_n_s_QUrl)) __PYX_ERR(0, 3, __pyx_L1_error);
-  __pyx_t_3 = __Pyx_Import(__pyx_n_s_PyQt5_QtCore, __pyx_t_2, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 3, __pyx_L1_error)
+  if (__Pyx_PyList_SET_ITEM(__pyx_t_2, 0, __pyx_n_s_QUrl)) __PYX_ERR(0, 8, __pyx_L1_error);
+  __pyx_t_3 = __Pyx_Import(__pyx_n_s_PyQt5_QtCore, __pyx_t_2, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 8, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_3, __pyx_n_s_QUrl); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 3, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_3, __pyx_n_s_QUrl); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 8, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_QUrl, __pyx_t_2) < 0) __PYX_ERR(0, 3, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_QUrl, __pyx_t_2) < 0) __PYX_ERR(0, 8, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "browser.pyx":4
+  /* "browser.pyx":9
  * from PyQt5.QtWebEngineWidgets import QWebEngineView
  * from PyQt5.QtCore import QUrl
  * from PyQt5.QtGui import QIcon             # <<<<<<<<<<<<<<
  * from src.styles import get_styles
  * 
  */
-  __pyx_t_3 = PyList_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 4, __pyx_L1_error)
+  __pyx_t_3 = PyList_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 9, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_INCREF(__pyx_n_s_QIcon);
   __Pyx_GIVEREF(__pyx_n_s_QIcon);
-  if (__Pyx_PyList_SET_ITEM(__pyx_t_3, 0, __pyx_n_s_QIcon)) __PYX_ERR(0, 4, __pyx_L1_error);
-  __pyx_t_2 = __Pyx_Import(__pyx_n_s_PyQt5_QtGui, __pyx_t_3, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 4, __pyx_L1_error)
+  if (__Pyx_PyList_SET_ITEM(__pyx_t_3, 0, __pyx_n_s_QIcon)) __PYX_ERR(0, 9, __pyx_L1_error);
+  __pyx_t_2 = __Pyx_Import(__pyx_n_s_PyQt5_QtGui, __pyx_t_3, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 9, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_QIcon); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 4, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_QIcon); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 9, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_QIcon, __pyx_t_3) < 0) __PYX_ERR(0, 4, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_QIcon, __pyx_t_3) < 0) __PYX_ERR(0, 9, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "browser.pyx":5
+  /* "browser.pyx":10
  * from PyQt5.QtCore import QUrl
  * from PyQt5.QtGui import QIcon
  * from src.styles import get_styles             # <<<<<<<<<<<<<<
  * 
  * URL = "https://www.qwant.com/"
  */
-  __pyx_t_2 = PyList_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 5, __pyx_L1_error)
+  __pyx_t_2 = PyList_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_INCREF(__pyx_n_s_get_styles);
   __Pyx_GIVEREF(__pyx_n_s_get_styles);
-  if (__Pyx_PyList_SET_ITEM(__pyx_t_2, 0, __pyx_n_s_get_styles)) __PYX_ERR(0, 5, __pyx_L1_error);
-  __pyx_t_3 = __Pyx_Import(__pyx_n_s_src_styles, __pyx_t_2, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 5, __pyx_L1_error)
+  if (__Pyx_PyList_SET_ITEM(__pyx_t_2, 0, __pyx_n_s_get_styles)) __PYX_ERR(0, 10, __pyx_L1_error);
+  __pyx_t_3 = __Pyx_Import(__pyx_n_s_src_styles, __pyx_t_2, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 10, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_3, __pyx_n_s_get_styles); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 5, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_3, __pyx_n_s_get_styles); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_styles, __pyx_t_2) < 0) __PYX_ERR(0, 5, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_styles, __pyx_t_2) < 0) __PYX_ERR(0, 10, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "browser.pyx":7
+  /* "browser.pyx":12
  * from src.styles import get_styles
  * 
  * URL = "https://www.qwant.com/"             # <<<<<<<<<<<<<<
  * 
- * 
+ * class Purroser(QMainWindow):
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_URL, __pyx_kp_s_https_www_qwant_com) < 0) __PYX_ERR(0, 7, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_URL, __pyx_kp_u_https_www_qwant_com) < 0) __PYX_ERR(0, 12, __pyx_L1_error)
 
-  /* "browser.pyx":10
- * 
+  /* "browser.pyx":14
+ * URL = "https://www.qwant.com/"
  * 
  * class Purroser(QMainWindow):             # <<<<<<<<<<<<<<
  *     def __init__(self):
  *         super().__init__()
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_QMainWindow); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 10, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_QMainWindow); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 14, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10, __pyx_L1_error)
+  __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 14, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_GIVEREF(__pyx_t_3);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_3)) __PYX_ERR(0, 10, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_3)) __PYX_ERR(0, 14, __pyx_L1_error);
   __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PEP560_update_bases(__pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 10, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PEP560_update_bases(__pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 14, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_CalculateMetaclass(NULL, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 10, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CalculateMetaclass(NULL, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 14, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = __Pyx_Py3MetaclassPrepare(__pyx_t_4, __pyx_t_3, __pyx_n_s_Purroser, __pyx_n_s_Purroser, (PyObject *) NULL, __pyx_n_s_browser, (PyObject *) NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 10, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_Py3MetaclassPrepare(__pyx_t_4, __pyx_t_3, __pyx_n_s_Purroser, __pyx_n_s_Purroser, (PyObject *) NULL, __pyx_n_s_browser, (PyObject *) NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 14, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   if (__pyx_t_3 != __pyx_t_2) {
-    if (unlikely((PyDict_SetItemString(__pyx_t_5, "__orig_bases__", __pyx_t_2) < 0))) __PYX_ERR(0, 10, __pyx_L1_error)
+    if (unlikely((PyDict_SetItemString(__pyx_t_5, "__orig_bases__", __pyx_t_2) < 0))) __PYX_ERR(0, 14, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = PyList_New(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 10, __pyx_L1_error)
+  __pyx_t_2 = PyList_New(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 14, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
 
-  /* "browser.pyx":11
+  /* "browser.pyx":15
  * 
  * class Purroser(QMainWindow):
  *     def __init__(self):             # <<<<<<<<<<<<<<
  *         super().__init__()
  *         self.setWindowTitle("Purroser")
  */
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_7browser_8Purroser_1__init__, 0, __pyx_n_s_Purroser___init, NULL, __pyx_n_s_browser, __pyx_d, ((PyObject *)__pyx_codeobj__5)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 11, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_7browser_8Purroser_1__init__, 0, __pyx_n_s_Purroser___init, NULL, __pyx_n_s_browser, __pyx_d, ((PyObject *)__pyx_codeobj__6)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 15, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_INCREF(__pyx_t_6);
   PyList_Append(__pyx_t_2, __pyx_t_6);
   __Pyx_GIVEREF(__pyx_t_6);
-  if (__Pyx_SetNameInClass(__pyx_t_5, __pyx_n_s_init, __pyx_t_6) < 0) __PYX_ERR(0, 11, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_5, __pyx_n_s_init, __pyx_t_6) < 0) __PYX_ERR(0, 15, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "browser.pyx":30
+  /* "browser.pyx":35
  *         self.setStyleSheet(get_styles())
  * 
  *     def add_toolbar_actions(self):             # <<<<<<<<<<<<<<
  *         new_tab_action = QAction("New Tab", self)
  *         new_tab_action.triggered.connect(self.add_tab)
  */
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_7browser_8Purroser_3add_toolbar_actions, 0, __pyx_n_s_Purroser_add_toolbar_actions, NULL, __pyx_n_s_browser, __pyx_d, ((PyObject *)__pyx_codeobj__7)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 30, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_7browser_8Purroser_3add_toolbar_actions, 0, __pyx_n_s_Purroser_add_toolbar_actions, NULL, __pyx_n_s_browser, __pyx_d, ((PyObject *)__pyx_codeobj__8)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 35, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  if (__Pyx_SetNameInClass(__pyx_t_5, __pyx_n_s_add_toolbar_actions, __pyx_t_6) < 0) __PYX_ERR(0, 30, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_5, __pyx_n_s_add_toolbar_actions, __pyx_t_6) < 0) __PYX_ERR(0, 35, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "browser.pyx":50
- *         self.toolbar.addWidget(self.url_bar)
+  /* "browser.pyx":56
+ *         self.add_fullscreen_action()  # Ensure fullscreen action is added here too
+ * 
+ *     def add_fullscreen_action(self):             # <<<<<<<<<<<<<<
+ *         fullscreen_action = QAction("Full Screen", self)
+ *         fullscreen_action.triggered.connect(lambda: self.toggle_fullscreen(self.tabs.currentWidget()))
+ */
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_7browser_8Purroser_5add_fullscreen_action, 0, __pyx_n_s_Purroser_add_fullscreen_action, NULL, __pyx_n_s_browser, __pyx_d, ((PyObject *)__pyx_codeobj__10)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 56, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_6);
+  if (__Pyx_SetNameInClass(__pyx_t_5, __pyx_n_s_add_fullscreen_action, __pyx_t_6) < 0) __PYX_ERR(0, 56, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+
+  /* "browser.pyx":61
+ *         self.toolbar.addAction(fullscreen_action)
+ * 
+ *     def check_fullscreen_support(self, web_view):             # <<<<<<<<<<<<<<
+ *         js_code = """
+ *         var elem = document.documentElement;
+ */
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_7browser_8Purroser_7check_fullscreen_support, 0, __pyx_n_s_Purroser_check_fullscreen_suppor, NULL, __pyx_n_s_browser, __pyx_d, ((PyObject *)__pyx_codeobj__12)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 61, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_6);
+  if (__Pyx_SetNameInClass(__pyx_t_5, __pyx_n_s_check_fullscreen_support, __pyx_t_6) < 0) __PYX_ERR(0, 61, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+
+  /* "browser.pyx":77
+ *         web_view.page().runJavaScript(js_code)
+ * 
+ *     def toggle_fullscreen(self, web_view):             # <<<<<<<<<<<<<<
+ *         if self.check_fullscreen_support(web_view):
+ *             web_view.showFullScreen()
+ */
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_7browser_8Purroser_9toggle_fullscreen, 0, __pyx_n_s_Purroser_toggle_fullscreen, NULL, __pyx_n_s_browser, __pyx_d, ((PyObject *)__pyx_codeobj__14)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 77, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_6);
+  if (__Pyx_SetNameInClass(__pyx_t_5, __pyx_n_s_toggle_fullscreen, __pyx_t_6) < 0) __PYX_ERR(0, 77, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+
+  /* "browser.pyx":83
+ *             print("Fullscreen not supported.")
  * 
  *     def home(self):             # <<<<<<<<<<<<<<
  *         if self.tabs.count() == 0:
  *             self.add_tab(URL)
  */
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_7browser_8Purroser_5home, 0, __pyx_n_s_Purroser_home, NULL, __pyx_n_s_browser, __pyx_d, ((PyObject *)__pyx_codeobj__9)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 50, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_7browser_8Purroser_11home, 0, __pyx_n_s_Purroser_home, NULL, __pyx_n_s_browser, __pyx_d, ((PyObject *)__pyx_codeobj__16)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 83, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  if (__Pyx_SetNameInClass(__pyx_t_5, __pyx_n_s_home, __pyx_t_6) < 0) __PYX_ERR(0, 50, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_5, __pyx_n_s_home, __pyx_t_6) < 0) __PYX_ERR(0, 83, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "browser.pyx":55
+  /* "browser.pyx":88
  *         self.tabs.currentWidget().setUrl(QUrl(URL))
  * 
  *     def add_tab(self, url=URL):             # <<<<<<<<<<<<<<
  *         web_view = QWebEngineView()
  *         if isinstance(url, str) and url:
  */
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_7browser_8Purroser_7add_tab, 0, __pyx_n_s_Purroser_add_tab, NULL, __pyx_n_s_browser, __pyx_d, ((PyObject *)__pyx_codeobj__11)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 55, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_7browser_8Purroser_13add_tab, 0, __pyx_n_s_Purroser_add_tab, NULL, __pyx_n_s_browser, __pyx_d, ((PyObject *)__pyx_codeobj__18)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 88, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  if (!__Pyx_CyFunction_InitDefaults(__pyx_t_6, sizeof(__pyx_defaults), 1)) __PYX_ERR(0, 55, __pyx_L1_error)
-  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_URL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 55, __pyx_L1_error)
+  if (!__Pyx_CyFunction_InitDefaults(__pyx_t_6, sizeof(__pyx_defaults), 1)) __PYX_ERR(0, 88, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_URL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 88, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_CyFunction_Defaults(__pyx_defaults, __pyx_t_6)->__pyx_arg_url = __pyx_t_7;
   __Pyx_GIVEREF(__pyx_t_7);
   __pyx_t_7 = 0;
   __Pyx_CyFunction_SetDefaultsGetter(__pyx_t_6, __pyx_pf_7browser___defaults__);
-  if (__Pyx_SetNameInClass(__pyx_t_5, __pyx_n_s_add_tab, __pyx_t_6) < 0) __PYX_ERR(0, 55, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_5, __pyx_n_s_add_tab, __pyx_t_6) < 0) __PYX_ERR(0, 88, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "browser.pyx":68
+  /* "browser.pyx":101
  *         web_view.urlChanged.connect(lambda q: self.url_bar.setText(q.toString()))
  * 
  *     def close_current_tab(self, *args):             # <<<<<<<<<<<<<<
  *         current_index = self.tabs.currentIndex()
  *         if current_index != -1:
  */
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_7browser_8Purroser_9close_current_tab, 0, __pyx_n_s_Purroser_close_current_tab, NULL, __pyx_n_s_browser, __pyx_d, ((PyObject *)__pyx_codeobj__13)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 68, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_7browser_8Purroser_15close_current_tab, 0, __pyx_n_s_Purroser_close_current_tab, NULL, __pyx_n_s_browser, __pyx_d, ((PyObject *)__pyx_codeobj__20)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 101, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  if (__Pyx_SetNameInClass(__pyx_t_5, __pyx_n_s_close_current_tab, __pyx_t_6) < 0) __PYX_ERR(0, 68, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_5, __pyx_n_s_close_current_tab, __pyx_t_6) < 0) __PYX_ERR(0, 101, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "browser.pyx":73
+  /* "browser.pyx":106
  *             self.tabs.removeTab(current_index)
  * 
  *     def navigate_to_url(self):             # <<<<<<<<<<<<<<
  *         url = self.url_bar.text()
  *         if not url.startswith("https"):
  */
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_7browser_8Purroser_11navigate_to_url, 0, __pyx_n_s_Purroser_navigate_to_url, NULL, __pyx_n_s_browser, __pyx_d, ((PyObject *)__pyx_codeobj__15)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 73, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_7browser_8Purroser_17navigate_to_url, 0, __pyx_n_s_Purroser_navigate_to_url, NULL, __pyx_n_s_browser, __pyx_d, ((PyObject *)__pyx_codeobj__22)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 106, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  if (__Pyx_SetNameInClass(__pyx_t_5, __pyx_n_s_navigate_to_url, __pyx_t_6) < 0) __PYX_ERR(0, 73, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_5, __pyx_n_s_navigate_to_url, __pyx_t_6) < 0) __PYX_ERR(0, 106, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "browser.pyx":10
- * 
+  /* "browser.pyx":14
+ * URL = "https://www.qwant.com/"
  * 
  * class Purroser(QMainWindow):             # <<<<<<<<<<<<<<
  *     def __init__(self):
  *         super().__init__()
  */
-  __pyx_t_6 = __Pyx_Py3ClassCreate(__pyx_t_4, __pyx_n_s_Purroser, __pyx_t_3, __pyx_t_5, NULL, 0, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 10, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_Py3ClassCreate(__pyx_t_4, __pyx_n_s_Purroser, __pyx_t_3, __pyx_t_5, NULL, 0, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 14, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  if (__Pyx_CyFunction_InitClassCell(__pyx_t_2, __pyx_t_6) < 0) __PYX_ERR(0, 10, __pyx_L1_error)
+  if (__Pyx_CyFunction_InitClassCell(__pyx_t_2, __pyx_t_6) < 0) __PYX_ERR(0, 14, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_Purroser, __pyx_t_6) < 0) __PYX_ERR(0, 10, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_Purroser, __pyx_t_6) < 0) __PYX_ERR(0, 14, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /* "browser.pyx":1
- * from PyQt5.QtWidgets import QMainWindow, QTabWidget, QToolBar, QAction, QLineEdit             # <<<<<<<<<<<<<<
- * from PyQt5.QtWebEngineWidgets import QWebEngineView
- * from PyQt5.QtCore import QUrl
+ * # You are working in src/browser.pyx             # <<<<<<<<<<<<<<
+ * # -*- coding: utf-8 -*-
+ * # cython: language_level=3
  */
   __pyx_t_3 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -10320,7 +11684,7 @@ static PyObject* __Pyx_ImportFrom(PyObject* module, PyObject* name) {
         if (unlikely(!module_name_str)) { goto modbad; }
         module_name = PyUnicode_FromString(module_name_str);
         if (unlikely(!module_name)) { goto modbad; }
-        module_dot = PyUnicode_Concat(module_name, __pyx_kp_u__3);
+        module_dot = PyUnicode_Concat(module_name, __pyx_kp_u__4);
         if (unlikely(!module_dot)) { goto modbad; }
         full_name = PyUnicode_Concat(module_dot, name);
         if (unlikely(!full_name)) { goto modbad; }
@@ -11123,7 +12487,7 @@ __Pyx_PyType_GetName(PyTypeObject* tp)
     if (unlikely(name == NULL) || unlikely(!PyUnicode_Check(name))) {
         PyErr_Clear();
         Py_XDECREF(name);
-        name = __Pyx_NewRef(__pyx_n_s__16);
+        name = __Pyx_NewRef(__pyx_n_s__23);
     }
     return name;
 }

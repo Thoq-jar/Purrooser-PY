@@ -1,3 +1,8 @@
+# You are working in src/browser.pyx
+# -*- coding: utf-8 -*-
+# cython: language_level=3
+
+
 from PyQt5.QtWidgets import QMainWindow, QTabWidget, QToolBar, QAction, QLineEdit
 from PyQt5.QtWebEngineWidgets import QWebEngineView
 from PyQt5.QtCore import QUrl
@@ -5,7 +10,6 @@ from PyQt5.QtGui import QIcon
 from src.styles import get_styles
 
 URL = "https://www.qwant.com/"
-
 
 class Purroser(QMainWindow):
     def __init__(self):
@@ -24,6 +28,7 @@ class Purroser(QMainWindow):
             self.add_tab(URL)
 
         self.add_toolbar_actions()
+        self.add_fullscreen_action()  # Added fullscreen action to the toolbar
 
         self.setStyleSheet(get_styles())
 
@@ -46,6 +51,34 @@ class Purroser(QMainWindow):
         self.url_bar = QLineEdit()
         self.url_bar.returnPressed.connect(self.navigate_to_url)
         self.toolbar.addWidget(self.url_bar)
+        self.add_fullscreen_action()  # Ensure fullscreen action is added here too
+
+    def add_fullscreen_action(self):
+        fullscreen_action = QAction("Full Screen", self)
+        fullscreen_action.triggered.connect(lambda: self.toggle_fullscreen(self.tabs.currentWidget()))
+        self.toolbar.addAction(fullscreen_action)
+
+    def check_fullscreen_support(self, web_view):
+        js_code = """
+        var elem = document.documentElement;
+        if (!document.fullscreenElement && 
+            !document.mozFullScreenElement && 
+            !document.webkitFullscreenElement && 
+            !document.msFullscreenElement ) {        
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+                return true;
+            }
+        }
+        return false;
+        """
+        web_view.page().runJavaScript(js_code)
+
+    def toggle_fullscreen(self, web_view):
+        if self.check_fullscreen_support(web_view):
+            web_view.showFullScreen()
+        else:
+            print("Fullscreen not supported.")
 
     def home(self):
         if self.tabs.count() == 0:
