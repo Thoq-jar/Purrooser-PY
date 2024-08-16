@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 # cython: language_level=3
 
-
 from PyQt5.QtWidgets import QMainWindow, QTabWidget, QToolBar, QAction, QLineEdit
 from PyQt5.QtWebEngineWidgets import QWebEngineView
 from PyQt5.QtCore import QUrl
