@@ -1,0 +1,13 @@
+echo "Setting up Purroser..."
+rm -rf purr
+rm -rf build
+python3 -m venv purr
+source purr/bin/activate
+pip install --upgrade pip
+pip install PyQt5
+pip install PyQtWebEngine
+pip install setuptools
+pip install Cython
+deactivate
+chmod +x Thoqfile
+echo "Done! Now run ./Thoqfile to start Purroser."
